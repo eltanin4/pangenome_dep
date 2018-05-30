@@ -1,0 +1,290 @@
+<!doctype html>
+<html><head>
+<title>KEGG COMPOUND: C00124</title>
+<link type="text/css" rel="stylesheet" href="/css/gn2.css">
+<link rel="stylesheet" href="/css/bget.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="/css/bgetm.css" media="only screen and (max-width: 768px)">
+<style>.kcfd{display:none;}</style>
+<script>
+<!--
+var getElementsByClassName = document.getElementsByClassName ?
+  function (cl){
+    return document.getElementsByClassName(cl);
+  } :
+  function (cl){
+    var elms = [];
+    var objs = document.getElementsByTagName('*');
+    for(var i=0;i<objs.length;i++){
+      var obj = objs[i];
+      if(obj.className == cl){
+        elms.push(obj);
+      }
+    }
+    return elms;
+  };
+function toggleField(clk,cl,show,hide){
+  var objs = getElementsByClassName(cl);
+  for(var i=0;i<objs.length;i++){
+    var obj = objs[i];
+    if(!obj.style.display||obj.style.display == 'none'){
+      obj.style.display = 'block';
+      clk.innerHTML = '&nbsp;&laquo; '+hide;
+    }
+    else{
+      obj.style.display = 'none';
+      clk.innerHTML = '&nbsp;&raquo; '+show;
+    }
+  }
+}
+function toggleData(bobj,e){
+  var id = bobj.id.replace(/[^0-9]/g,'');
+  var dt = document.getElementById('kcfd'+id);
+  if(!dt.style.display||dt.style.display == 'none'){
+    bobj.name = 'hide_kcf';
+    bobj.alt = 'Hide';
+    bobj.src = '/Fig/bget/button_Hib.gif';
+    dt.style.display = 'block';
+  }
+  else{
+    bobj.name = 'show_kcf';
+    bobj.alt = 'Show';
+    bobj.src = '/Fig/bget/button_Sb.gif';
+    dt.style.display = 'none';
+  }
+}
+function btn(bobj,img) {
+  bobj.src = "/Fig/bget/button_" + img + ".gif";
+}
+function btn_e(e) {
+  e = e || event;
+  var obj = e.target;
+  var img = e.target.src;
+  var img_base = img.replace(/\\/g,'/').replace(/(b|bd|bh)\.gif$/,'');
+  if(e.type == 'mousedown'||e.type == 'touchstart'){
+    obj.src = img_base +'bd.gif';
+  }
+  else if(e.type == 'mouseover'){
+    obj.src = img_base +'bh.gif';
+  }
+  else if(e.type == 'mouseup'||e.type == 'touchend'){
+    obj.src = img_base +'b.gif';
+  }
+  else if(e.type == 'mouseout'){
+    obj.src = img_base +'b.gif';
+  }
+}
+function init(){
+  for(var i=1;i<=1;i++){
+    if(document.getElementById('kcfb'+i)){
+      document.getElementById('kcfb'+i).onclick = function(e){toggleData(this,e);};
+      document.getElementById('kcfb'+i).onmousedown = function(e){btn_e(e);};
+      document.getElementById('kcfb'+i).onmouseover = function(e){btn_e(e);};
+      document.getElementById('kcfb'+i).onmouseout = function(e){btn_e(e);};
+      document.getElementById('kcfb'+i).onmouseup = function(e){btn_e(e);};
+      document.getElementById('kcfb'+i).ontouchstart = function(e){btn_e(e);};
+      document.getElementById('kcfb'+i).ontouchend = function(e){btn_e(e);};
+    }
+  }
+}
+function Link_XtrctSeq2(form) {
+    var dna_from;
+    var dna_to;
+    var dna_len;
+    var plus_up   = Number(form.XtrctSeq_UP.value) ;
+    var plus_down = Number(form.XtrctSeq_DOWN.value);
+    var vector    = Number(form.VECTOR.value);
+    var org       = form.ORG.value;
+    var chr       = form.CHR.value;
+    var kid       = form.KEGGID.value;
+    var url;
+
+    if (plus_up == 0 && plus_down == 0) {
+	url = "/dbget-bin/www_bget?-f+-n+n+" + kid;
+    }
+    else {
+	if (vector == 1) {
+	    dna_from  = Number(form.FROM.value)  - plus_up;
+	    dna_to    = Number(form.TO.value) + plus_down;
+	} else {
+	    dna_from  = Number(form.FROM.value)  - plus_down;
+	    dna_to    = Number(form.TO.value) + plus_up;
+	}
+
+	url = "/dbget-bin/cut_sequence_genes.pl?FROM=" + dna_from + "&TO=" + dna_to +"&VECTOR=" + vector + "&ORG=" + org;
+	if (chr) url += "&CHR=" + chr;
+    }
+    //window.open( url, "_self" );
+    location.href = url;
+}
+function go_taxonomy(form,params){
+  for(var key in params){
+    if(form[key]){
+      form.setAttribute(key,params[key]);
+    }
+    else{
+      var obj = document.createElement('input');
+      obj.setAttribute('type','hidden');
+      obj.setAttribute('name',key);
+      obj.setAttribute('value',params[key]);
+      form.appendChild(obj);
+    }
+  }
+  form.submit();
+}
+window.onload=function(){window.focus();init();};
+//--->
+</script>
+
+</head>
+<body>
+<div>
+
+<table border=0 cellpadding=0 cellspacing=0><tr><td>
+<table border=0 cellpadding=0 cellspacing=0 width="650"><tr><td width=70><a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border=0 src="/Fig/bget/kegg2.gif"></a></td><td>&nbsp;&nbsp;&nbsp;</td><td><a name="compound:C00124"></a><font class="title2">COMPOUND: C00124</font></td><td align="right" valign="bottom"><a href="javascript:void(window.open('/kegg/document/help_bget_compound.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img align="middle" alt="Help" border="0" name="help" onmousedown="btn(this,'Hbd')" onmouseout="btn(this,'Hb')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" ontouchend="btn(this,'Hb')" ontouchstart="btn(this,'Hbd')" src="/Fig/bget/button_Hb.gif"></a></td></tr></table><form method="post" action="/dbget-bin/www_bget" enctype="application/x-www-form-urlencoded" name="form1"><table border=0 cellpadding=1 cellspacing=0 width="650">
+<tr>
+<td class="fr2">
+<table border=0 cellpadding=2 cellspacing=0 width="650" style="border-bottom:#000 1px solid">
+
+<tr><th class="th20" align="left" valign="middle" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Entry</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td align="left"><code><nobr>C00124&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Compound&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+</nobr></code></td><td align="right"><br></td></tr></table></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Name</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden"><div style="width:555px;overflow-x:auto;overflow-y:hidden">D-Galactose;<br>
+D-Galactopyranose<br>
+</div></div></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Formula</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden">C6H12O6<br>
+</div></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Exact mass</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden">180.0634<br>
+</div></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Mol weight</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden">180.1559<br>
+</div></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Structure</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><a href="/Fig/compound/C00124.gif"><img name="img0" src="/Fig/compound_small/C00124.gif" border=0></a><br>
+<a href="/dbget-bin/www_bget?-f+m+compound+C00124"><img align="middle" alt="Mol file" border="0" name="Mol" onmousedown="btn(this,'Molbd')" onmouseout="btn(this,'Molb')" onmouseover="btn(this,'Molbh')" onmouseup="btn(this,'Molb')" ontouchend="btn(this,'Molb')" ontouchstart="btn(this,'Molbd')" src="/Fig/bget/button_Molb.gif"></a><a href="/dbget-bin/www_bget?-f+k+compound+C00124"><img align="middle" alt="KCF file" border="0" name="KCF" onmousedown="btn(this,'KCFbd')" onmouseout="btn(this,'KCFb')" onmouseover="btn(this,'KCFbh')" onmouseup="btn(this,'KCFb')" ontouchend="btn(this,'KCFb')" ontouchstart="btn(this,'KCFbd')" src="/Fig/bget/button_KCFb.gif"></a><a href="/tools-bin/strsearch_view?ENTRY=C00124&amp;PROGRAM=simcomp&amp;DATABASE=compound"><img align="middle" alt="DB search" border="0" name="SIMCOMP" onmousedown="btn(this,'Dsbd')" onmouseout="btn(this,'Dsb')" onmouseover="btn(this,'Dsbh')" onmouseup="btn(this,'Dsb')" ontouchend="btn(this,'Dsb')" ontouchstart="btn(this,'Dsbd')" src="/Fig/bget/button_Dsb.gif"></a><a href="http://www.genome.jp/dbget-bin/Jmol.jnlp?-f+m+compound+C00124"><img align="middle" alt="Jmol" border="0" name="Jmol" onmousedown="btn(this,'Jmlbd')" onmouseout="btn(this,'Jmlb')" onmouseover="btn(this,'Jmlbh')" onmouseup="btn(this,'Jmlb')" ontouchend="btn(this,'Jmlb')" ontouchstart="btn(this,'Jmlbd')" src="/Fig/bget/button_Jmlb.gif"></a><a href="http://www.genome.jp/dbget-bin/KegDraw.jnlp?--find+C00124"><img align="middle" alt="KegDraw" border="0" name="KegDraw" onmousedown="btn(this,'Drbd')" onmouseout="btn(this,'Drb')" onmouseover="btn(this,'Drbh')" onmouseup="btn(this,'Drb')" ontouchend="btn(this,'Drb')" ontouchstart="btn(this,'Drbd')" src="/Fig/bget/button_Drb.gif"></a></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Comment</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden">Galactose [CPD:<a href="/dbget-bin/www_bget?cpd:C01582">C01582</a>]<br>
+L-Galactose [CPD:<a href="/dbget-bin/www_bget?cpd:C01825">C01825</a>]<br>
+alpha-D-Galactose [CPD:<a href="/dbget-bin/www_bget?cpd:C00984">C00984</a>]<br>
+beta-D-Galactose [CPD:<a href="/dbget-bin/www_bget?cpd:C00962">C00962</a>]<br>
+</div></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Reaction</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden"><a href="/dbget-bin/www_bget?rn:R01093">R01093</a> <a href="/dbget-bin/www_bget?rn:R01094">R01094</a> <a href="/dbget-bin/www_bget?rn:R01095">R01095</a> <a href="/dbget-bin/www_bget?rn:R01096">R01096</a> <a href="/dbget-bin/www_bget?rn:R01097">R01097</a> <a href="/dbget-bin/www_bget?rn:R01098">R01098</a> <a href="/dbget-bin/www_bget?rn:R01099">R01099</a> <a href="/dbget-bin/www_bget?rn:R01100">R01100</a> <br>
+<a href="/dbget-bin/www_bget?rn:R01101">R01101</a> <a href="/dbget-bin/www_bget?rn:R01103">R01103</a> <a href="/dbget-bin/www_bget?rn:R01104">R01104</a> <a href="/dbget-bin/www_bget?rn:R01105">R01105</a> <a href="/dbget-bin/www_bget?rn:R01194">R01194</a> <a href="/dbget-bin/www_bget?rn:R01329">R01329</a> <a href="/dbget-bin/www_bget?rn:R01678">R01678</a> <a href="/dbget-bin/www_bget?rn:R02926">R02926</a> <br>
+<a href="/dbget-bin/www_bget?rn:R03355">R03355</a> <a href="/dbget-bin/www_bget?rn:R03617">R03617</a> <a href="/dbget-bin/www_bget?rn:R03618">R03618</a> <a href="/dbget-bin/www_bget?rn:R03634">R03634</a> <a href="/dbget-bin/www_bget?rn:R04019">R04019</a> <a href="/dbget-bin/www_bget?rn:R04470">R04470</a> <a href="/dbget-bin/www_bget?rn:R04633">R04633</a> <a href="/dbget-bin/www_bget?rn:R05112">R05112</a> <br>
+<a href="/dbget-bin/www_bget?rn:R05549">R05549</a> <a href="/dbget-bin/www_bget?rn:R05961">R05961</a> <a href="/dbget-bin/www_bget?rn:R05994">R05994</a> <a href="/dbget-bin/www_bget?rn:R06010">R06010</a> <a href="/dbget-bin/www_bget?rn:R06070">R06070</a> <a href="/dbget-bin/www_bget?rn:R06091">R06091</a> <a href="/dbget-bin/www_bget?rn:R06093">R06093</a> <a href="/dbget-bin/www_bget?rn:R06094">R06094</a> <br>
+<a href="/dbget-bin/www_bget?rn:R06096">R06096</a> <a href="/dbget-bin/www_bget?rn:R06098">R06098</a> <a href="/dbget-bin/www_bget?rn:R06099">R06099</a> <a href="/dbget-bin/www_bget?rn:R06114">R06114</a> <a href="/dbget-bin/www_bget?rn:R06136">R06136</a> <a href="/dbget-bin/www_bget?rn:R06142">R06142</a> <a href="/dbget-bin/www_bget?rn:R06152">R06152</a> <a href="/dbget-bin/www_bget?rn:R06202">R06202</a> <br>
+<a href="/dbget-bin/www_bget?rn:R07807">R07807</a> <a href="/dbget-bin/www_bget?rn:R08544">R08544</a> <a href="/dbget-bin/www_bget?rn:R10619">R10619</a> <a href="/dbget-bin/www_bget?rn:R10622">R10622</a> <a href="/dbget-bin/www_bget?rn:R11171">R11171</a><br>
+</div></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Pathway</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><table width=555 border=0 cellspacing=0 cellpadding=0><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map00052+C00124">map00052</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Galactose metabolism</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map01100+C00124">map01100</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Metabolic pathways</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map02030+C00124">map02030</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Bacterial chemotaxis</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map02060+C00124">map02060</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Phosphotransferase system (PTS)</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04973+C00124">map04973</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Carbohydrate digestion and absorption</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04978+C00124">map04978</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Mineral absorption</div></td></tr></table></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Module</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><table width=555 border=0 cellspacing=0 cellpadding=0><tr><td align="left" valign="top" style="width:4.5em"><div><nobr><a href="/kegg-bin/show_module?M00554+C00124">M00554</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Nucleotide sugar biosynthesis, galactose =&gt; UDP-galactose</div></td></tr><tr><td align="left" valign="top" style="width:4.5em"><div><nobr><a href="/kegg-bin/show_module?M00632+C00124">M00632</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Galactose degradation, Leloir pathway, galactose =&gt; alpha-D-glucose-1P</div></td></tr></table></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Enzyme</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden"><a href="/dbget-bin/www_bget?ec:1.1.1.21">1.1.1.21</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.1.1.48">1.1.1.48</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.1.1.120">1.1.1.120</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.1.1.121">1.1.1.121</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:1.1.1.359">1.1.1.359</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.1.1.360">1.1.1.360</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.1.3.9">1.1.3.9</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:2.7.1.204">2.7.1.204</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:3.1.3.94">3.1.3.94</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.2.1.22">3.2.1.22</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.2.1.23">3.2.1.23</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.2.1.46">3.2.1.46</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:3.2.1.47">3.2.1.47</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.2.1.62">3.2.1.62</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.2.1.108">3.2.1.108</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:5.1.3.3">5.1.3.3</a><br>
+</div></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Brite</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden"><nobr>Compounds with biological roles [BR:<a href="/kegg-bin/get_htext?br08001+C00124">br08001</a>]<br>
+&nbsp;Carbohydrates<br>
+&nbsp;&nbsp;Monosaccharides<br>
+&nbsp;&nbsp;&nbsp;Aldoses<br>
+&nbsp;&nbsp;&nbsp;&nbsp;C00124&nbsp;&nbsp;D-Galactose<br>
+</nobr></div><a href="/kegg-bin/search_brite?option=-a&amp;search_string=C00124"><img align="middle" alt="BRITE hierarchy" border="0" name="BRH" onmousedown="btn(this,'BHbd')" onmouseout="btn(this,'BHb')" onmouseover="btn(this,'BHbh')" onmouseup="btn(this,'BHb')" ontouchend="btn(this,'BHb')" ontouchstart="btn(this,'BHbd')" src="/Fig/bget/button_BHb.gif"></a></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Other DBs</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden"><div style="float:left">CAS:&nbsp;</div><div style="margin-left:3em">59-23-4 10257-28-0</div><div style="clear:both"></div><div style="float:left">PubChem:&nbsp;</div><div style="margin-left:5em"><a href="https://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=3424">3424</a></div><div style="clear:both"></div><div style="float:left">ChEBI:&nbsp;</div><div style="margin-left:4em"><a href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:4139">4139</a></div><div style="clear:both"></div><div style="float:left">ChEMBL:&nbsp;</div><div style="margin-left:4.5em"><a href="https://www.ebi.ac.uk/chembldb/compound/inspect/CHEMBL1233058">CHEMBL1233058</a> <a href="https://www.ebi.ac.uk/chembldb/compound/inspect/CHEMBL195923">CHEMBL195923</a> <a href="https://www.ebi.ac.uk/chembldb/compound/inspect/CHEMBL300520">CHEMBL300520</a></div><div style="clear:both"></div><div style="float:left">KNApSAcK:&nbsp;</div><div style="margin-left:5.5em"><a href="http://kanaya.naist.jp/knapsack_jsp/information.jsp?sname=C_ID&word=C00019681">C00019681</a></div><div style="clear:both"></div><div style="float:left">PDB-CCD:&nbsp;</div><div style="margin-left:5em"><a href="http://www.ebi.ac.uk/pdbe-srv/pdbechem/chemicalCompound/show/GAL">GAL</a>[<a href="http://pdbj.org/chemie/summary/GAL">PDBj</a>] <a href="http://www.ebi.ac.uk/pdbe-srv/pdbechem/chemicalCompound/show/GLA">GLA</a>[<a href="http://pdbj.org/chemie/summary/GLA">PDBj</a>] </div><div style="clear:both"></div><div style="float:left">3DMET:&nbsp;</div><div style="margin-left:4em"><a href="http://www.3dmet.dna.affrc.go.jp/cgi/show_data.php?acc=B04637">B04637</a></div><div style="clear:both"></div><div style="float:left">NIKKAJI:&nbsp;</div><div style="margin-left:5em"><a href="http://jglobal.jst.go.jp/en/redirect?Nikkaji_No=J4.597G">J4.597G</a></div><div style="clear:both"></div></div></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>KCF data</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><img align="middle" alt="Show" border="0" class="kcfb" id="kcfb1" name="show_kcf" src="/Fig/bget/button_Sb.gif"><div class="kcfd" id="kcfd1"><br>ATOM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;C1y C&nbsp;&nbsp;&nbsp;&nbsp;20.9181&nbsp;&nbsp;-13.5272<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;C1y C&nbsp;&nbsp;&nbsp;&nbsp;20.9181&nbsp;&nbsp;-14.9277<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;O2x O&nbsp;&nbsp;&nbsp;&nbsp;22.1260&nbsp;&nbsp;-12.8270<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;C1b C&nbsp;&nbsp;&nbsp;&nbsp;19.7043&nbsp;&nbsp;-12.8270<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;C1y C&nbsp;&nbsp;&nbsp;&nbsp;22.1260&nbsp;&nbsp;-15.6279<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;O1a O&nbsp;&nbsp;&nbsp;&nbsp;19.7043&nbsp;&nbsp;-15.6279<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;C1y C&nbsp;&nbsp;&nbsp;&nbsp;23.3455&nbsp;&nbsp;-13.5272<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;&nbsp;&nbsp;O1a O&nbsp;&nbsp;&nbsp;&nbsp;18.6423&nbsp;&nbsp;-13.7374<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;C1y C&nbsp;&nbsp;&nbsp;&nbsp;23.3455&nbsp;&nbsp;-14.9277<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;O1a O&nbsp;&nbsp;&nbsp;&nbsp;22.1260&nbsp;&nbsp;-17.0283<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11&nbsp;&nbsp;O1a O&nbsp;&nbsp;&nbsp;&nbsp;24.5534&nbsp;&nbsp;-12.8270<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12&nbsp;&nbsp;O1a O&nbsp;&nbsp;&nbsp;&nbsp;24.5534&nbsp;&nbsp;-15.6279<br>
+BOND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;2 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;3 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;4 1 #Up<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;5 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;6 1 #Up<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;7 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;8 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;9 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;10 1 #Up<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;11 1 #Either<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;12 1 #Down<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;9 1<br>
+</div></td></tr>
+
+</table></td></tr></table>
+<br><span style="font-size:12px"><a href="/dbget-bin/www_bget?cpd_ja:C00124">&raquo; Japanese version</a></span><br><br></form></td><td valign="top"><div style="margin-top:46px;margin-left:1em;border:#ddd 1px solid"><div class="th20" style="font-weight:bold;line-height:1.5em">&nbsp;&nbsp;All links&nbsp;&nbsp;</div>
+<pre style="margin-left:1em">
+<span style="color:#006"><a href="/dbget-bin/get_linkdb?-t+1+cpd:C00124">Ontology (1)</a></span>   
+   <a href="/dbget-bin/get_linkdb?-t+brite+cpd:C00124">KEGG BRITE (1)</a>   
+<span style="color:#006"><a href="/dbget-bin/get_linkdb?-t+2+cpd:C00124">Pathway (8)</a></span>   
+   <a href="/dbget-bin/get_linkdb?-t+pathway+cpd:C00124">KEGG PATHWAY (6)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+module+cpd:C00124">KEGG MODULE (2)</a>   
+<span style="color:#006"><a href="/dbget-bin/get_linkdb?-t+5+cpd:C00124">Drug (4)</a></span>   
+   <a href="/dbget-bin/get_linkdb?-t+environ+cpd:C00124">KEGG ENVIRON (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+chembl+cpd:C00124">CHEMBL (3)</a>   
+<span style="color:#006"><a href="/dbget-bin/get_linkdb?-t+6+cpd:C00124">Chemical substance (12)</a></span>   
+   <a href="/dbget-bin/get_linkdb?-t+pubchem+cpd:C00124">PubChem (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+chebi+cpd:C00124">ChEBI (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+3dmet+cpd:C00124">3DMET (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+knapsack+cpd:C00124">KNApSAcK (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+massbank+cpd:C00124">MASSBANK (5)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+nikkaji+cpd:C00124">NIKKAJI (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+pdb-ccd+cpd:C00124">PDB-CCD (2)</a>   
+<span style="color:#006"><a href="/dbget-bin/get_linkdb?-t+7+cpd:C00124">Chemical reaction (61)</a></span>   
+   <a href="/dbget-bin/get_linkdb?-t+enzyme+cpd:C00124">KEGG ENZYME (16)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+reaction+cpd:C00124">KEGG REACTION (45)</a>   
+<span style="color:#006"><a href="/dbget-bin/get_linkdb?-t+9+cpd:C00124">Gene (15558)</a></span>   
+   <a href="/dbget-bin/get_linkdb?-t+genes+cpd:C00124">KEGG GENES (15558)</a>   
+<a href="/dbget-bin/get_linkdb?-t+alldb+cpd:C00124">All databases (15644)</a>   
+<br><a href="/dbget-bin/get_linkdb?-N+cpd:C00124">Download RDF</a>   
+</pre>
+</div>
+</td></tr></table>
+
+
+<a href="/dbget/">DBGET</a> integrated database retrieval system</div>
+
+</body>
+</html>

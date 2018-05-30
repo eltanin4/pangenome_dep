@@ -1,0 +1,259 @@
+<!doctype html>
+<html><head>
+<title>KEGG COMPOUND: C00165</title>
+<link type="text/css" rel="stylesheet" href="/css/gn2.css">
+<link rel="stylesheet" href="/css/bget.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="/css/bgetm.css" media="only screen and (max-width: 768px)">
+<style>.kcfd{display:none;}</style>
+<script>
+<!--
+var getElementsByClassName = document.getElementsByClassName ?
+  function (cl){
+    return document.getElementsByClassName(cl);
+  } :
+  function (cl){
+    var elms = [];
+    var objs = document.getElementsByTagName('*');
+    for(var i=0;i<objs.length;i++){
+      var obj = objs[i];
+      if(obj.className == cl){
+        elms.push(obj);
+      }
+    }
+    return elms;
+  };
+function toggleField(clk,cl,show,hide){
+  var objs = getElementsByClassName(cl);
+  for(var i=0;i<objs.length;i++){
+    var obj = objs[i];
+    if(!obj.style.display||obj.style.display == 'none'){
+      obj.style.display = 'block';
+      clk.innerHTML = '&nbsp;&laquo; '+hide;
+    }
+    else{
+      obj.style.display = 'none';
+      clk.innerHTML = '&nbsp;&raquo; '+show;
+    }
+  }
+}
+function toggleData(bobj,e){
+  var id = bobj.id.replace(/[^0-9]/g,'');
+  var dt = document.getElementById('kcfd'+id);
+  if(!dt.style.display||dt.style.display == 'none'){
+    bobj.name = 'hide_kcf';
+    bobj.alt = 'Hide';
+    bobj.src = '/Fig/bget/button_Hib.gif';
+    dt.style.display = 'block';
+  }
+  else{
+    bobj.name = 'show_kcf';
+    bobj.alt = 'Show';
+    bobj.src = '/Fig/bget/button_Sb.gif';
+    dt.style.display = 'none';
+  }
+}
+function btn(bobj,img) {
+  bobj.src = "/Fig/bget/button_" + img + ".gif";
+}
+function btn_e(e) {
+  e = e || event;
+  var obj = e.target;
+  var img = e.target.src;
+  var img_base = img.replace(/\\/g,'/').replace(/(b|bd|bh)\.gif$/,'');
+  if(e.type == 'mousedown'||e.type == 'touchstart'){
+    obj.src = img_base +'bd.gif';
+  }
+  else if(e.type == 'mouseover'){
+    obj.src = img_base +'bh.gif';
+  }
+  else if(e.type == 'mouseup'||e.type == 'touchend'){
+    obj.src = img_base +'b.gif';
+  }
+  else if(e.type == 'mouseout'){
+    obj.src = img_base +'b.gif';
+  }
+}
+function init(){
+  for(var i=1;i<=1;i++){
+    if(document.getElementById('kcfb'+i)){
+      document.getElementById('kcfb'+i).onclick = function(e){toggleData(this,e);};
+      document.getElementById('kcfb'+i).onmousedown = function(e){btn_e(e);};
+      document.getElementById('kcfb'+i).onmouseover = function(e){btn_e(e);};
+      document.getElementById('kcfb'+i).onmouseout = function(e){btn_e(e);};
+      document.getElementById('kcfb'+i).onmouseup = function(e){btn_e(e);};
+      document.getElementById('kcfb'+i).ontouchstart = function(e){btn_e(e);};
+      document.getElementById('kcfb'+i).ontouchend = function(e){btn_e(e);};
+    }
+  }
+}
+function Link_XtrctSeq2(form) {
+    var dna_from;
+    var dna_to;
+    var dna_len;
+    var plus_up   = Number(form.XtrctSeq_UP.value) ;
+    var plus_down = Number(form.XtrctSeq_DOWN.value);
+    var vector    = Number(form.VECTOR.value);
+    var org       = form.ORG.value;
+    var chr       = form.CHR.value;
+    var kid       = form.KEGGID.value;
+    var url;
+
+    if (plus_up == 0 && plus_down == 0) {
+	url = "/dbget-bin/www_bget?-f+-n+n+" + kid;
+    }
+    else {
+	if (vector == 1) {
+	    dna_from  = Number(form.FROM.value)  - plus_up;
+	    dna_to    = Number(form.TO.value) + plus_down;
+	} else {
+	    dna_from  = Number(form.FROM.value)  - plus_down;
+	    dna_to    = Number(form.TO.value) + plus_up;
+	}
+
+	url = "/dbget-bin/cut_sequence_genes.pl?FROM=" + dna_from + "&TO=" + dna_to +"&VECTOR=" + vector + "&ORG=" + org;
+	if (chr) url += "&CHR=" + chr;
+    }
+    //window.open( url, "_self" );
+    location.href = url;
+}
+function go_taxonomy(form,params){
+  for(var key in params){
+    if(form[key]){
+      form.setAttribute(key,params[key]);
+    }
+    else{
+      var obj = document.createElement('input');
+      obj.setAttribute('type','hidden');
+      obj.setAttribute('name',key);
+      obj.setAttribute('value',params[key]);
+      form.appendChild(obj);
+    }
+  }
+  form.submit();
+}
+window.onload=function(){window.focus();init();};
+//--->
+</script>
+
+</head>
+<body>
+<div>
+
+<table border=0 cellpadding=0 cellspacing=0><tr><td>
+<table border=0 cellpadding=0 cellspacing=0 width="650"><tr><td width=70><a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border=0 src="/Fig/bget/kegg2.gif"></a></td><td>&nbsp;&nbsp;&nbsp;</td><td><a name="compound:C00165"></a><font class="title2">COMPOUND: C00165</font></td><td align="right" valign="bottom"><a href="javascript:void(window.open('/kegg/document/help_bget_compound.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img align="middle" alt="Help" border="0" name="help" onmousedown="btn(this,'Hbd')" onmouseout="btn(this,'Hb')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" ontouchend="btn(this,'Hb')" ontouchstart="btn(this,'Hbd')" src="/Fig/bget/button_Hb.gif"></a></td></tr></table><form method="post" action="/dbget-bin/www_bget" enctype="application/x-www-form-urlencoded" name="form1"><table border=0 cellpadding=1 cellspacing=0 width="650">
+<tr>
+<td class="fr2">
+<table border=0 cellpadding=2 cellspacing=0 width="650" style="border-bottom:#000 1px solid">
+
+<tr><th class="th20" align="left" valign="middle" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Entry</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td align="left"><code><nobr>C00165&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Compound&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+</nobr></code></td><td align="right"><br></td></tr></table></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Name</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden"><div style="width:555px;overflow-x:auto;overflow-y:hidden">Diacylglycerol;<br>
+Diglyceride<br>
+</div></div></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Formula</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden">C5H6O5R2<br>
+</div></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Structure</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><a href="/Fig/compound/C00165.gif"><img name="img0" src="/Fig/compound_small/C00165.gif" border=0></a><br>
+<a href="/dbget-bin/www_bget?-f+m+compound+C00165"><img align="middle" alt="Mol file" border="0" name="Mol" onmousedown="btn(this,'Molbd')" onmouseout="btn(this,'Molb')" onmouseover="btn(this,'Molbh')" onmouseup="btn(this,'Molb')" ontouchend="btn(this,'Molb')" ontouchstart="btn(this,'Molbd')" src="/Fig/bget/button_Molb.gif"></a><a href="/dbget-bin/www_bget?-f+k+compound+C00165"><img align="middle" alt="KCF file" border="0" name="KCF" onmousedown="btn(this,'KCFbd')" onmouseout="btn(this,'KCFb')" onmouseover="btn(this,'KCFbh')" onmouseup="btn(this,'KCFb')" ontouchend="btn(this,'KCFb')" ontouchstart="btn(this,'KCFbd')" src="/Fig/bget/button_KCFb.gif"></a><a href="/tools-bin/strsearch_view?ENTRY=C00165&amp;PROGRAM=simcomp&amp;DATABASE=compound"><img align="middle" alt="DB search" border="0" name="SIMCOMP" onmousedown="btn(this,'Dsbd')" onmouseout="btn(this,'Dsb')" onmouseover="btn(this,'Dsbh')" onmouseup="btn(this,'Dsb')" ontouchend="btn(this,'Dsb')" ontouchstart="btn(this,'Dsbd')" src="/Fig/bget/button_Dsb.gif"></a><a href="http://www.genome.jp/dbget-bin/Jmol.jnlp?-f+m+compound+C00165"><img align="middle" alt="Jmol" border="0" name="Jmol" onmousedown="btn(this,'Jmlbd')" onmouseout="btn(this,'Jmlb')" onmouseover="btn(this,'Jmlbh')" onmouseup="btn(this,'Jmlb')" ontouchend="btn(this,'Jmlb')" ontouchstart="btn(this,'Jmlbd')" src="/Fig/bget/button_Jmlb.gif"></a><a href="http://www.genome.jp/dbget-bin/KegDraw.jnlp?--find+C00165"><img align="middle" alt="KegDraw" border="0" name="KegDraw" onmousedown="btn(this,'Drbd')" onmouseout="btn(this,'Drb')" onmouseover="btn(this,'Drbh')" onmouseup="btn(this,'Drb')" ontouchend="btn(this,'Drb')" ontouchstart="btn(this,'Drbd')" src="/Fig/bget/button_Drb.gif"></a></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Comment</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden">Generic compound in reaction hierarchy<br>
+Including 1,2-Diacyl-sn-glycerol [CPD:<a href="/dbget-bin/www_bget?cpd:C00641">C00641</a>] and 2,3-Diacyl-sn-glycerol<br>
+</div></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Reaction</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden"><a href="/dbget-bin/www_bget?rn:R01368">R01368</a> <a href="/dbget-bin/www_bget?rn:R01369">R01369</a> <a href="/dbget-bin/www_bget?rn:R04055">R04055</a> <a href="/dbget-bin/www_bget?rn:R05209">R05209</a> <a href="/dbget-bin/www_bget?rn:R11555">R11555</a> <a href="/dbget-bin/www_bget?rn:R11556">R11556</a> <a href="/dbget-bin/www_bget?rn:R11557">R11557</a><br>
+</div></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Pathway</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><table width=555 border=0 cellspacing=0 cellpadding=0><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map01521+C00165">map01521</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>EGFR tyrosine kinase inhibitor resistance</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04010+C00165">map04010</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>MAPK signaling pathway</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04012+C00165">map04012</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>ErbB signaling pathway</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04014+C00165">map04014</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Ras signaling pathway</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04015+C00165">map04015</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Rap1 signaling pathway</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04020+C00165">map04020</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Calcium signaling pathway</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04024+C00165">map04024</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>cAMP signaling pathway</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04062+C00165">map04062</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Chemokine signaling pathway</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04064+C00165">map04064</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>NF-kappa B signaling pathway</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04066+C00165">map04066</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>HIF-1 signaling pathway</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04071+C00165">map04071</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Sphingolipid signaling pathway</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04072+C00165">map04072</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Phospholipase D signaling pathway</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04261+C00165">map04261</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Adrenergic signaling in cardiomyocytes</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04270+C00165">map04270</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Vascular smooth muscle contraction</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04370+C00165">map04370</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>VEGF signaling pathway</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04371+C00165">map04371</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Apelin signaling pathway</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04540+C00165">map04540</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Gap junction</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04611+C00165">map04611</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Platelet activation</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04625+C00165">map04625</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>C-type lectin receptor signaling pathway</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04650+C00165">map04650</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Natural killer cell mediated cytotoxicity</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04658+C00165">map04658</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Th1 and Th2 cell differentiation</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04659+C00165">map04659</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Th17 cell differentiation</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04660+C00165">map04660</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>T cell receptor signaling pathway</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04662+C00165">map04662</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>B cell receptor signaling pathway</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04664+C00165">map04664</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Fc epsilon RI signaling pathway</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04666+C00165">map04666</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Fc gamma R-mediated phagocytosis</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04713+C00165">map04713</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Circadian entrainment</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04714+C00165">map04714</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Thermogenesis</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04720+C00165">map04720</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Long-term potentiation</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04722+C00165">map04722</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Neurotrophin signaling pathway</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04723+C00165">map04723</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Retrograde endocannabinoid signaling</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04724+C00165">map04724</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Glutamatergic synapse</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04725+C00165">map04725</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Cholinergic synapse</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04726+C00165">map04726</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Serotonergic synapse</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04728+C00165">map04728</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Dopaminergic synapse</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04730+C00165">map04730</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Long-term depression</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04745+C00165">map04745</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Phototransduction - fly</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04750+C00165">map04750</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Inflammatory mediator regulation of TRP channels</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04911+C00165">map04911</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Insulin secretion</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04912+C00165">map04912</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>GnRH signaling pathway</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04915+C00165">map04915</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Estrogen signaling pathway</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04916+C00165">map04916</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Melanogenesis</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04918+C00165">map04918</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Thyroid hormone synthesis</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04919+C00165">map04919</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Thyroid hormone signaling pathway</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04920+C00165">map04920</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Adipocytokine signaling pathway</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04921+C00165">map04921</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Oxytocin signaling pathway</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04923+C00165">map04923</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Regulation of lipolysis in adipocytes</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04925+C00165">map04925</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Aldosterone synthesis and secretion</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04926+C00165">map04926</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Relaxin signaling pathway</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04928+C00165">map04928</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Parathyroid hormone synthesis, secretion and action</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04931+C00165">map04931</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Insulin resistance</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04933+C00165">map04933</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>AGE-RAGE signaling pathway in diabetic complications</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04961+C00165">map04961</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Endocrine and other factor-regulated calcium reabsorption</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04970+C00165">map04970</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Salivary secretion</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04971+C00165">map04971</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Gastric acid secretion</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04972+C00165">map04972</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Pancreatic secretion</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04973+C00165">map04973</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Carbohydrate digestion and absorption</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04975+C00165">map04975</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Fat digestion and absorption</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map05110+C00165">map05110</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Vibrio cholerae infection</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map05143+C00165">map05143</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>African trypanosomiasis</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map05146+C00165">map05146</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Amoebiasis</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map05167+C00165">map05167</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Kaposi's sarcoma-associated herpesvirus infection</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map05200+C00165">map05200</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Pathways in cancer</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map05214+C00165">map05214</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Glioma</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map05223+C00165">map05223</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Non-small cell lung cancer</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map05225+C00165">map05225</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Hepatocellular carcinoma</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map05231+C00165">map05231</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Choline metabolism in cancer</div></td></tr></table></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Enzyme</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden"><a href="/dbget-bin/www_bget?ec:2.3.1.22">2.3.1.22</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:2.3.1.77">2.3.1.77</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:2.7.8.43">2.7.8.43</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.1.1.3">3.1.1.3</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:3.1.1.34">3.1.1.34</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.1.1.79">3.1.1.79</a><br>
+</div></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Brite</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden"><nobr>Lipids [BR:<a href="/kegg-bin/get_htext?br08002+C00165">br08002</a>]<br>
+&nbsp;GL&nbsp;&nbsp;Glycerolipids<br>
+&nbsp;&nbsp;GL02 Diradylglycerols<br>
+&nbsp;&nbsp;&nbsp;GL0201 Diacylglycerols<br>
+&nbsp;&nbsp;&nbsp;&nbsp;C00165&nbsp;&nbsp;Diacylglycerol<br>
+</nobr></div><a href="/kegg-bin/search_brite?option=-a&amp;search_string=C00165"><img align="middle" alt="BRITE hierarchy" border="0" name="BRH" onmousedown="btn(this,'BHbd')" onmouseout="btn(this,'BHb')" onmouseover="btn(this,'BHbh')" onmouseup="btn(this,'BHb')" ontouchend="btn(this,'BHb')" ontouchstart="btn(this,'BHbd')" src="/Fig/bget/button_BHb.gif"></a></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Other DBs</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden"><div style="float:left">PubChem:&nbsp;</div><div style="margin-left:5em"><a href="https://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=3465">3465</a></div><div style="clear:both"></div><div style="float:left">ChEBI:&nbsp;</div><div style="margin-left:4em"><a href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:18035">18035</a></div><div style="clear:both"></div></div></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>KCF data</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><img align="middle" alt="Show" border="0" class="kcfb" id="kcfb1" name="show_kcf" src="/Fig/bget/button_Sb.gif"><div class="kcfd" id="kcfd1"><br>ATOM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;C1c C&nbsp;&nbsp;&nbsp;&nbsp;24.3836&nbsp;&nbsp;-15.1201<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;C1b C&nbsp;&nbsp;&nbsp;&nbsp;25.5964&nbsp;&nbsp;-14.4204<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;O7a O&nbsp;&nbsp;&nbsp;&nbsp;24.3836&nbsp;&nbsp;-16.5196<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;C1b C&nbsp;&nbsp;&nbsp;&nbsp;23.1706&nbsp;&nbsp;-14.4204<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;O7a O&nbsp;&nbsp;&nbsp;&nbsp;26.8094&nbsp;&nbsp;-15.1201<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;C7a C&nbsp;&nbsp;&nbsp;&nbsp;23.1706&nbsp;&nbsp;-17.2251<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;O1a O&nbsp;&nbsp;&nbsp;&nbsp;21.9695&nbsp;&nbsp;-15.1201<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;&nbsp;&nbsp;C7a C&nbsp;&nbsp;&nbsp;&nbsp;28.0222&nbsp;&nbsp;-14.4146<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;O6a O&nbsp;&nbsp;&nbsp;&nbsp;21.9636&nbsp;&nbsp;-16.5196<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;R&nbsp;&nbsp;&nbsp;R&nbsp;&nbsp;&nbsp;&nbsp;23.1706&nbsp;&nbsp;-18.6305<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11&nbsp;&nbsp;O6a O&nbsp;&nbsp;&nbsp;&nbsp;28.0105&nbsp;&nbsp;-13.0151<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12&nbsp;&nbsp;R&nbsp;&nbsp;&nbsp;R&nbsp;&nbsp;&nbsp;&nbsp;29.2350&nbsp;&nbsp;-15.1144<br>
+BOND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;2 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;3 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;4 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;5 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;6 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;7 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;8 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;9 2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;10 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;&nbsp;11 2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;&nbsp;12 1<br>
+</div></td></tr>
+
+</table></td></tr></table>
+<br><span style="font-size:12px"><a href="/dbget-bin/www_bget?cpd_ja:C00165">&raquo; Japanese version</a></span><br><br></form></td><td valign="top"><div style="margin-top:46px;margin-left:1em;border:#ddd 1px solid"><div class="th20" style="font-weight:bold;line-height:1.5em">&nbsp;&nbsp;All links&nbsp;&nbsp;</div>
+<pre style="margin-left:1em">
+<span style="color:#006"><a href="/dbget-bin/get_linkdb?-t+1+cpd:C00165">Ontology (1)</a></span>   
+   <a href="/dbget-bin/get_linkdb?-t+brite+cpd:C00165">KEGG BRITE (1)</a>   
+<span style="color:#006"><a href="/dbget-bin/get_linkdb?-t+2+cpd:C00165">Pathway (67)</a></span>   
+   <a href="/dbget-bin/get_linkdb?-t+pathway+cpd:C00165">KEGG PATHWAY (67)</a>   
+<span style="color:#006"><a href="/dbget-bin/get_linkdb?-t+3+cpd:C00165">Network (1)</a></span>   
+   <a href="/dbget-bin/get_linkdb?-t+network+cpd:C00165">KEGG NETWORK (1)</a>   
+<span style="color:#006"><a href="/dbget-bin/get_linkdb?-t+6+cpd:C00165">Chemical substance (2)</a></span>   
+   <a href="/dbget-bin/get_linkdb?-t+pubchem+cpd:C00165">PubChem (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+chebi+cpd:C00165">ChEBI (1)</a>   
+<span style="color:#006"><a href="/dbget-bin/get_linkdb?-t+7+cpd:C00165">Chemical reaction (13)</a></span>   
+   <a href="/dbget-bin/get_linkdb?-t+enzyme+cpd:C00165">KEGG ENZYME (6)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+reaction+cpd:C00165">KEGG REACTION (7)</a>   
+<span style="color:#006"><a href="/dbget-bin/get_linkdb?-t+9+cpd:C00165">Gene (1235)</a></span>   
+   <a href="/dbget-bin/get_linkdb?-t+genes+cpd:C00165">KEGG GENES (1235)</a>   
+<a href="/dbget-bin/get_linkdb?-t+alldb+cpd:C00165">All databases (1319)</a>   
+<br><a href="/dbget-bin/get_linkdb?-N+cpd:C00165">Download RDF</a>   
+</pre>
+</div>
+</td></tr></table>
+
+
+<a href="/dbget/">DBGET</a> integrated database retrieval system</div>
+
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!doctype html>
+<html><head>
+<title>KEGG COMPOUND: C01405</title>
+<link type="text/css" rel="stylesheet" href="/css/gn2.css">
+<link rel="stylesheet" href="/css/bget.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="/css/bgetm.css" media="only screen and (max-width: 768px)">
+<style>.kcfd{display:none;}</style>
+<script>
+<!--
+var getElementsByClassName = document.getElementsByClassName ?
+  function (cl){
+    return document.getElementsByClassName(cl);
+  } :
+  function (cl){
+    var elms = [];
+    var objs = document.getElementsByTagName('*');
+    for(var i=0;i<objs.length;i++){
+      var obj = objs[i];
+      if(obj.className == cl){
+        elms.push(obj);
+      }
+    }
+    return elms;
+  };
+function toggleField(clk,cl,show,hide){
+  var objs = getElementsByClassName(cl);
+  for(var i=0;i<objs.length;i++){
+    var obj = objs[i];
+    if(!obj.style.display||obj.style.display == 'none'){
+      obj.style.display = 'block';
+      clk.innerHTML = '&nbsp;&laquo; '+hide;
+    }
+    else{
+      obj.style.display = 'none';
+      clk.innerHTML = '&nbsp;&raquo; '+show;
+    }
+  }
+}
+function toggleData(bobj,e){
+  var id = bobj.id.replace(/[^0-9]/g,'');
+  var dt = document.getElementById('kcfd'+id);
+  if(!dt.style.display||dt.style.display == 'none'){
+    bobj.name = 'hide_kcf';
+    bobj.alt = 'Hide';
+    bobj.src = '/Fig/bget/button_Hib.gif';
+    dt.style.display = 'block';
+  }
+  else{
+    bobj.name = 'show_kcf';
+    bobj.alt = 'Show';
+    bobj.src = '/Fig/bget/button_Sb.gif';
+    dt.style.display = 'none';
+  }
+}
+function btn(bobj,img) {
+  bobj.src = "/Fig/bget/button_" + img + ".gif";
+}
+function btn_e(e) {
+  e = e || event;
+  var obj = e.target;
+  var img = e.target.src;
+  var img_base = img.replace(/\\/g,'/').replace(/(b|bd|bh)\.gif$/,'');
+  if(e.type == 'mousedown'||e.type == 'touchstart'){
+    obj.src = img_base +'bd.gif';
+  }
+  else if(e.type == 'mouseover'){
+    obj.src = img_base +'bh.gif';
+  }
+  else if(e.type == 'mouseup'||e.type == 'touchend'){
+    obj.src = img_base +'b.gif';
+  }
+  else if(e.type == 'mouseout'){
+    obj.src = img_base +'b.gif';
+  }
+}
+function init(){
+  for(var i=1;i<=1;i++){
+    if(document.getElementById('kcfb'+i)){
+      document.getElementById('kcfb'+i).onclick = function(e){toggleData(this,e);};
+      document.getElementById('kcfb'+i).onmousedown = function(e){btn_e(e);};
+      document.getElementById('kcfb'+i).onmouseover = function(e){btn_e(e);};
+      document.getElementById('kcfb'+i).onmouseout = function(e){btn_e(e);};
+      document.getElementById('kcfb'+i).onmouseup = function(e){btn_e(e);};
+      document.getElementById('kcfb'+i).ontouchstart = function(e){btn_e(e);};
+      document.getElementById('kcfb'+i).ontouchend = function(e){btn_e(e);};
+    }
+  }
+}
+function Link_XtrctSeq2(form) {
+    var dna_from;
+    var dna_to;
+    var dna_len;
+    var plus_up   = Number(form.XtrctSeq_UP.value) ;
+    var plus_down = Number(form.XtrctSeq_DOWN.value);
+    var vector    = Number(form.VECTOR.value);
+    var org       = form.ORG.value;
+    var chr       = form.CHR.value;
+    var kid       = form.KEGGID.value;
+    var url;
+
+    if (plus_up == 0 && plus_down == 0) {
+	url = "/dbget-bin/www_bget?-f+-n+n+" + kid;
+    }
+    else {
+	if (vector == 1) {
+	    dna_from  = Number(form.FROM.value)  - plus_up;
+	    dna_to    = Number(form.TO.value) + plus_down;
+	} else {
+	    dna_from  = Number(form.FROM.value)  - plus_down;
+	    dna_to    = Number(form.TO.value) + plus_up;
+	}
+
+	url = "/dbget-bin/cut_sequence_genes.pl?FROM=" + dna_from + "&TO=" + dna_to +"&VECTOR=" + vector + "&ORG=" + org;
+	if (chr) url += "&CHR=" + chr;
+    }
+    //window.open( url, "_self" );
+    location.href = url;
+}
+function go_taxonomy(form,params){
+  for(var key in params){
+    if(form[key]){
+      form.setAttribute(key,params[key]);
+    }
+    else{
+      var obj = document.createElement('input');
+      obj.setAttribute('type','hidden');
+      obj.setAttribute('name',key);
+      obj.setAttribute('value',params[key]);
+      form.appendChild(obj);
+    }
+  }
+  form.submit();
+}
+window.onload=function(){window.focus();init();};
+//--->
+</script>
+
+</head>
+<body>
+<div>
+
+<table border=0 cellpadding=0 cellspacing=0><tr><td>
+<table border=0 cellpadding=0 cellspacing=0 width="650"><tr><td width=70><a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border=0 src="/Fig/bget/kegg2.gif"></a></td><td>&nbsp;&nbsp;&nbsp;</td><td><a name="compound:C01405"></a><font class="title2">COMPOUND: C01405</font></td><td align="right" valign="bottom"><a href="javascript:void(window.open('/kegg/document/help_bget_compound.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img align="middle" alt="Help" border="0" name="help" onmousedown="btn(this,'Hbd')" onmouseout="btn(this,'Hb')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" ontouchend="btn(this,'Hb')" ontouchstart="btn(this,'Hbd')" src="/Fig/bget/button_Hb.gif"></a></td></tr></table><form method="post" action="/dbget-bin/www_bget" enctype="application/x-www-form-urlencoded" name="form1"><table border=0 cellpadding=1 cellspacing=0 width="650">
+<tr>
+<td class="fr2">
+<table border=0 cellpadding=2 cellspacing=0 width="650" style="border-bottom:#000 1px solid">
+
+<tr><th class="th20" align="left" valign="middle" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Entry</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td align="left"><code><nobr>C01405&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Compound&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+</nobr></code></td><td align="right"><br></td></tr></table></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Name</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden"><div style="width:555px;overflow-x:auto;overflow-y:hidden">Aspirin;<br>
+Acetylsalicylic acid;<br>
+2-Acetoxybenzenecarboxylic acid;<br>
+Acetylsalicylate<br>
+</div></div></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Formula</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden">C9H8O4<br>
+</div></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Exact mass</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden">180.0423<br>
+</div></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Mol weight</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden">180.1574<br>
+</div></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Structure</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><a href="/Fig/compound/C01405.gif"><img name="img0" src="/Fig/compound_small/C01405.gif" border=0></a><br>
+<a href="/dbget-bin/www_bget?-f+m+compound+C01405"><img align="middle" alt="Mol file" border="0" name="Mol" onmousedown="btn(this,'Molbd')" onmouseout="btn(this,'Molb')" onmouseover="btn(this,'Molbh')" onmouseup="btn(this,'Molb')" ontouchend="btn(this,'Molb')" ontouchstart="btn(this,'Molbd')" src="/Fig/bget/button_Molb.gif"></a><a href="/dbget-bin/www_bget?-f+k+compound+C01405"><img align="middle" alt="KCF file" border="0" name="KCF" onmousedown="btn(this,'KCFbd')" onmouseout="btn(this,'KCFb')" onmouseover="btn(this,'KCFbh')" onmouseup="btn(this,'KCFb')" ontouchend="btn(this,'KCFb')" ontouchstart="btn(this,'KCFbd')" src="/Fig/bget/button_KCFb.gif"></a><a href="/tools-bin/strsearch_view?ENTRY=C01405&amp;PROGRAM=simcomp&amp;DATABASE=compound"><img align="middle" alt="DB search" border="0" name="SIMCOMP" onmousedown="btn(this,'Dsbd')" onmouseout="btn(this,'Dsb')" onmouseover="btn(this,'Dsbh')" onmouseup="btn(this,'Dsb')" ontouchend="btn(this,'Dsb')" ontouchstart="btn(this,'Dsbd')" src="/Fig/bget/button_Dsb.gif"></a><a href="http://www.genome.jp/dbget-bin/Jmol.jnlp?-f+m+compound+C01405"><img align="middle" alt="Jmol" border="0" name="Jmol" onmousedown="btn(this,'Jmlbd')" onmouseout="btn(this,'Jmlb')" onmouseover="btn(this,'Jmlbh')" onmouseup="btn(this,'Jmlb')" ontouchend="btn(this,'Jmlb')" ontouchstart="btn(this,'Jmlbd')" src="/Fig/bget/button_Jmlb.gif"></a><a href="http://www.genome.jp/dbget-bin/KegDraw.jnlp?--find+C01405"><img align="middle" alt="KegDraw" border="0" name="KegDraw" onmousedown="btn(this,'Drbd')" onmouseout="btn(this,'Drb')" onmouseover="btn(this,'Drbh')" onmouseup="btn(this,'Drb')" ontouchend="btn(this,'Drb')" ontouchstart="btn(this,'Drbd')" src="/Fig/bget/button_Drb.gif"></a></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Remark</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden"><div style="float:left">Same as:&nbsp;</div><div style="margin-left:5em"><a href="/dbget-bin/www_bget?dr:D00109">D00109</a></div><div style="clear:both"></div></div></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Reaction</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden"><a href="/dbget-bin/www_bget?rn:R02942">R02942</a><br>
+</div></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Pathway</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><table width=555 border=0 cellspacing=0 cellpadding=0><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04976+C01405">map04976</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Bile secretion</div></td></tr></table></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Enzyme</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden"><a href="/dbget-bin/www_bget?ec:3.1.1.55">3.1.1.55</a><br>
+</div></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Brite</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden"><nobr>Anatomical Therapeutic Chemical (ATC) classification [BR:<a href="/kegg-bin/get_htext?br08303+C01405+D00109">br08303</a>]<br>
+&nbsp;A ALIMENTARY TRACT AND METABOLISM<br>
+&nbsp;&nbsp;A01 STOMATOLOGICAL PREPARATIONS<br>
+&nbsp;&nbsp;&nbsp;A01A STOMATOLOGICAL PREPARATIONS<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A01AD Other agents for local oral treatment<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A01AD05 Acetylsalicylic acid<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D00109&nbsp;&nbsp;Aspirin (JP17/USP)<br>
+&nbsp;B BLOOD AND BLOOD FORMING ORGANS<br>
+&nbsp;&nbsp;B01 ANTITHROMBOTIC AGENTS<br>
+&nbsp;&nbsp;&nbsp;B01A ANTITHROMBOTIC AGENTS<br>
+&nbsp;&nbsp;&nbsp;&nbsp;B01AC Platelet aggregation inhibitors excl. heparin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B01AC06 Acetylsalicylic acid<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D00109&nbsp;&nbsp;Aspirin (JP17/USP)<br>
+&nbsp;N NERVOUS SYSTEM<br>
+&nbsp;&nbsp;N02 ANALGESICS<br>
+&nbsp;&nbsp;&nbsp;N02B OTHER ANALGESICS AND ANTIPYRETICS<br>
+&nbsp;&nbsp;&nbsp;&nbsp;N02BA Salicylic acid and derivatives<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N02BA01 Acetylsalicylic acid<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D00109&nbsp;&nbsp;Aspirin (JP17/USP)<br>
+Therapeutic category of drugs in Japan [BR:<a href="/kegg-bin/get_htext?br08301+C01405+D00109">br08301</a>]<br>
+&nbsp;1&nbsp;&nbsp;Agents affecting nervous system and sensory organs<br>
+&nbsp;&nbsp;11&nbsp;&nbsp;Agents affecting central nervous system<br>
+&nbsp;&nbsp;&nbsp;114&nbsp;&nbsp;Antipyretics and analgesics, anti-inflammatory agents<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1143&nbsp;&nbsp;Salicylates<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D00109&nbsp;&nbsp;Aspirin (JP17/USP); Aspalon (JAN)<br>
+&nbsp;3&nbsp;&nbsp;Agents affecting metabolism<br>
+&nbsp;&nbsp;33&nbsp;&nbsp;Blood and body fluid agents<br>
+&nbsp;&nbsp;&nbsp;339&nbsp;&nbsp;Miscellaneous<br>
+&nbsp;&nbsp;&nbsp;&nbsp;3399&nbsp;&nbsp;Others<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D00109&nbsp;&nbsp;Aspirin (JP17/USP); Aspalon (JAN)<br>
+Classification of Japanese OTC drugs [BR:<a href="/kegg-bin/get_htext?br08313+C01405+D00109">br08313</a>]<br>
+&nbsp;Agents for nervous and sensory systems<br>
+&nbsp;&nbsp;01 Cold remedy (oral use)<br>
+&nbsp;&nbsp;&nbsp;D00109&nbsp;&nbsp;Aspirin (JP17/USP)<br>
+&nbsp;&nbsp;03 Antipyretic analgesic agents<br>
+&nbsp;&nbsp;&nbsp;D00109&nbsp;&nbsp;Aspirin (JP17/USP)<br>
+Risk category of Japanese OTC drugs [BR:<a href="/kegg-bin/get_htext?br08312+C01405+D00109">br08312</a>]<br>
+&nbsp;Designated second-class OTC drugs<br>
+&nbsp;&nbsp;Inorganic and organic chemicals<br>
+&nbsp;&nbsp;&nbsp;Aspirin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;D00109&nbsp;&nbsp;Aspirin (JP17/USP)<br>
+&nbsp;Second-class OTC drugs<br>
+&nbsp;&nbsp;Inorganic and organic chemicals<br>
+&nbsp;&nbsp;&nbsp;Aspirin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;D00109&nbsp;&nbsp;Aspirin (JP17/USP)<br>
+Target-based classification of drugs [BR:<a href="/kegg-bin/get_htext?br08310+C01405+D00109">br08310</a>]<br>
+&nbsp;Ion channels<br>
+&nbsp;&nbsp;Epithelial and related channels<br>
+&nbsp;&nbsp;&nbsp;Acid-sensing ion channel (ASIC)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;acid-sensing ion channel 3<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Acetylsalicylic acid<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D00109&nbsp;&nbsp;Aspirin (JP17/USP)<br>
+&nbsp;Enzymes<br>
+&nbsp;&nbsp;Oxidoreductases<br>
+&nbsp;&nbsp;&nbsp;cyclooxygenase-1 (COX-1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Acetylsalicylic acid<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D00109&nbsp;&nbsp;Aspirin (JP17/USP)<br>
+&nbsp;&nbsp;&nbsp;cyclooxygenase-2 (COX-2)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Acetylsalicylic acid<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D00109&nbsp;&nbsp;Aspirin (JP17/USP)<br>
+Drugs listed in the Japanese Pharmacopoeia [BR:<a href="/kegg-bin/get_htext?br08311+C01405+D00109">br08311</a>]<br>
+&nbsp;Chemicals<br>
+&nbsp;&nbsp;D00109&nbsp;&nbsp;Aspirin<br>
+&nbsp;&nbsp;D00109&nbsp;&nbsp;Aspirin tablets<br>
+Drug classes of therapeutic agents [<a href="/kegg/drug/br08360.html?id=C01405">br08360.html</a>]<br>
+&nbsp;Antirheumatic and antigout agents<br>
+&nbsp;&nbsp;D00109<br>
+&nbsp;Anesthetics, analgesics and anti-inflammatory drugs<br>
+&nbsp;&nbsp;D00109<br>
+Rx-to-OTC switch list in the USA [<a href="/kegg/drug/br08315.html?id=C01405">br08315.html</a>]<br>
+&nbsp;D00109<br>
+</nobr></div><a href="/kegg-bin/search_brite?option=-a&amp;search_string=C01405"><img align="middle" alt="BRITE hierarchy" border="0" name="BRH" onmousedown="btn(this,'BHbd')" onmouseout="btn(this,'BHb')" onmouseover="btn(this,'BHbh')" onmouseup="btn(this,'BHb')" ontouchend="btn(this,'BHb')" ontouchstart="btn(this,'BHbd')" src="/Fig/bget/button_BHb.gif"></a></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Other DBs</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden"><div style="float:left">CAS:&nbsp;</div><div style="margin-left:3em">50-78-2</div><div style="clear:both"></div><div style="float:left">PubChem:&nbsp;</div><div style="margin-left:5em"><a href="https://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=4594">4594</a></div><div style="clear:both"></div><div style="float:left">ChEBI:&nbsp;</div><div style="margin-left:4em"><a href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:15365">15365</a></div><div style="clear:both"></div><div style="float:left">ChEMBL:&nbsp;</div><div style="margin-left:4.5em"><a href="https://www.ebi.ac.uk/chembldb/compound/inspect/CHEMBL25">CHEMBL25</a></div><div style="clear:both"></div><div style="float:left">PDB-CCD:&nbsp;</div><div style="margin-left:5em"><a href="http://www.ebi.ac.uk/pdbe-srv/pdbechem/chemicalCompound/show/AIN">AIN</a>[<a href="http://pdbj.org/chemie/summary/AIN">PDBj</a>] </div><div style="clear:both"></div><div style="float:left">3DMET:&nbsp;</div><div style="margin-left:4em"><a href="http://www.3dmet.dna.affrc.go.jp/cgi/show_data.php?acc=B00284">B00284</a></div><div style="clear:both"></div><div style="float:left">NIKKAJI:&nbsp;</div><div style="margin-left:5em"><a href="http://jglobal.jst.go.jp/en/redirect?Nikkaji_No=J2.300K">J2.300K</a></div><div style="clear:both"></div></div></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>KCF data</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><img align="middle" alt="Show" border="0" class="kcfb" id="kcfb1" name="show_kcf" src="/Fig/bget/button_Sb.gif"><div class="kcfd" id="kcfd1"><br>ATOM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;C8y C&nbsp;&nbsp;&nbsp;&nbsp;20.2981&nbsp;&nbsp;-15.8105<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;C8y C&nbsp;&nbsp;&nbsp;&nbsp;21.5226&nbsp;&nbsp;-16.5029<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;C8x C&nbsp;&nbsp;&nbsp;&nbsp;19.0928&nbsp;&nbsp;-16.5029<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;C6a C&nbsp;&nbsp;&nbsp;&nbsp;20.2981&nbsp;&nbsp;-14.6927<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;C8x C&nbsp;&nbsp;&nbsp;&nbsp;21.5226&nbsp;&nbsp;-17.9133<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;O7a O&nbsp;&nbsp;&nbsp;&nbsp;22.7278&nbsp;&nbsp;-15.8040<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;C8x C&nbsp;&nbsp;&nbsp;&nbsp;19.0928&nbsp;&nbsp;-17.9133<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;&nbsp;&nbsp;O6a O&nbsp;&nbsp;&nbsp;&nbsp;21.5033&nbsp;&nbsp;-13.9940<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;O6a O&nbsp;&nbsp;&nbsp;&nbsp;19.0863&nbsp;&nbsp;-14.0004<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;C8x C&nbsp;&nbsp;&nbsp;&nbsp;20.2981&nbsp;&nbsp;-18.6250<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11&nbsp;&nbsp;C7a C&nbsp;&nbsp;&nbsp;&nbsp;23.9396&nbsp;&nbsp;-16.4964<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12&nbsp;&nbsp;C1a C&nbsp;&nbsp;&nbsp;&nbsp;25.1450&nbsp;&nbsp;-15.7977<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13&nbsp;&nbsp;O6a O&nbsp;&nbsp;&nbsp;&nbsp;23.9396&nbsp;&nbsp;-17.9642<br>
+BOND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;2 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;3 2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;4 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;5 2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;6 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;7 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;8 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;9 2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;10 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;11 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;11&nbsp;&nbsp;12 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12&nbsp;&nbsp;&nbsp;11&nbsp;&nbsp;13 2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;10 2<br>
+</div></td></tr>
+
+</table></td></tr></table>
+<br><span style="font-size:12px"><a href="/dbget-bin/www_bget?cpd_ja:C01405">&raquo; Japanese version</a></span><br><br></form></td><td valign="top"><div style="margin-top:46px;margin-left:1em;border:#ddd 1px solid"><div class="th20" style="font-weight:bold;line-height:1.5em">&nbsp;&nbsp;All links&nbsp;&nbsp;</div>
+<pre style="margin-left:1em">
+<span style="color:#006"><a href="/dbget-bin/get_linkdb?-t+2+cpd:C01405">Pathway (1)</a></span>   
+   <a href="/dbget-bin/get_linkdb?-t+pathway+cpd:C01405">KEGG PATHWAY (1)</a>   
+<span style="color:#006"><a href="/dbget-bin/get_linkdb?-t+5+cpd:C01405">Drug (2)</a></span>   
+   <a href="/dbget-bin/get_linkdb?-t+drug+cpd:C01405">KEGG DRUG (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+chembl+cpd:C01405">CHEMBL (1)</a>   
+<span style="color:#006"><a href="/dbget-bin/get_linkdb?-t+6+cpd:C01405">Chemical substance (12)</a></span>   
+   <a href="/dbget-bin/get_linkdb?-t+pubchem+cpd:C01405">PubChem (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+chebi+cpd:C01405">ChEBI (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+3dmet+cpd:C01405">3DMET (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+hmdb+cpd:C01405">HMDB (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+hsdb+cpd:C01405">HSDB (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+massbank+cpd:C01405">MASSBANK (5)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+nikkaji+cpd:C01405">NIKKAJI (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+pdb-ccd+cpd:C01405">PDB-CCD (1)</a>   
+<span style="color:#006"><a href="/dbget-bin/get_linkdb?-t+7+cpd:C01405">Chemical reaction (2)</a></span>   
+   <a href="/dbget-bin/get_linkdb?-t+enzyme+cpd:C01405">KEGG ENZYME (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+reaction+cpd:C01405">KEGG REACTION (1)</a>   
+<a href="/dbget-bin/get_linkdb?-t+alldb+cpd:C01405">All databases (17)</a>   
+<br><a href="/dbget-bin/get_linkdb?-N+cpd:C01405">Download RDF</a>   
+</pre>
+</div>
+</td></tr></table>
+
+
+<a href="/dbget/">DBGET</a> integrated database retrieval system</div>
+
+</body>
+</html>

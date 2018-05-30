@@ -1,0 +1,320 @@
+<!doctype html>
+<html><head>
+<title>KEGG COMPOUND: C00067</title>
+<link type="text/css" rel="stylesheet" href="/css/gn2.css">
+<link rel="stylesheet" href="/css/bget.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="/css/bgetm.css" media="only screen and (max-width: 768px)">
+<style>.kcfd{display:none;}</style>
+<script>
+<!--
+var getElementsByClassName = document.getElementsByClassName ?
+  function (cl){
+    return document.getElementsByClassName(cl);
+  } :
+  function (cl){
+    var elms = [];
+    var objs = document.getElementsByTagName('*');
+    for(var i=0;i<objs.length;i++){
+      var obj = objs[i];
+      if(obj.className == cl){
+        elms.push(obj);
+      }
+    }
+    return elms;
+  };
+function toggleField(clk,cl,show,hide){
+  var objs = getElementsByClassName(cl);
+  for(var i=0;i<objs.length;i++){
+    var obj = objs[i];
+    if(!obj.style.display||obj.style.display == 'none'){
+      obj.style.display = 'block';
+      clk.innerHTML = '&nbsp;&laquo; '+hide;
+    }
+    else{
+      obj.style.display = 'none';
+      clk.innerHTML = '&nbsp;&raquo; '+show;
+    }
+  }
+}
+function toggleData(bobj,e){
+  var id = bobj.id.replace(/[^0-9]/g,'');
+  var dt = document.getElementById('kcfd'+id);
+  if(!dt.style.display||dt.style.display == 'none'){
+    bobj.name = 'hide_kcf';
+    bobj.alt = 'Hide';
+    bobj.src = '/Fig/bget/button_Hib.gif';
+    dt.style.display = 'block';
+  }
+  else{
+    bobj.name = 'show_kcf';
+    bobj.alt = 'Show';
+    bobj.src = '/Fig/bget/button_Sb.gif';
+    dt.style.display = 'none';
+  }
+}
+function btn(bobj,img) {
+  bobj.src = "/Fig/bget/button_" + img + ".gif";
+}
+function btn_e(e) {
+  e = e || event;
+  var obj = e.target;
+  var img = e.target.src;
+  var img_base = img.replace(/\\/g,'/').replace(/(b|bd|bh)\.gif$/,'');
+  if(e.type == 'mousedown'||e.type == 'touchstart'){
+    obj.src = img_base +'bd.gif';
+  }
+  else if(e.type == 'mouseover'){
+    obj.src = img_base +'bh.gif';
+  }
+  else if(e.type == 'mouseup'||e.type == 'touchend'){
+    obj.src = img_base +'b.gif';
+  }
+  else if(e.type == 'mouseout'){
+    obj.src = img_base +'b.gif';
+  }
+}
+function init(){
+  for(var i=1;i<=1;i++){
+    if(document.getElementById('kcfb'+i)){
+      document.getElementById('kcfb'+i).onclick = function(e){toggleData(this,e);};
+      document.getElementById('kcfb'+i).onmousedown = function(e){btn_e(e);};
+      document.getElementById('kcfb'+i).onmouseover = function(e){btn_e(e);};
+      document.getElementById('kcfb'+i).onmouseout = function(e){btn_e(e);};
+      document.getElementById('kcfb'+i).onmouseup = function(e){btn_e(e);};
+      document.getElementById('kcfb'+i).ontouchstart = function(e){btn_e(e);};
+      document.getElementById('kcfb'+i).ontouchend = function(e){btn_e(e);};
+    }
+  }
+}
+function Link_XtrctSeq2(form) {
+    var dna_from;
+    var dna_to;
+    var dna_len;
+    var plus_up   = Number(form.XtrctSeq_UP.value) ;
+    var plus_down = Number(form.XtrctSeq_DOWN.value);
+    var vector    = Number(form.VECTOR.value);
+    var org       = form.ORG.value;
+    var chr       = form.CHR.value;
+    var kid       = form.KEGGID.value;
+    var url;
+
+    if (plus_up == 0 && plus_down == 0) {
+	url = "/dbget-bin/www_bget?-f+-n+n+" + kid;
+    }
+    else {
+	if (vector == 1) {
+	    dna_from  = Number(form.FROM.value)  - plus_up;
+	    dna_to    = Number(form.TO.value) + plus_down;
+	} else {
+	    dna_from  = Number(form.FROM.value)  - plus_down;
+	    dna_to    = Number(form.TO.value) + plus_up;
+	}
+
+	url = "/dbget-bin/cut_sequence_genes.pl?FROM=" + dna_from + "&TO=" + dna_to +"&VECTOR=" + vector + "&ORG=" + org;
+	if (chr) url += "&CHR=" + chr;
+    }
+    //window.open( url, "_self" );
+    location.href = url;
+}
+function go_taxonomy(form,params){
+  for(var key in params){
+    if(form[key]){
+      form.setAttribute(key,params[key]);
+    }
+    else{
+      var obj = document.createElement('input');
+      obj.setAttribute('type','hidden');
+      obj.setAttribute('name',key);
+      obj.setAttribute('value',params[key]);
+      form.appendChild(obj);
+    }
+  }
+  form.submit();
+}
+window.onload=function(){window.focus();init();};
+//--->
+</script>
+
+</head>
+<body>
+<div>
+
+<table border=0 cellpadding=0 cellspacing=0><tr><td>
+<table border=0 cellpadding=0 cellspacing=0 width="650"><tr><td width=70><a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border=0 src="/Fig/bget/kegg2.gif"></a></td><td>&nbsp;&nbsp;&nbsp;</td><td><a name="compound:C00067"></a><font class="title2">COMPOUND: C00067</font></td><td align="right" valign="bottom"><a href="javascript:void(window.open('/kegg/document/help_bget_compound.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img align="middle" alt="Help" border="0" name="help" onmousedown="btn(this,'Hbd')" onmouseout="btn(this,'Hb')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" ontouchend="btn(this,'Hb')" ontouchstart="btn(this,'Hbd')" src="/Fig/bget/button_Hb.gif"></a></td></tr></table><form method="post" action="/dbget-bin/www_bget" enctype="application/x-www-form-urlencoded" name="form1"><table border=0 cellpadding=1 cellspacing=0 width="650">
+<tr>
+<td class="fr2">
+<table border=0 cellpadding=2 cellspacing=0 width="650" style="border-bottom:#000 1px solid">
+
+<tr><th class="th20" align="left" valign="middle" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Entry</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td align="left"><code><nobr>C00067&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Compound&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+</nobr></code></td><td align="right"><br></td></tr></table></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Name</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden"><div style="width:555px;overflow-x:auto;overflow-y:hidden">Formaldehyde;<br>
+Methanal;<br>
+Oxomethane;<br>
+Oxomethylene;<br>
+Methylene oxide;<br>
+Formalin<br>
+</div></div></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Formula</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden">CH2O<br>
+</div></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Exact mass</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden">30.0106<br>
+</div></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Mol weight</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden">30.026<br>
+</div></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Structure</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><a href="/Fig/compound/C00067.gif"><img name="img0" src="/Fig/compound_small/C00067.gif" border=0></a><br>
+<a href="/dbget-bin/www_bget?-f+m+compound+C00067"><img align="middle" alt="Mol file" border="0" name="Mol" onmousedown="btn(this,'Molbd')" onmouseout="btn(this,'Molb')" onmouseover="btn(this,'Molbh')" onmouseup="btn(this,'Molb')" ontouchend="btn(this,'Molb')" ontouchstart="btn(this,'Molbd')" src="/Fig/bget/button_Molb.gif"></a><a href="/dbget-bin/www_bget?-f+k+compound+C00067"><img align="middle" alt="KCF file" border="0" name="KCF" onmousedown="btn(this,'KCFbd')" onmouseout="btn(this,'KCFb')" onmouseover="btn(this,'KCFbh')" onmouseup="btn(this,'KCFb')" ontouchend="btn(this,'KCFb')" ontouchstart="btn(this,'KCFbd')" src="/Fig/bget/button_KCFb.gif"></a><a href="/tools-bin/strsearch_view?ENTRY=C00067&amp;PROGRAM=simcomp&amp;DATABASE=compound"><img align="middle" alt="DB search" border="0" name="SIMCOMP" onmousedown="btn(this,'Dsbd')" onmouseout="btn(this,'Dsb')" onmouseover="btn(this,'Dsbh')" onmouseup="btn(this,'Dsb')" ontouchend="btn(this,'Dsb')" ontouchstart="btn(this,'Dsbd')" src="/Fig/bget/button_Dsb.gif"></a><a href="http://www.genome.jp/dbget-bin/Jmol.jnlp?-f+m+compound+C00067"><img align="middle" alt="Jmol" border="0" name="Jmol" onmousedown="btn(this,'Jmlbd')" onmouseout="btn(this,'Jmlb')" onmouseover="btn(this,'Jmlbh')" onmouseup="btn(this,'Jmlb')" ontouchend="btn(this,'Jmlb')" ontouchstart="btn(this,'Jmlbd')" src="/Fig/bget/button_Jmlb.gif"></a><a href="http://www.genome.jp/dbget-bin/KegDraw.jnlp?--find+C00067"><img align="middle" alt="KegDraw" border="0" name="KegDraw" onmousedown="btn(this,'Drbd')" onmouseout="btn(this,'Drb')" onmouseover="btn(this,'Drbh')" onmouseup="btn(this,'Drb')" ontouchend="btn(this,'Drb')" ontouchstart="btn(this,'Drbd')" src="/Fig/bget/button_Drb.gif"></a></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Remark</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden"><div style="float:left">Same as:&nbsp;</div><div style="margin-left:5em"><a href="/dbget-bin/www_bget?dr:D00017">D00017</a></div><div style="clear:both"></div></div></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Reaction</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden"><a href="/dbget-bin/www_bget?rn:R00602">R00602</a> <a href="/dbget-bin/www_bget?rn:R00603">R00603</a> <a href="/dbget-bin/www_bget?rn:R00604">R00604</a> <a href="/dbget-bin/www_bget?rn:R00605">R00605</a> <a href="/dbget-bin/www_bget?rn:R00606">R00606</a> <a href="/dbget-bin/www_bget?rn:R00608">R00608</a> <a href="/dbget-bin/www_bget?rn:R00609">R00609</a> <a href="/dbget-bin/www_bget?rn:R00610">R00610</a> <br>
+<a href="/dbget-bin/www_bget?rn:R00611">R00611</a> <a href="/dbget-bin/www_bget?rn:R00612">R00612</a> <a href="/dbget-bin/www_bget?rn:R00614">R00614</a> <a href="/dbget-bin/www_bget?rn:R01014">R01014</a> <a href="/dbget-bin/www_bget?rn:R01146">R01146</a> <a href="/dbget-bin/www_bget?rn:R01216">R01216</a> <a href="/dbget-bin/www_bget?rn:R01264">R01264</a> <a href="/dbget-bin/www_bget?rn:R01306">R01306</a> <br>
+<a href="/dbget-bin/www_bget?rn:R01440">R01440</a> <a href="/dbget-bin/www_bget?rn:R01564">R01564</a> <a href="/dbget-bin/www_bget?rn:R01588">R01588</a> <a href="/dbget-bin/www_bget?rn:R01851">R01851</a> <a href="/dbget-bin/www_bget?rn:R02511">R02511</a> <a href="/dbget-bin/www_bget?rn:R02512">R02512</a> <a href="/dbget-bin/www_bget?rn:R03345">R03345</a> <a href="/dbget-bin/www_bget?rn:R03523">R03523</a> <br>
+<a href="/dbget-bin/www_bget?rn:R03697">R03697</a> <a href="/dbget-bin/www_bget?rn:R03698">R03698</a> <a href="/dbget-bin/www_bget?rn:R05126">R05126</a> <a href="/dbget-bin/www_bget?rn:R05127">R05127</a> <a href="/dbget-bin/www_bget?rn:R05274">R05274</a> <a href="/dbget-bin/www_bget?rn:R05307">R05307</a> <a href="/dbget-bin/www_bget?rn:R05338">R05338</a> <a href="/dbget-bin/www_bget?rn:R06154">R06154</a> <br>
+<a href="/dbget-bin/www_bget?rn:R06862">R06862</a> <a href="/dbget-bin/www_bget?rn:R06982">R06982</a> <a href="/dbget-bin/www_bget?rn:R07939">R07939</a> <a href="/dbget-bin/www_bget?rn:R07954">R07954</a> <a href="/dbget-bin/www_bget?rn:R07955">R07955</a> <a href="/dbget-bin/www_bget?rn:R07956">R07956</a> <a href="/dbget-bin/www_bget?rn:R07957">R07957</a> <a href="/dbget-bin/www_bget?rn:R07958">R07958</a> <br>
+<a href="/dbget-bin/www_bget?rn:R07959">R07959</a> <a href="/dbget-bin/www_bget?rn:R07960">R07960</a> <a href="/dbget-bin/www_bget?rn:R07961">R07961</a> <a href="/dbget-bin/www_bget?rn:R07962">R07962</a> <a href="/dbget-bin/www_bget?rn:R07963">R07963</a> <a href="/dbget-bin/www_bget?rn:R07964">R07964</a> <a href="/dbget-bin/www_bget?rn:R07965">R07965</a> <a href="/dbget-bin/www_bget?rn:R07966">R07966</a> <br>
+<a href="/dbget-bin/www_bget?rn:R07967">R07967</a> <a href="/dbget-bin/www_bget?rn:R07968">R07968</a> <a href="/dbget-bin/www_bget?rn:R07969">R07969</a> <a href="/dbget-bin/www_bget?rn:R07970">R07970</a> <a href="/dbget-bin/www_bget?rn:R07971">R07971</a> <a href="/dbget-bin/www_bget?rn:R07972">R07972</a> <a href="/dbget-bin/www_bget?rn:R07973">R07973</a> <a href="/dbget-bin/www_bget?rn:R07974">R07974</a> <br>
+<a href="/dbget-bin/www_bget?rn:R07975">R07975</a> <a href="/dbget-bin/www_bget?rn:R07976">R07976</a> <a href="/dbget-bin/www_bget?rn:R08058">R08058</a> <a href="/dbget-bin/www_bget?rn:R08264">R08264</a> <a href="/dbget-bin/www_bget?rn:R08265">R08265</a> <a href="/dbget-bin/www_bget?rn:R09093">R09093</a> <a href="/dbget-bin/www_bget?rn:R09275">R09275</a> <a href="/dbget-bin/www_bget?rn:R09402">R09402</a> <br>
+<a href="/dbget-bin/www_bget?rn:R09431">R09431</a> <a href="/dbget-bin/www_bget?rn:R09432">R09432</a> <a href="/dbget-bin/www_bget?rn:R09510">R09510</a> <a href="/dbget-bin/www_bget?rn:R09511">R09511</a> <a href="/dbget-bin/www_bget?rn:R09513">R09513</a> <a href="/dbget-bin/www_bget?rn:R09553">R09553</a> <a href="/dbget-bin/www_bget?rn:R09786">R09786</a> <a href="/dbget-bin/www_bget?rn:R10056">R10056</a> <br>
+<a href="/dbget-bin/www_bget?rn:R10102">R10102</a> <a href="/dbget-bin/www_bget?rn:R10203">R10203</a> <a href="/dbget-bin/www_bget?rn:R10206">R10206</a> <a href="/dbget-bin/www_bget?rn:R10302">R10302</a> <a href="/dbget-bin/www_bget?rn:R10468">R10468</a> <a href="/dbget-bin/www_bget?rn:R10510">R10510</a> <a href="/dbget-bin/www_bget?rn:R11345">R11345</a> <a href="/dbget-bin/www_bget?rn:R11457">R11457</a> <br>
+<style>.r1{display:none;}</style><div class="r1"><a href="/dbget-bin/www_bget?rn:R11805">R11805</a><br>
+</div><a href="javascript:void(0)" onclick="javascript:toggleField(this,&quot;r1&quot;,&quot;show all&quot;,&quot;hide&quot;)">&nbsp;&raquo; show all</a><br>
+</div></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Pathway</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><table width=555 border=0 cellspacing=0 cellpadding=0><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map00625+C00067">map00625</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Chloroalkane and chloroalkene degradation</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map00680+C00067">map00680</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Methane metabolism</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map01100+C00067">map01100</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Metabolic pathways</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map01120+C00067">map01120</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Microbial metabolism in diverse environments</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map01200+C00067">map01200</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Carbon metabolism</div></td></tr></table></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Module</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><table width=555 border=0 cellspacing=0 cellpadding=0><tr><td align="left" valign="top" style="width:4.5em"><div><nobr><a href="/kegg-bin/show_module?M00174+C00067">M00174</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Methane oxidation, methanotroph, methane =&gt; formaldehyde</div></td></tr><tr><td align="left" valign="top" style="width:4.5em"><div><nobr><a href="/kegg-bin/show_module?M00344+C00067">M00344</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Formaldehyde assimilation, xylulose monophosphate pathway</div></td></tr><tr><td align="left" valign="top" style="width:4.5em"><div><nobr><a href="/kegg-bin/show_module?M00345+C00067">M00345</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Formaldehyde assimilation, ribulose monophosphate pathway</div></td></tr></table></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Enzyme</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden"><a href="/dbget-bin/www_bget?ec:1.1.1.244">1.1.1.244</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.1.2.7">1.1.2.7</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.1.3.13">1.1.3.13</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.1.99.37">1.1.99.37</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:1.2.1.46">1.2.1.46</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2.1.-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.2.98.1">1.2.98.1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.3.21">1.4.3.21</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:1.4.9.1">1.4.9.1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.5.3.1">1.5.3.1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.5.3.2">1.5.3.2</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.5.3.4">1.5.3.4</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:1.5.3.10">1.5.3.10</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.5.3.19">1.5.3.19</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.5.8.1">1.5.8.1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.5.8.2">1.5.8.2</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:1.5.8.3">1.5.8.3</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.5.99.5">1.5.99.5</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.8.3.4">1.8.3.4</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.11.1.6">1.11.1.6</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:1.11.1.7">1.11.1.7</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.11.1.21">1.11.1.21</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.13.12.-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.14.11.27">1.14.11.27</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:1.14.11.31">1.14.11.31</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.14.11.32">1.14.11.32</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.14.11.51">1.14.11.51</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.14.13.82">1.14.13.82</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:1.14.13.111">1.14.13.111</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.14.13.128">1.14.13.128</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.14.13.131">1.14.13.131</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.14.13.178">1.14.13.178</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:1.14.13.179">1.14.13.179</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.14.13.238">1.14.13.238</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.14.13.-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.14.14.1">1.14.14.1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:1.14.14.5">1.14.14.5</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.14.14.34">1.14.14.34</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.14.14.35">1.14.14.35</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.14.99.15">1.14.99.15</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<style>.e1{display:none;}</style><div class="e1"><a href="/dbget-bin/www_bget?ec:1.14.99.48">1.14.99.48</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:2.1.2.11">2.1.2.11</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:2.2.1.3">2.2.1.3</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.8.1.1">3.8.1.1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:4.1.2.2">4.1.2.2</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.1.2.12">4.1.2.12</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.1.2.24">4.1.2.24</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.1.2.32">4.1.2.32</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:4.1.2.43">4.1.2.43</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.2.1.147">4.2.1.147</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.4.1.22">4.4.1.22</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.5.1.3">4.5.1.3</a><br>
+</div><a href="javascript:void(0)" onclick="javascript:toggleField(this,&quot;e1&quot;,&quot;show all&quot;,&quot;hide&quot;)">&nbsp;&raquo; show all</a><br>
+</div></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Brite</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden"><nobr>Carcinogens [BR:<a href="/kegg-bin/get_htext?br08008+C00067+D00017">br08008</a>]<br>
+&nbsp;Group 1: Carcinogenic to humans<br>
+&nbsp;&nbsp;Compounds<br>
+&nbsp;&nbsp;&nbsp;C00067&nbsp;&nbsp;Formaldehyde<br>
+Therapeutic category of drugs in Japan [BR:<a href="/kegg-bin/get_htext?br08301+C00067+D00017">br08301</a>]<br>
+&nbsp;2&nbsp;&nbsp;Agents affecting individual organs<br>
+&nbsp;&nbsp;26&nbsp;&nbsp;Epidermides<br>
+&nbsp;&nbsp;&nbsp;261&nbsp;&nbsp;Antimicrobial agents<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2619&nbsp;&nbsp;Others<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D00017&nbsp;&nbsp;Formaldehyde (USP); Formalin (JP17)<br>
+&nbsp;&nbsp;27&nbsp;&nbsp;Dental preparations<br>
+&nbsp;&nbsp;&nbsp;273&nbsp;&nbsp;Analgesics and sedatives<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2730&nbsp;&nbsp;Analgesics and sedatives<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D00017&nbsp;&nbsp;Formaldehyde (USP); Formalin (JP17)<br>
+&nbsp;7&nbsp;&nbsp;Agents not mainly for therapeutic purpose<br>
+&nbsp;&nbsp;73&nbsp;&nbsp;Public health agents<br>
+&nbsp;&nbsp;&nbsp;732&nbsp;&nbsp;Germicides and disinfectants<br>
+&nbsp;&nbsp;&nbsp;&nbsp;7321&nbsp;&nbsp;Alcohols and aldehydes<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D00017&nbsp;&nbsp;Formaldehyde (USP); Formalin (JP17)<br>
+Classification of Japanese OTC drugs [BR:<a href="/kegg-bin/get_htext?br08313+C00067+D00017">br08313</a>]<br>
+&nbsp;Agents for sanitation<br>
+&nbsp;&nbsp;81 Disinfectants<br>
+&nbsp;&nbsp;&nbsp;D00017&nbsp;&nbsp;Formaldehyde (USP)<br>
+Risk category of Japanese OTC drugs [BR:<a href="/kegg-bin/get_htext?br08312+C00067+D00017">br08312</a>]<br>
+&nbsp;Drugs requiring guidance<br>
+&nbsp;&nbsp;Powerful drugs<br>
+&nbsp;&nbsp;&nbsp;Formalin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;D00017&nbsp;&nbsp;Formaldehyde (USP)<br>
+Pharmaceutical additives in Japan [BR:<a href="/kegg-bin/get_htext?br08316+C00067+D00017">br08316</a>]<br>
+&nbsp;Stabilizing agent<br>
+&nbsp;&nbsp;D00017&nbsp;&nbsp;[001595] Formalin<br>
+&nbsp;Preserving agent<br>
+&nbsp;&nbsp;D00017&nbsp;&nbsp;[001595] Formalin<br>
+&nbsp;Solvent<br>
+&nbsp;&nbsp;D00017&nbsp;&nbsp;[001595] Formalin<br>
+Drugs listed in the Japanese Pharmacopoeia [BR:<a href="/kegg-bin/get_htext?br08311+C00067+D00017">br08311</a>]<br>
+&nbsp;Chemicals<br>
+&nbsp;&nbsp;D00017&nbsp;&nbsp;Formalin<br>
+</nobr></div><a href="/kegg-bin/search_brite?option=-a&amp;search_string=C00067"><img align="middle" alt="BRITE hierarchy" border="0" name="BRH" onmousedown="btn(this,'BHbd')" onmouseout="btn(this,'BHb')" onmouseover="btn(this,'BHbh')" onmouseup="btn(this,'BHb')" ontouchend="btn(this,'BHb')" ontouchstart="btn(this,'BHbd')" src="/Fig/bget/button_BHb.gif"></a></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Other DBs</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden"><div style="float:left">CAS:&nbsp;</div><div style="margin-left:3em">50-00-0</div><div style="clear:both"></div><div style="float:left">PubChem:&nbsp;</div><div style="margin-left:5em"><a href="https://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=3367">3367</a></div><div style="clear:both"></div><div style="float:left">ChEBI:&nbsp;</div><div style="margin-left:4em"><a href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:16842">16842</a></div><div style="clear:both"></div><div style="float:left">ChEMBL:&nbsp;</div><div style="margin-left:4.5em"><a href="https://www.ebi.ac.uk/chembldb/compound/inspect/CHEMBL1255">CHEMBL1255</a></div><div style="clear:both"></div><div style="float:left">PDB-CCD:&nbsp;</div><div style="margin-left:5em"><a href="http://www.ebi.ac.uk/pdbe-srv/pdbechem/chemicalCompound/show/FOR">FOR</a>[<a href="http://pdbj.org/chemie/summary/FOR">PDBj</a>] </div><div style="clear:both"></div><div style="float:left">3DMET:&nbsp;</div><div style="margin-left:4em"><a href="http://www.3dmet.dna.affrc.go.jp/cgi/show_data.php?acc=B00018">B00018</a></div><div style="clear:both"></div><div style="float:left">NIKKAJI:&nbsp;</div><div style="margin-left:5em"><a href="http://jglobal.jst.go.jp/en/redirect?Nikkaji_No=J2.294B">J2.294B</a></div><div style="clear:both"></div></div></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>KCF data</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><img align="middle" alt="Show" border="0" class="kcfb" id="kcfb1" name="show_kcf" src="/Fig/bget/button_Sb.gif"><div class="kcfd" id="kcfd1"><br>ATOM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;C2a C&nbsp;&nbsp;&nbsp;&nbsp;28.2908&nbsp;&nbsp;-19.4039<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;O0&nbsp;&nbsp;O&nbsp;&nbsp;&nbsp;&nbsp;26.8901&nbsp;&nbsp;-19.3913<br>
+BOND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;2 2<br>
+</div></td></tr>
+
+</table></td></tr></table>
+<br><span style="font-size:12px"><a href="/dbget-bin/www_bget?cpd_ja:C00067">&raquo; Japanese version</a></span><br><br></form></td><td valign="top"><div style="margin-top:46px;margin-left:1em;border:#ddd 1px solid"><div class="th20" style="font-weight:bold;line-height:1.5em">&nbsp;&nbsp;All links&nbsp;&nbsp;</div>
+<pre style="margin-left:1em">
+<span style="color:#006"><a href="/dbget-bin/get_linkdb?-t+1+cpd:C00067">Ontology (1)</a></span>   
+   <a href="/dbget-bin/get_linkdb?-t+brite+cpd:C00067">KEGG BRITE (1)</a>   
+<span style="color:#006"><a href="/dbget-bin/get_linkdb?-t+2+cpd:C00067">Pathway (8)</a></span>   
+   <a href="/dbget-bin/get_linkdb?-t+pathway+cpd:C00067">KEGG PATHWAY (5)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+module+cpd:C00067">KEGG MODULE (3)</a>   
+<span style="color:#006"><a href="/dbget-bin/get_linkdb?-t+4+cpd:C00067">Disease (1)</a></span>   
+   <a href="/dbget-bin/get_linkdb?-t+disease+cpd:C00067">KEGG DISEASE (1)</a>   
+<span style="color:#006"><a href="/dbget-bin/get_linkdb?-t+5+cpd:C00067">Drug (2)</a></span>   
+   <a href="/dbget-bin/get_linkdb?-t+drug+cpd:C00067">KEGG DRUG (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+chembl+cpd:C00067">CHEMBL (1)</a>   
+<span style="color:#006"><a href="/dbget-bin/get_linkdb?-t+6+cpd:C00067">Chemical substance (7)</a></span>   
+   <a href="/dbget-bin/get_linkdb?-t+pubchem+cpd:C00067">PubChem (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+chebi+cpd:C00067">ChEBI (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+3dmet+cpd:C00067">3DMET (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+hmdb+cpd:C00067">HMDB (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+hsdb+cpd:C00067">HSDB (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+nikkaji+cpd:C00067">NIKKAJI (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+pdb-ccd+cpd:C00067">PDB-CCD (1)</a>   
+<span style="color:#006"><a href="/dbget-bin/get_linkdb?-t+7+cpd:C00067">Chemical reaction (130)</a></span>   
+   <a href="/dbget-bin/get_linkdb?-t+enzyme+cpd:C00067">KEGG ENZYME (49)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+reaction+cpd:C00067">KEGG REACTION (81)</a>   
+<span style="color:#006"><a href="/dbget-bin/get_linkdb?-t+9+cpd:C00067">Gene (31433)</a></span>   
+   <a href="/dbget-bin/get_linkdb?-t+genes+cpd:C00067">KEGG GENES (31433)</a>   
+<a href="/dbget-bin/get_linkdb?-t+alldb+cpd:C00067">All databases (31582)</a>   
+<br><a href="/dbget-bin/get_linkdb?-N+cpd:C00067">Download RDF</a>   
+</pre>
+</div>
+</td></tr></table>
+
+
+<a href="/dbget/">DBGET</a> integrated database retrieval system</div>
+
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!doctype html>
+<html><head>
+<title>KEGG GLYCAN: G11122</title>
+<link type="text/css" rel="stylesheet" href="/css/gn2.css?">
+<link rel="stylesheet" href="/css/bget.css?1524563045" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="/css/bgetm.css?1524563045" media="only screen and (max-width: 768px)">
+<style>.kcfd{display:none;}</style>
+<script>
+<!--
+var getElementsByClassName = document.getElementsByClassName ?
+  function (cl){
+    return document.getElementsByClassName(cl);
+  } :
+  function (cl){
+    var elms = [];
+    var objs = document.getElementsByTagName('*');
+    for(var i=0;i<objs.length;i++){
+      var obj = objs[i];
+      if(obj.className == cl){
+        elms.push(obj);
+      }
+    }
+    return elms;
+  };
+function toggleField(clk,cl,show,hide){
+  var objs = getElementsByClassName(cl);
+  for(var i=0;i<objs.length;i++){
+    var obj = objs[i];
+    if(!obj.style.display||obj.style.display == 'none'){
+      obj.style.display = 'block';
+      clk.innerHTML = '&nbsp;&laquo; '+hide;
+    }
+    else{
+      obj.style.display = 'none';
+      clk.innerHTML = '&nbsp;&raquo; '+show;
+    }
+  }
+}
+function toggleData(bobj,e){
+  var id = bobj.id.replace(/[^0-9]/g,'');
+  var dt = document.getElementById('kcfd'+id);
+  if(!dt.style.display||dt.style.display == 'none'){
+    bobj.name = 'hide_kcf';
+    bobj.alt = 'Hide';
+    bobj.src = '/Fig/bget/button_Hib.gif';
+    dt.style.display = 'block';
+  }
+  else{
+    bobj.name = 'show_kcf';
+    bobj.alt = 'Show';
+    bobj.src = '/Fig/bget/button_Sb.gif';
+    dt.style.display = 'none';
+  }
+}
+function btn(bobj,img) {
+  bobj.src = "/Fig/bget/button_" + img + ".gif";
+}
+function btn_e(e) {
+  e = e || event;
+  var obj = e.target;
+  var img = e.target.src;
+  var img_base = img.replace(/\\/g,'/').replace(/(b|bd|bh)\.gif$/,'');
+  if(e.type == 'mousedown'||e.type == 'touchstart'){
+    obj.src = img_base +'bd.gif';
+  }
+  else if(e.type == 'mouseover'){
+    obj.src = img_base +'bh.gif';
+  }
+  else if(e.type == 'mouseup'||e.type == 'touchend'){
+    obj.src = img_base +'b.gif';
+  }
+  else if(e.type == 'mouseout'){
+    obj.src = img_base +'b.gif';
+  }
+}
+function init(){
+  for(var i=1;i<=1;i++){
+    if(document.getElementById('kcfb'+i)){
+      document.getElementById('kcfb'+i).onclick = function(e){toggleData(this,e);};
+      document.getElementById('kcfb'+i).onmousedown = function(e){btn_e(e);};
+      document.getElementById('kcfb'+i).onmouseover = function(e){btn_e(e);};
+      document.getElementById('kcfb'+i).onmouseout = function(e){btn_e(e);};
+      document.getElementById('kcfb'+i).onmouseup = function(e){btn_e(e);};
+      document.getElementById('kcfb'+i).ontouchstart = function(e){btn_e(e);};
+      document.getElementById('kcfb'+i).ontouchend = function(e){btn_e(e);};
+    }
+  }
+}
+function Link_XtrctSeq2(form) {
+    var dna_from;
+    var dna_to;
+    var dna_len;
+    var plus_up   = Number(form.XtrctSeq_UP.value) ;
+    var plus_down = Number(form.XtrctSeq_DOWN.value);
+    var vector    = Number(form.VECTOR.value);
+    var org       = form.ORG.value;
+    var chr       = form.CHR.value;
+    var kid       = form.KEGGID.value;
+    var url;
+
+    if (plus_up == 0 && plus_down == 0) {
+	url = "/dbget-bin/www_bget?-f+-n+n+" + kid;
+    }
+    else {
+	if (vector == 1) {
+	    dna_from  = Number(form.FROM.value)  - plus_up;
+	    dna_to    = Number(form.TO.value) + plus_down;
+	} else {
+	    dna_from  = Number(form.FROM.value)  - plus_down;
+	    dna_to    = Number(form.TO.value) + plus_up;
+	}
+
+	url = "/dbget-bin/cut_sequence_genes.pl?FROM=" + dna_from + "&TO=" + dna_to +"&VECTOR=" + vector + "&ORG=" + org;
+	if (chr) url += "&CHR=" + chr;
+    }
+    //window.open( url, "_self" );
+    location.href = url;
+}
+function go_taxonomy(form,params){
+  for(var key in params){
+    if(form[key]){
+      form.setAttribute(key,params[key]);
+    }
+    else{
+      var obj = document.createElement('input');
+      obj.setAttribute('type','hidden');
+      obj.setAttribute('name',key);
+      obj.setAttribute('value',params[key]);
+      form.appendChild(obj);
+    }
+  }
+  form.submit();
+}
+window.onload=function(){window.focus();init();};
+//--->
+</script>
+
+</head>
+<body>
+<div>
+
+<table border=0 cellpadding=0 cellspacing=0><tr><td>
+<table border=0 cellpadding=0 cellspacing=0 width="650"><tr><td width=70><a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border=0 src="/Fig/bget/kegg2.gif"></a></td><td>&nbsp;&nbsp;&nbsp;</td><td><a name="glycan:G11122"></a><font class="title2">GLYCAN: G11122</font></td><td align="right" valign="bottom"><a href="javascript:void(window.open('/kegg/document/help_bget_glycan.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img align="middle" alt="Help" border="0" name="help" onmousedown="btn(this,'Hbd')" onmouseout="btn(this,'Hb')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" ontouchend="btn(this,'Hb')" ontouchstart="btn(this,'Hbd')" src="/Fig/bget/button_Hb.gif"></a></td></tr></table><form method="post" action="/dbget-bin/www_bget" enctype="application/x-www-form-urlencoded" name="form1"><table border=0 cellpadding=1 cellspacing=0 width="650">
+<tr>
+<td class="fr2">
+<table border=0 cellpadding=2 cellspacing=0 width="650" style="border-bottom:#000 1px solid">
+
+<tr><th class="th20" align="left" valign="middle" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Entry</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td align="left"><code><nobr>G11122&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Glycan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+</nobr></code></td><td align="right"><br></td></tr></table></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Name</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden"><div style="width:555px;overflow-x:auto;overflow-y:hidden">Sulfatide;<br>
+Galactosylceramide sulfate;<br>
+SM4s<br>
+</div></div></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Composition</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden">(Gal)1 (S)1 (Cer)1<br>
+</div></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Mass</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden">242.2 (Cer)<br>
+</div></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Structure</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><a href="/Fig/glycan/G11122.gif"><img name="img0" src="/Fig/glycan_small/G11122.gif" border=0></a><br>
+<a href="/dbget-bin/www_bget?-f+k+glycan+G11122"><img align="middle" alt="KCF file" border="0" name="KCF" onmousedown="btn(this,'KCFbd')" onmouseout="btn(this,'KCFb')" onmouseover="btn(this,'KCFbh')" onmouseup="btn(this,'KCFb')" ontouchend="btn(this,'KCFb')" ontouchstart="btn(this,'KCFbd')" src="/Fig/bget/button_KCFb.gif"></a><a href="/tools-bin/strsearch_view?ENTRY=G11122&amp;PROGRAM=Approximate-global&amp;DATABASE=glycan"><img align="middle" alt="KCaM" border="0" name="KCaM" onmousedown="btn(this,'KCaMbd')" onmouseout="btn(this,'KCaMb')" onmouseover="btn(this,'KCaMbh')" onmouseup="btn(this,'KCaMb')" ontouchend="btn(this,'KCaMb')" ontouchstart="btn(this,'KCaMbd')" src="/Fig/bget/button_KCaMb.gif"></a><a href="http://www.genome.jp/dbget-bin/KegDraw.jnlp?--find+G11122"><img align="middle" alt="KegDraw" border="0" name="KegDraw" onmousedown="btn(this,'Drbd')" onmouseout="btn(this,'Drb')" onmouseover="btn(this,'Drbh')" onmouseup="btn(this,'Drb')" ontouchend="btn(this,'Drb')" ontouchstart="btn(this,'Drbd')" src="/Fig/bget/button_Drb.gif"></a></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Remark</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><table style="border:0;border-collapse:collapse;"><tr><td valign="top"><nobr>Same as:&nbsp;</nobr></td><td><a href="/dbget-bin/www_bget?cpd:C06125">C06125</a></td></tr></table></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Reaction</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden"><a href="/dbget-bin/www_bget?rn:R06279">R06279</a> <a href="/dbget-bin/www_bget?rn:R06280">R06280</a><br>
+</div></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Enzyme</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden"><a href="/dbget-bin/www_bget?ec:2.8.2.11">2.8.2.11</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.1.6.1">3.1.6.1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.1.6.8">3.1.6.8</a><br>
+</div></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Brite</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden"><nobr>Compounds with biological roles [BR:<a href="/kegg-bin/get_htext?br08001+G11122+C06125">br08001</a>]<br>
+&nbsp;Lipids<br>
+&nbsp;&nbsp;Glycolipids<br>
+&nbsp;&nbsp;&nbsp;Glycosphingolipids<br>
+&nbsp;&nbsp;&nbsp;&nbsp;C06125&nbsp;&nbsp;Sulfatide<br>
+Lipids [BR:<a href="/kegg-bin/get_htext?br08002+G11122+C06125">br08002</a>]<br>
+&nbsp;SP&nbsp;&nbsp;Sphingolipids<br>
+&nbsp;&nbsp;SP06 Acidic glycosphingolipids<br>
+&nbsp;&nbsp;&nbsp;SP0602 Sulfoglycosphingolipids (sulfatides)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;C06125&nbsp;&nbsp;Sulfatide<br>
+</nobr></div><a href="/kegg-bin/search_brite?option=-a&amp;search_string=G11122"><img align="middle" alt="BRITE hierarchy" border="0" name="BRH" onmousedown="btn(this,'BHbd')" onmouseout="btn(this,'BHb')" onmouseover="btn(this,'BHbh')" onmouseup="btn(this,'BHb')" ontouchend="btn(this,'BHb')" ontouchstart="btn(this,'BHbd')" src="/Fig/bget/button_BHb.gif"></a></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Reference</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden">1&nbsp;&nbsp;[PMID:<a href="https://www.ncbi.nlm.nih.gov/pubmed/7537307">7537307</a>]<br>
+Alon R, Feizi T, Yuen CT, Fuhlbrigge RC, Springer TA.<br>
+Glycolipid ligands for selectins support leukocyte tethering and rolling under physiologic flow conditions.<br>
+J. Immunol. 154 (1995) 5356-66.<br>
+2&nbsp;&nbsp;[PMID:<a href="https://www.ncbi.nlm.nih.gov/pubmed/15546874">15546874</a>]<br>
+Ideo H, Seko A, Yamashita K.<br>
+Galectin-4 binds to sulfated glycosphingolipids and carcinoembryonic antigen in patches on the cell surface of human colon adenocarcinoma cells.<br>
+J. Biol. Chem. 280 (2005) 4730-7.</div></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Other DBs</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px"><div style="float:left"><a href="/dbget-bin/www_bget?carbbank+4+7259+7291+7332+7349+7369+7412+7426+8305+8306+8357+8358+8399+8540+8635+8759+9316+9331+9332+9370+9401+9403+9406+9411+9973+10022+10197+10226+10296+10306+10316+11328+11428+11502+11581+11592+11594+11595+11597+11599+11605+11609+11610+11614+11618+11619+11620+11621+11624+11636+11883+12017+17972+18027+21721+25036+25792+25930+26744+27677+29197+29840+29845+30302+31759+33105+33180+35035+35427+35442+35454+35466+35500+35502+35829+35930+36122+36192+36218+36480+36555+36661+37000+37033+37095+37622+38111+38129+38143+38637+39399+39525+40324+41467+41874+41908+41929+42581+42938+43525+43797+44058+44272+44511+45151+45254+46057+46395+46565+46662+46664+47035+47038+47420+47447+47461+47597+47749+47992+48163+48379+48601+48908+48911+48941+49445+50480+50787">CCSD</a>:&nbsp;</div><div style="margin-left:3.5em"><a href="/dbget-bin/www_bget?carbbank+4">4</a> <a href="/dbget-bin/www_bget?carbbank+7259">7259</a> <a href="/dbget-bin/www_bget?carbbank+7291">7291</a> <a href="/dbget-bin/www_bget?carbbank+7332">7332</a> <a href="/dbget-bin/www_bget?carbbank+7349">7349</a> <a href="/dbget-bin/www_bget?carbbank+7369">7369</a> <a href="/dbget-bin/www_bget?carbbank+7412">7412</a> <a href="/dbget-bin/www_bget?carbbank+7426">7426</a> <a href="/dbget-bin/www_bget?carbbank+8305">8305</a> <a href="/dbget-bin/www_bget?carbbank+8306">8306</a> <a href="/dbget-bin/www_bget?carbbank+8357">8357</a> <a href="/dbget-bin/www_bget?carbbank+8358">8358</a> <a href="/dbget-bin/www_bget?carbbank+8399">8399</a> <a href="/dbget-bin/www_bget?carbbank+8540">8540</a> <a href="/dbget-bin/www_bget?carbbank+8635">8635</a> <a href="/dbget-bin/www_bget?carbbank+8759">8759</a> <a href="/dbget-bin/www_bget?carbbank+9316">9316</a> <a href="/dbget-bin/www_bget?carbbank+9331">9331</a> <a href="/dbget-bin/www_bget?carbbank+9332">9332</a> <a href="/dbget-bin/www_bget?carbbank+9370">9370</a> <a href="/dbget-bin/www_bget?carbbank+9401">9401</a> <a href="/dbget-bin/www_bget?carbbank+9403">9403</a> <a href="/dbget-bin/www_bget?carbbank+9406">9406</a> <a href="/dbget-bin/www_bget?carbbank+9411">9411</a> <a href="/dbget-bin/www_bget?carbbank+9973">9973</a> <a href="/dbget-bin/www_bget?carbbank+10022">10022</a> <a href="/dbget-bin/www_bget?carbbank+10197">10197</a> <a href="/dbget-bin/www_bget?carbbank+10226">10226</a> <a href="/dbget-bin/www_bget?carbbank+10296">10296</a> <a href="/dbget-bin/www_bget?carbbank+10306">10306</a> <a href="/dbget-bin/www_bget?carbbank+10316">10316</a> <a href="/dbget-bin/www_bget?carbbank+11328">11328</a> <a href="/dbget-bin/www_bget?carbbank+11428">11428</a> <a href="/dbget-bin/www_bget?carbbank+11502">11502</a> <a href="/dbget-bin/www_bget?carbbank+11581">11581</a> <a href="/dbget-bin/www_bget?carbbank+11592">11592</a> <a href="/dbget-bin/www_bget?carbbank+11594">11594</a> <a href="/dbget-bin/www_bget?carbbank+11595">11595</a> <a href="/dbget-bin/www_bget?carbbank+11597">11597</a> <a href="/dbget-bin/www_bget?carbbank+11599">11599</a> <a href="/dbget-bin/www_bget?carbbank+11605">11605</a> <a href="/dbget-bin/www_bget?carbbank+11609">11609</a> <a href="/dbget-bin/www_bget?carbbank+11610">11610</a> <a href="/dbget-bin/www_bget?carbbank+11614">11614</a> <a href="/dbget-bin/www_bget?carbbank+11618">11618</a> <a href="/dbget-bin/www_bget?carbbank+11619">11619</a> <a href="/dbget-bin/www_bget?carbbank+11620">11620</a> <a href="/dbget-bin/www_bget?carbbank+11621">11621</a> <a href="/dbget-bin/www_bget?carbbank+11624">11624</a> <a href="/dbget-bin/www_bget?carbbank+11636">11636</a> <a href="/dbget-bin/www_bget?carbbank+11883">11883</a> <a href="/dbget-bin/www_bget?carbbank+12017">12017</a> <a href="/dbget-bin/www_bget?carbbank+17972">17972</a> <a href="/dbget-bin/www_bget?carbbank+18027">18027</a> <a href="/dbget-bin/www_bget?carbbank+21721">21721</a> <a href="/dbget-bin/www_bget?carbbank+25036">25036</a> <a href="/dbget-bin/www_bget?carbbank+25792">25792</a> <a href="/dbget-bin/www_bget?carbbank+25930">25930</a> <a href="/dbget-bin/www_bget?carbbank+26744">26744</a> <a href="/dbget-bin/www_bget?carbbank+27677">27677</a> <a href="/dbget-bin/www_bget?carbbank+29197">29197</a> <a href="/dbget-bin/www_bget?carbbank+29840">29840</a> <a href="/dbget-bin/www_bget?carbbank+29845">29845</a> <a href="/dbget-bin/www_bget?carbbank+30302">30302</a> <a href="/dbget-bin/www_bget?carbbank+31759">31759</a> <a href="/dbget-bin/www_bget?carbbank+33105">33105</a> <a href="/dbget-bin/www_bget?carbbank+33180">33180</a> <a href="/dbget-bin/www_bget?carbbank+35035">35035</a> <a href="/dbget-bin/www_bget?carbbank+35427">35427</a> <a href="/dbget-bin/www_bget?carbbank+35442">35442</a> <a href="/dbget-bin/www_bget?carbbank+35454">35454</a> <a href="/dbget-bin/www_bget?carbbank+35466">35466</a> <a href="/dbget-bin/www_bget?carbbank+35500">35500</a> <a href="/dbget-bin/www_bget?carbbank+35502">35502</a> <a href="/dbget-bin/www_bget?carbbank+35829">35829</a> <a href="/dbget-bin/www_bget?carbbank+35930">35930</a> <a href="/dbget-bin/www_bget?carbbank+36122">36122</a> <a href="/dbget-bin/www_bget?carbbank+36192">36192</a> <a href="/dbget-bin/www_bget?carbbank+36218">36218</a> <a href="/dbget-bin/www_bget?carbbank+36480">36480</a> <a href="/dbget-bin/www_bget?carbbank+36555">36555</a> <a href="/dbget-bin/www_bget?carbbank+36661">36661</a> <a href="/dbget-bin/www_bget?carbbank+37000">37000</a> <a href="/dbget-bin/www_bget?carbbank+37033">37033</a> <a href="/dbget-bin/www_bget?carbbank+37095">37095</a> <a href="/dbget-bin/www_bget?carbbank+37622">37622</a> <a href="/dbget-bin/www_bget?carbbank+38111">38111</a> <a href="/dbget-bin/www_bget?carbbank+38129">38129</a> <a href="/dbget-bin/www_bget?carbbank+38143">38143</a> <a href="/dbget-bin/www_bget?carbbank+38637">38637</a> <a href="/dbget-bin/www_bget?carbbank+39399">39399</a> <a href="/dbget-bin/www_bget?carbbank+39525">39525</a> <a href="/dbget-bin/www_bget?carbbank+40324">40324</a> <a href="/dbget-bin/www_bget?carbbank+41467">41467</a> <a href="/dbget-bin/www_bget?carbbank+41874">41874</a> <a href="/dbget-bin/www_bget?carbbank+41908">41908</a> <a href="/dbget-bin/www_bget?carbbank+41929">41929</a> <a href="/dbget-bin/www_bget?carbbank+42581">42581</a> <a href="/dbget-bin/www_bget?carbbank+42938">42938</a> <a href="/dbget-bin/www_bget?carbbank+43525">43525</a> <a href="/dbget-bin/www_bget?carbbank+43797">43797</a> <a href="/dbget-bin/www_bget?carbbank+44058">44058</a> <a href="/dbget-bin/www_bget?carbbank+44272">44272</a> <a href="/dbget-bin/www_bget?carbbank+44511">44511</a> <a href="/dbget-bin/www_bget?carbbank+45151">45151</a> <a href="/dbget-bin/www_bget?carbbank+45254">45254</a> <a href="/dbget-bin/www_bget?carbbank+46057">46057</a> <a href="/dbget-bin/www_bget?carbbank+46395">46395</a> <a href="/dbget-bin/www_bget?carbbank+46565">46565</a> <a href="/dbget-bin/www_bget?carbbank+46662">46662</a> <a href="/dbget-bin/www_bget?carbbank+46664">46664</a> <a href="/dbget-bin/www_bget?carbbank+47035">47035</a> <a href="/dbget-bin/www_bget?carbbank+47038">47038</a> <a href="/dbget-bin/www_bget?carbbank+47420">47420</a> <a href="/dbget-bin/www_bget?carbbank+47447">47447</a> <a href="/dbget-bin/www_bget?carbbank+47461">47461</a> <a href="/dbget-bin/www_bget?carbbank+47597">47597</a> <a href="/dbget-bin/www_bget?carbbank+47749">47749</a> <a href="/dbget-bin/www_bget?carbbank+47992">47992</a> <a href="/dbget-bin/www_bget?carbbank+48163">48163</a> <a href="/dbget-bin/www_bget?carbbank+48379">48379</a> <a href="/dbget-bin/www_bget?carbbank+48601">48601</a> <a href="/dbget-bin/www_bget?carbbank+48908">48908</a> <a href="/dbget-bin/www_bget?carbbank+48911">48911</a> <a href="/dbget-bin/www_bget?carbbank+48941">48941</a> <a href="/dbget-bin/www_bget?carbbank+49445">49445</a> <a href="/dbget-bin/www_bget?carbbank+50480">50480</a> <a href="/dbget-bin/www_bget?carbbank+50787">50787</a></div><table style="border:0;border-collapse:collapse;"><tr><td valign="top"><nobr>GlyTouCan:&nbsp;</nobr></td><td><a href="https://glytoucan.org/Structures/Glycans/G72548RZ">G72548RZ</a></td></tr></table><table style="border:0;border-collapse:collapse;"><tr><td valign="top"><nobr>JCGGDB:&nbsp;</nobr></td><td><a href="http://jcggdb.jp/idb/jcggdb/JCGG-STR001855">JCGG-STR001855</a></td></tr></table><table style="border:0;border-collapse:collapse;"><tr><td valign="top"><nobr>LipidBank:&nbsp;</nobr></td><td><a href="http://lipidbank.jp/cgi-bin/detail.cgi?id=GSG0069">GSG0069</a> <a href="http://lipidbank.jp/cgi-bin/detail.cgi?id=GSG3051">GSG3051</a></td></tr></table><table style="border:0;border-collapse:collapse;"><tr><td valign="top"><nobr>GlycoEpitope:&nbsp;</nobr></td><td><a href="http://www.glycoepitope.jp/epitopes/EP0120">EP0120</a> <a href="http://www.glycoepitope.jp/epitopes/EP0312">EP0312</a></td></tr></table></div></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>KCF data</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><img align="middle" alt="Show" border="0" class="kcfb" id="kcfb1" name="show_kcf" src="/Fig/bget/button_Sb.gif"><div class="kcfd" id="kcfd1"><br>NODE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;Cer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;Gal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;S&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-6&nbsp;&nbsp;&nbsp;&nbsp;-1<br>
+EDGE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2:b1&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2:3<br>
+</div></td></tr>
+
+</table></td></tr></table>
+<br></form></td><td valign="top"><div style="margin-top:46px;margin-left:1em;border:#ddd 1px solid"><div class="th20" style="font-weight:bold;line-height:1.5em">&nbsp;&nbsp;All links&nbsp;&nbsp;</div>
+<pre style="margin-left:1em">
+<span style="color:#006"><a href="/dbget-bin/get_linkdb?-t+6+gl:G11122">Chemical substance (9)</a></span>   
+   <a href="/dbget-bin/get_linkdb?-t+compound+gl:G11122">KEGG COMPOUND (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+pubchem+gl:G11122">PubChem (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+chebi+gl:G11122">ChEBI (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+glycoepitope+gl:G11122">GlycoEpitope (2)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+glytoucan+gl:G11122">GlyTouCan (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+jcggdb+gl:G11122">JCGGDB (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+lipidbank+gl:G11122">LipidBank (2)</a>   
+<span style="color:#006"><a href="/dbget-bin/get_linkdb?-t+7+gl:G11122">Chemical reaction (5)</a></span>   
+   <a href="/dbget-bin/get_linkdb?-t+enzyme+gl:G11122">KEGG ENZYME (3)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+reaction+gl:G11122">KEGG REACTION (2)</a>   
+<a href="/dbget-bin/get_linkdb?-t+alldb+gl:G11122">All databases (14)</a>   
+<br><a href="/dbget-bin/get_linkdb?-N+gl:G11122">Download RDF</a>   
+</pre>
+</div>
+</td></tr></table>
+
+
+<a href="/dbget/">DBGET</a> integrated database retrieval system</div>
+
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!doctype html>
+<html><head>
+<title>KEGG COMPOUND: C00014</title>
+<link type="text/css" rel="stylesheet" href="/css/gn2.css">
+<link rel="stylesheet" href="/css/bget.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="/css/bgetm.css" media="only screen and (max-width: 768px)">
+<style>.kcfd{display:none;}</style>
+<script>
+<!--
+var getElementsByClassName = document.getElementsByClassName ?
+  function (cl){
+    return document.getElementsByClassName(cl);
+  } :
+  function (cl){
+    var elms = [];
+    var objs = document.getElementsByTagName('*');
+    for(var i=0;i<objs.length;i++){
+      var obj = objs[i];
+      if(obj.className == cl){
+        elms.push(obj);
+      }
+    }
+    return elms;
+  };
+function toggleField(clk,cl,show,hide){
+  var objs = getElementsByClassName(cl);
+  for(var i=0;i<objs.length;i++){
+    var obj = objs[i];
+    if(!obj.style.display||obj.style.display == 'none'){
+      obj.style.display = 'block';
+      clk.innerHTML = '&nbsp;&laquo; '+hide;
+    }
+    else{
+      obj.style.display = 'none';
+      clk.innerHTML = '&nbsp;&raquo; '+show;
+    }
+  }
+}
+function toggleData(bobj,e){
+  var id = bobj.id.replace(/[^0-9]/g,'');
+  var dt = document.getElementById('kcfd'+id);
+  if(!dt.style.display||dt.style.display == 'none'){
+    bobj.name = 'hide_kcf';
+    bobj.alt = 'Hide';
+    bobj.src = '/Fig/bget/button_Hib.gif';
+    dt.style.display = 'block';
+  }
+  else{
+    bobj.name = 'show_kcf';
+    bobj.alt = 'Show';
+    bobj.src = '/Fig/bget/button_Sb.gif';
+    dt.style.display = 'none';
+  }
+}
+function btn(bobj,img) {
+  bobj.src = "/Fig/bget/button_" + img + ".gif";
+}
+function btn_e(e) {
+  e = e || event;
+  var obj = e.target;
+  var img = e.target.src;
+  var img_base = img.replace(/\\/g,'/').replace(/(b|bd|bh)\.gif$/,'');
+  if(e.type == 'mousedown'||e.type == 'touchstart'){
+    obj.src = img_base +'bd.gif';
+  }
+  else if(e.type == 'mouseover'){
+    obj.src = img_base +'bh.gif';
+  }
+  else if(e.type == 'mouseup'||e.type == 'touchend'){
+    obj.src = img_base +'b.gif';
+  }
+  else if(e.type == 'mouseout'){
+    obj.src = img_base +'b.gif';
+  }
+}
+function init(){
+  for(var i=1;i<=1;i++){
+    if(document.getElementById('kcfb'+i)){
+      document.getElementById('kcfb'+i).onclick = function(e){toggleData(this,e);};
+      document.getElementById('kcfb'+i).onmousedown = function(e){btn_e(e);};
+      document.getElementById('kcfb'+i).onmouseover = function(e){btn_e(e);};
+      document.getElementById('kcfb'+i).onmouseout = function(e){btn_e(e);};
+      document.getElementById('kcfb'+i).onmouseup = function(e){btn_e(e);};
+      document.getElementById('kcfb'+i).ontouchstart = function(e){btn_e(e);};
+      document.getElementById('kcfb'+i).ontouchend = function(e){btn_e(e);};
+    }
+  }
+}
+function Link_XtrctSeq2(form) {
+    var dna_from;
+    var dna_to;
+    var dna_len;
+    var plus_up   = Number(form.XtrctSeq_UP.value) ;
+    var plus_down = Number(form.XtrctSeq_DOWN.value);
+    var vector    = Number(form.VECTOR.value);
+    var org       = form.ORG.value;
+    var chr       = form.CHR.value;
+    var kid       = form.KEGGID.value;
+    var url;
+
+    if (plus_up == 0 && plus_down == 0) {
+	url = "/dbget-bin/www_bget?-f+-n+n+" + kid;
+    }
+    else {
+	if (vector == 1) {
+	    dna_from  = Number(form.FROM.value)  - plus_up;
+	    dna_to    = Number(form.TO.value) + plus_down;
+	} else {
+	    dna_from  = Number(form.FROM.value)  - plus_down;
+	    dna_to    = Number(form.TO.value) + plus_up;
+	}
+
+	url = "/dbget-bin/cut_sequence_genes.pl?FROM=" + dna_from + "&TO=" + dna_to +"&VECTOR=" + vector + "&ORG=" + org;
+	if (chr) url += "&CHR=" + chr;
+    }
+    //window.open( url, "_self" );
+    location.href = url;
+}
+function go_taxonomy(form,params){
+  for(var key in params){
+    if(form[key]){
+      form.setAttribute(key,params[key]);
+    }
+    else{
+      var obj = document.createElement('input');
+      obj.setAttribute('type','hidden');
+      obj.setAttribute('name',key);
+      obj.setAttribute('value',params[key]);
+      form.appendChild(obj);
+    }
+  }
+  form.submit();
+}
+window.onload=function(){window.focus();init();};
+//--->
+</script>
+
+</head>
+<body>
+<div>
+
+<table border=0 cellpadding=0 cellspacing=0><tr><td>
+<table border=0 cellpadding=0 cellspacing=0 width="650"><tr><td width=70><a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border=0 src="/Fig/bget/kegg2.gif"></a></td><td>&nbsp;&nbsp;&nbsp;</td><td><a name="compound:C00014"></a><font class="title2">COMPOUND: C00014</font></td><td align="right" valign="bottom"><a href="javascript:void(window.open('/kegg/document/help_bget_compound.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img align="middle" alt="Help" border="0" name="help" onmousedown="btn(this,'Hbd')" onmouseout="btn(this,'Hb')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" ontouchend="btn(this,'Hb')" ontouchstart="btn(this,'Hbd')" src="/Fig/bget/button_Hb.gif"></a></td></tr></table><form method="post" action="/dbget-bin/www_bget" enctype="application/x-www-form-urlencoded" name="form1"><table border=0 cellpadding=1 cellspacing=0 width="650">
+<tr>
+<td class="fr2">
+<table border=0 cellpadding=2 cellspacing=0 width="650" style="border-bottom:#000 1px solid">
+
+<tr><th class="th20" align="left" valign="middle" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Entry</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td align="left"><code><nobr>C00014&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Compound&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+</nobr></code></td><td align="right"><br></td></tr></table></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Name</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden"><div style="width:555px;overflow-x:auto;overflow-y:hidden">Ammonia;<br>
+NH3<br>
+</div></div></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Formula</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden">NH3<br>
+</div></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Exact mass</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden">17.0265<br>
+</div></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Mol weight</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden">17.0305<br>
+</div></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Structure</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><a href="/Fig/compound/C00014.gif"><img name="img0" src="/Fig/compound_small/C00014.gif" border=0></a><br>
+<a href="/dbget-bin/www_bget?-f+m+compound+C00014"><img align="middle" alt="Mol file" border="0" name="Mol" onmousedown="btn(this,'Molbd')" onmouseout="btn(this,'Molb')" onmouseover="btn(this,'Molbh')" onmouseup="btn(this,'Molb')" ontouchend="btn(this,'Molb')" ontouchstart="btn(this,'Molbd')" src="/Fig/bget/button_Molb.gif"></a><a href="/dbget-bin/www_bget?-f+k+compound+C00014"><img align="middle" alt="KCF file" border="0" name="KCF" onmousedown="btn(this,'KCFbd')" onmouseout="btn(this,'KCFb')" onmouseover="btn(this,'KCFbh')" onmouseup="btn(this,'KCFb')" ontouchend="btn(this,'KCFb')" ontouchstart="btn(this,'KCFbd')" src="/Fig/bget/button_KCFb.gif"></a><a href="/tools-bin/strsearch_view?ENTRY=C00014&amp;PROGRAM=simcomp&amp;DATABASE=compound"><img align="middle" alt="DB search" border="0" name="SIMCOMP" onmousedown="btn(this,'Dsbd')" onmouseout="btn(this,'Dsb')" onmouseover="btn(this,'Dsbh')" onmouseup="btn(this,'Dsb')" ontouchend="btn(this,'Dsb')" ontouchstart="btn(this,'Dsbd')" src="/Fig/bget/button_Dsb.gif"></a><a href="http://www.genome.jp/dbget-bin/Jmol.jnlp?-f+m+compound+C00014"><img align="middle" alt="Jmol" border="0" name="Jmol" onmousedown="btn(this,'Jmlbd')" onmouseout="btn(this,'Jmlb')" onmouseover="btn(this,'Jmlbh')" onmouseup="btn(this,'Jmlb')" ontouchend="btn(this,'Jmlb')" ontouchstart="btn(this,'Jmlbd')" src="/Fig/bget/button_Jmlb.gif"></a><a href="http://www.genome.jp/dbget-bin/KegDraw.jnlp?--find+C00014"><img align="middle" alt="KegDraw" border="0" name="KegDraw" onmousedown="btn(this,'Drbd')" onmouseout="btn(this,'Drb')" onmouseover="btn(this,'Drbh')" onmouseup="btn(this,'Drb')" ontouchend="btn(this,'Drb')" ontouchstart="btn(this,'Drbd')" src="/Fig/bget/button_Drb.gif"></a></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Remark</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden"><div style="float:left">Same as:&nbsp;</div><div style="margin-left:5em"><a href="/dbget-bin/www_bget?dr:D02916">D02916</a></div><div style="clear:both"></div></div></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Reaction</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden"><a href="/dbget-bin/www_bget?rn:R00005">R00005</a> <a href="/dbget-bin/www_bget?rn:R00018">R00018</a> <a href="/dbget-bin/www_bget?rn:R00084">R00084</a> <a href="/dbget-bin/www_bget?rn:R00088">R00088</a> <a href="/dbget-bin/www_bget?rn:R00123">R00123</a> <a href="/dbget-bin/www_bget?rn:R00131">R00131</a> <a href="/dbget-bin/www_bget?rn:R00141">R00141</a> <a href="/dbget-bin/www_bget?rn:R00143">R00143</a> <br>
+<a href="/dbget-bin/www_bget?rn:R00145">R00145</a> <a href="/dbget-bin/www_bget?rn:R00146">R00146</a> <a href="/dbget-bin/www_bget?rn:R00148">R00148</a> <a href="/dbget-bin/www_bget?rn:R00149">R00149</a> <a href="/dbget-bin/www_bget?rn:R00150">R00150</a> <a href="/dbget-bin/www_bget?rn:R00152">R00152</a> <a href="/dbget-bin/www_bget?rn:R00153">R00153</a> <a href="/dbget-bin/www_bget?rn:R00181">R00181</a> <br>
+<a href="/dbget-bin/www_bget?rn:R00189">R00189</a> <a href="/dbget-bin/www_bget?rn:R00193">R00193</a> <a href="/dbget-bin/www_bget?rn:R00195">R00195</a> <a href="/dbget-bin/www_bget?rn:R00213">R00213</a> <a href="/dbget-bin/www_bget?rn:R00220">R00220</a> <a href="/dbget-bin/www_bget?rn:R00221">R00221</a> <a href="/dbget-bin/www_bget?rn:R00223">R00223</a> <a href="/dbget-bin/www_bget?rn:R00243">R00243</a> <br>
+<a href="/dbget-bin/www_bget?rn:R00248">R00248</a> <a href="/dbget-bin/www_bget?rn:R00250">R00250</a> <a href="/dbget-bin/www_bget?rn:R00253">R00253</a> <a href="/dbget-bin/www_bget?rn:R00254">R00254</a> <a href="/dbget-bin/www_bget?rn:R00256">R00256</a> <a href="/dbget-bin/www_bget?rn:R00269">R00269</a> <a href="/dbget-bin/www_bget?rn:R00270">R00270</a> <a href="/dbget-bin/www_bget?rn:R00277">R00277</a> <br>
+<a href="/dbget-bin/www_bget?rn:R00279">R00279</a> <a href="/dbget-bin/www_bget?rn:R00283">R00283</a> <a href="/dbget-bin/www_bget?rn:R00284">R00284</a> <a href="/dbget-bin/www_bget?rn:R00321">R00321</a> <a href="/dbget-bin/www_bget?rn:R00347">R00347</a> <a href="/dbget-bin/www_bget?rn:R00348">R00348</a> <a href="/dbget-bin/www_bget?rn:R00357">R00357</a> <a href="/dbget-bin/www_bget?rn:R00359">R00359</a> <br>
+<a href="/dbget-bin/www_bget?rn:R00364">R00364</a> <a href="/dbget-bin/www_bget?rn:R00365">R00365</a> <a href="/dbget-bin/www_bget?rn:R00366">R00366</a> <a href="/dbget-bin/www_bget?rn:R00396">R00396</a> <a href="/dbget-bin/www_bget?rn:R00445">R00445</a> <a href="/dbget-bin/www_bget?rn:R00446">R00446</a> <a href="/dbget-bin/www_bget?rn:R00447">R00447</a> <a href="/dbget-bin/www_bget?rn:R00469">R00469</a> <br>
+<a href="/dbget-bin/www_bget?rn:R00482">R00482</a> <a href="/dbget-bin/www_bget?rn:R00483">R00483</a> <a href="/dbget-bin/www_bget?rn:R00484">R00484</a> <a href="/dbget-bin/www_bget?rn:R00485">R00485</a> <a href="/dbget-bin/www_bget?rn:R00486">R00486</a> <a href="/dbget-bin/www_bget?rn:R00490">R00490</a> <a href="/dbget-bin/www_bget?rn:R00524">R00524</a> <a href="/dbget-bin/www_bget?rn:R00532">R00532</a> <br>
+<a href="/dbget-bin/www_bget?rn:R00540">R00540</a> <a href="/dbget-bin/www_bget?rn:R00552">R00552</a> <a href="/dbget-bin/www_bget?rn:R00568">R00568</a> <a href="/dbget-bin/www_bget?rn:R00571">R00571</a> <a href="/dbget-bin/www_bget?rn:R00581">R00581</a> <a href="/dbget-bin/www_bget?rn:R00606">R00606</a> <a href="/dbget-bin/www_bget?rn:R00648">R00648</a> <a href="/dbget-bin/www_bget?rn:R00654">R00654</a> <br>
+<a href="/dbget-bin/www_bget?rn:R00665">R00665</a> <a href="/dbget-bin/www_bget?rn:R00671">R00671</a> <a href="/dbget-bin/www_bget?rn:R00673">R00673</a> <a href="/dbget-bin/www_bget?rn:R00675">R00675</a> <a href="/dbget-bin/www_bget?rn:R00676">R00676</a> <a href="/dbget-bin/www_bget?rn:R00677">R00677</a> <a href="/dbget-bin/www_bget?rn:R00681">R00681</a> <a href="/dbget-bin/www_bget?rn:R00682">R00682</a> <br>
+<a href="/dbget-bin/www_bget?rn:R00688">R00688</a> <a href="/dbget-bin/www_bget?rn:R00689">R00689</a> <a href="/dbget-bin/www_bget?rn:R00697">R00697</a> <a href="/dbget-bin/www_bget?rn:R00728">R00728</a> <a href="/dbget-bin/www_bget?rn:R00729">R00729</a> <a href="/dbget-bin/www_bget?rn:R00737">R00737</a> <a href="/dbget-bin/www_bget?rn:R00748">R00748</a> <a href="/dbget-bin/www_bget?rn:R00749">R00749</a> <br>
+<style>.r1{display:none;}</style><div class="r1"><a href="/dbget-bin/www_bget?rn:R00765">R00765</a> <a href="/dbget-bin/www_bget?rn:R00782">R00782</a> <a href="/dbget-bin/www_bget?rn:R00787">R00787</a> <a href="/dbget-bin/www_bget?rn:R00789">R00789</a> <a href="/dbget-bin/www_bget?rn:R00790">R00790</a> <a href="/dbget-bin/www_bget?rn:R00823">R00823</a> <a href="/dbget-bin/www_bget?rn:R00825">R00825</a> <a href="/dbget-bin/www_bget?rn:R00905">R00905</a> <br>
+<a href="/dbget-bin/www_bget?rn:R00917">R00917</a> <a href="/dbget-bin/www_bget?rn:R00974">R00974</a> <a href="/dbget-bin/www_bget?rn:R00980">R00980</a> <a href="/dbget-bin/www_bget?rn:R00985">R00985</a> <a href="/dbget-bin/www_bget?rn:R00996">R00996</a> <a href="/dbget-bin/www_bget?rn:R00997">R00997</a> <a href="/dbget-bin/www_bget?rn:R00999">R00999</a> <a href="/dbget-bin/www_bget?rn:R01001">R01001</a> <br>
+<a href="/dbget-bin/www_bget?rn:R01031">R01031</a> <a href="/dbget-bin/www_bget?rn:R01032">R01032</a> <a href="/dbget-bin/www_bget?rn:R01053">R01053</a> <a href="/dbget-bin/www_bget?rn:R01076">R01076</a> <a href="/dbget-bin/www_bget?rn:R01088">R01088</a> <a href="/dbget-bin/www_bget?rn:R01134">R01134</a> <a href="/dbget-bin/www_bget?rn:R01149">R01149</a> <a href="/dbget-bin/www_bget?rn:R01151">R01151</a> <br>
+<a href="/dbget-bin/www_bget?rn:R01152">R01152</a> <a href="/dbget-bin/www_bget?rn:R01168">R01168</a> <a href="/dbget-bin/www_bget?rn:R01212">R01212</a> <a href="/dbget-bin/www_bget?rn:R01221">R01221</a> <a href="/dbget-bin/www_bget?rn:R01230">R01230</a> <a href="/dbget-bin/www_bget?rn:R01244">R01244</a> <a href="/dbget-bin/www_bget?rn:R01258">R01258</a> <a href="/dbget-bin/www_bget?rn:R01259">R01259</a> <br>
+<a href="/dbget-bin/www_bget?rn:R01268">R01268</a> <a href="/dbget-bin/www_bget?rn:R01283">R01283</a> <a href="/dbget-bin/www_bget?rn:R01286">R01286</a> <a href="/dbget-bin/www_bget?rn:R01340">R01340</a> <a href="/dbget-bin/www_bget?rn:R01342">R01342</a> <a href="/dbget-bin/www_bget?rn:R01374">R01374</a> <a href="/dbget-bin/www_bget?rn:R01410">R01410</a> <a href="/dbget-bin/www_bget?rn:R01411">R01411</a> <br>
+<a href="/dbget-bin/www_bget?rn:R01416">R01416</a> <a href="/dbget-bin/www_bget?rn:R01434">R01434</a> <a href="/dbget-bin/www_bget?rn:R01469">R01469</a> <a href="/dbget-bin/www_bget?rn:R01485">R01485</a> <a href="/dbget-bin/www_bget?rn:R01544">R01544</a> <a href="/dbget-bin/www_bget?rn:R01560">R01560</a> <a href="/dbget-bin/www_bget?rn:R01563">R01563</a> <a href="/dbget-bin/www_bget?rn:R01579">R01579</a> <br>
+<a href="/dbget-bin/www_bget?rn:R01586">R01586</a> <a href="/dbget-bin/www_bget?rn:R01619">R01619</a> <a href="/dbget-bin/www_bget?rn:R01649">R01649</a> <a href="/dbget-bin/www_bget?rn:R01650">R01650</a> <a href="/dbget-bin/www_bget?rn:R01663">R01663</a> <a href="/dbget-bin/www_bget?rn:R01676">R01676</a> <a href="/dbget-bin/www_bget?rn:R01685">R01685</a> <a href="/dbget-bin/www_bget?rn:R01710">R01710</a> <br>
+<a href="/dbget-bin/www_bget?rn:R01853">R01853</a> <a href="/dbget-bin/www_bget?rn:R01854">R01854</a> <a href="/dbget-bin/www_bget?rn:R01874">R01874</a> <a href="/dbget-bin/www_bget?rn:R01878">R01878</a> <a href="/dbget-bin/www_bget?rn:R01887">R01887</a> <a href="/dbget-bin/www_bget?rn:R01922">R01922</a> <a href="/dbget-bin/www_bget?rn:R01937">R01937</a> <a href="/dbget-bin/www_bget?rn:R01938">R01938</a> <br>
+<a href="/dbget-bin/www_bget?rn:R02145">R02145</a> <a href="/dbget-bin/www_bget?rn:R02150">R02150</a> <a href="/dbget-bin/www_bget?rn:R02173">R02173</a> <a href="/dbget-bin/www_bget?rn:R02190">R02190</a> <a href="/dbget-bin/www_bget?rn:R02196">R02196</a> <a href="/dbget-bin/www_bget?rn:R02197">R02197</a> <a href="/dbget-bin/www_bget?rn:R02233">R02233</a> <a href="/dbget-bin/www_bget?rn:R02273">R02273</a> <br>
+<a href="/dbget-bin/www_bget?rn:R02280">R02280</a> <a href="/dbget-bin/www_bget?rn:R02286">R02286</a> <a href="/dbget-bin/www_bget?rn:R02302">R02302</a> <a href="/dbget-bin/www_bget?rn:R02322">R02322</a> <a href="/dbget-bin/www_bget?rn:R02325">R02325</a> <a href="/dbget-bin/www_bget?rn:R02359">R02359</a> <a href="/dbget-bin/www_bget?rn:R02382">R02382</a> <a href="/dbget-bin/www_bget?rn:R02408">R02408</a> <br>
+<a href="/dbget-bin/www_bget?rn:R02423">R02423</a> <a href="/dbget-bin/www_bget?rn:R02457">R02457</a> <a href="/dbget-bin/www_bget?rn:R02485">R02485</a> <a href="/dbget-bin/www_bget?rn:R02529">R02529</a> <a href="/dbget-bin/www_bget?rn:R02532">R02532</a> <a href="/dbget-bin/www_bget?rn:R02540">R02540</a> <a href="/dbget-bin/www_bget?rn:R02556">R02556</a> <a href="/dbget-bin/www_bget?rn:R02605">R02605</a> <br>
+<a href="/dbget-bin/www_bget?rn:R02612">R02612</a> <a href="/dbget-bin/www_bget?rn:R02613">R02613</a> <a href="/dbget-bin/www_bget?rn:R02618">R02618</a> <a href="/dbget-bin/www_bget?rn:R02621">R02621</a> <a href="/dbget-bin/www_bget?rn:R02622">R02622</a> <a href="/dbget-bin/www_bget?rn:R02711">R02711</a> <a href="/dbget-bin/www_bget?rn:R02712">R02712</a> <a href="/dbget-bin/www_bget?rn:R02755">R02755</a> <br>
+<a href="/dbget-bin/www_bget?rn:R02815">R02815</a> <a href="/dbget-bin/www_bget?rn:R02908">R02908</a> <a href="/dbget-bin/www_bget?rn:R02922">R02922</a> <a href="/dbget-bin/www_bget?rn:R02923">R02923</a> <a href="/dbget-bin/www_bget?rn:R02938">R02938</a> <a href="/dbget-bin/www_bget?rn:R02953">R02953</a> <a href="/dbget-bin/www_bget?rn:R02974">R02974</a> <a href="/dbget-bin/www_bget?rn:R03030">R03030</a> <br>
+<a href="/dbget-bin/www_bget?rn:R03046">R03046</a> <a href="/dbget-bin/www_bget?rn:R03093">R03093</a> <a href="/dbget-bin/www_bget?rn:R03096">R03096</a> <a href="/dbget-bin/www_bget?rn:R03139">R03139</a> <a href="/dbget-bin/www_bget?rn:R03148">R03148</a> <a href="/dbget-bin/www_bget?rn:R03180">R03180</a> <a href="/dbget-bin/www_bget?rn:R03188">R03188</a> <a href="/dbget-bin/www_bget?rn:R03349">R03349</a> <br>
+<a href="/dbget-bin/www_bget?rn:R03358">R03358</a> <a href="/dbget-bin/www_bget?rn:R03459">R03459</a> <a href="/dbget-bin/www_bget?rn:R03528">R03528</a> <a href="/dbget-bin/www_bget?rn:R03540">R03540</a> <a href="/dbget-bin/www_bget?rn:R03542">R03542</a> <a href="/dbget-bin/www_bget?rn:R03593">R03593</a> <a href="/dbget-bin/www_bget?rn:R03613">R03613</a> <a href="/dbget-bin/www_bget?rn:R03696">R03696</a> <br>
+<a href="/dbget-bin/www_bget?rn:R03800">R03800</a> <a href="/dbget-bin/www_bget?rn:R03804">R03804</a> <a href="/dbget-bin/www_bget?rn:R03887">R03887</a> <a href="/dbget-bin/www_bget?rn:R03909">R03909</a> <a href="/dbget-bin/www_bget?rn:R03983">R03983</a> <a href="/dbget-bin/www_bget?rn:R04011">R04011</a> <a href="/dbget-bin/www_bget?rn:R04012">R04012</a> <a href="/dbget-bin/www_bget?rn:R04025">R04025</a> <br>
+<a href="/dbget-bin/www_bget?rn:R04027">R04027</a> <a href="/dbget-bin/www_bget?rn:R04058">R04058</a> <a href="/dbget-bin/www_bget?rn:R04125">R04125</a> <a href="/dbget-bin/www_bget?rn:R04140">R04140</a> <a href="/dbget-bin/www_bget?rn:R04189">R04189</a> <a href="/dbget-bin/www_bget?rn:R04200">R04200</a> <a href="/dbget-bin/www_bget?rn:R04201">R04201</a> <a href="/dbget-bin/www_bget?rn:R04239">R04239</a> <br>
+<a href="/dbget-bin/www_bget?rn:R04283">R04283</a> <a href="/dbget-bin/www_bget?rn:R04300">R04300</a> <a href="/dbget-bin/www_bget?rn:R04341">R04341</a> <a href="/dbget-bin/www_bget?rn:R04349">R04349</a> <a href="/dbget-bin/www_bget?rn:R04397">R04397</a> <a href="/dbget-bin/www_bget?rn:R04641">R04641</a> <a href="/dbget-bin/www_bget?rn:R04666">R04666</a> <a href="/dbget-bin/www_bget?rn:R04674">R04674</a> <br>
+<a href="/dbget-bin/www_bget?rn:R04687">R04687</a> <a href="/dbget-bin/www_bget?rn:R04688">R04688</a> <a href="/dbget-bin/www_bget?rn:R04731">R04731</a> <a href="/dbget-bin/www_bget?rn:R04770">R04770</a> <a href="/dbget-bin/www_bget?rn:R04857">R04857</a> <a href="/dbget-bin/www_bget?rn:R04890">R04890</a> <a href="/dbget-bin/www_bget?rn:R04893">R04893</a> <a href="/dbget-bin/www_bget?rn:R04907">R04907</a> <br>
+<a href="/dbget-bin/www_bget?rn:R04908">R04908</a> <a href="/dbget-bin/www_bget?rn:R04930">R04930</a> <a href="/dbget-bin/www_bget?rn:R04941">R04941</a> <a href="/dbget-bin/www_bget?rn:R04975">R04975</a> <a href="/dbget-bin/www_bget?rn:R05030">R05030</a> <a href="/dbget-bin/www_bget?rn:R05077">R05077</a> <a href="/dbget-bin/www_bget?rn:R05079">R05079</a> <a href="/dbget-bin/www_bget?rn:R05156">R05156</a> <br>
+<a href="/dbget-bin/www_bget?rn:R05169">R05169</a> <a href="/dbget-bin/www_bget?rn:R05170">R05170</a> <a href="/dbget-bin/www_bget?rn:R05172">R05172</a> <a href="/dbget-bin/www_bget?rn:R05185">R05185</a> <a href="/dbget-bin/www_bget?rn:R05186">R05186</a> <a href="/dbget-bin/www_bget?rn:R05279">R05279</a> <a href="/dbget-bin/www_bget?rn:R05280">R05280</a> <a href="/dbget-bin/www_bget?rn:R05334">R05334</a> <br>
+<a href="/dbget-bin/www_bget?rn:R05358">R05358</a> <a href="/dbget-bin/www_bget?rn:R05546">R05546</a> <a href="/dbget-bin/www_bget?rn:R05551">R05551</a> <a href="/dbget-bin/www_bget?rn:R05552">R05552</a> <a href="/dbget-bin/www_bget?rn:R05554">R05554</a> <a href="/dbget-bin/www_bget?rn:R05563">R05563</a> <a href="/dbget-bin/www_bget?rn:R05569">R05569</a> <a href="/dbget-bin/www_bget?rn:R05574">R05574</a> <br>
+<a href="/dbget-bin/www_bget?rn:R05585">R05585</a> <a href="/dbget-bin/www_bget?rn:R05590">R05590</a> <a href="/dbget-bin/www_bget?rn:R05591">R05591</a> <a href="/dbget-bin/www_bget?rn:R05712">R05712</a> <a href="/dbget-bin/www_bget?rn:R05758">R05758</a> <a href="/dbget-bin/www_bget?rn:R05780">R05780</a> <a href="/dbget-bin/www_bget?rn:R05782">R05782</a> <a href="/dbget-bin/www_bget?rn:R05783">R05783</a> <br>
+<a href="/dbget-bin/www_bget?rn:R05861">R05861</a> <a href="/dbget-bin/www_bget?rn:R06124">R06124</a> <a href="/dbget-bin/www_bget?rn:R06131">R06131</a> <a href="/dbget-bin/www_bget?rn:R06132">R06132</a> <a href="/dbget-bin/www_bget?rn:R06134">R06134</a> <a href="/dbget-bin/www_bget?rn:R06138">R06138</a> <a href="/dbget-bin/www_bget?rn:R06154">R06154</a> <a href="/dbget-bin/www_bget?rn:R06740">R06740</a> <br>
+<a href="/dbget-bin/www_bget?rn:R06852">R06852</a> <a href="/dbget-bin/www_bget?rn:R06967">R06967</a> <a href="/dbget-bin/www_bget?rn:R06968">R06968</a> <a href="/dbget-bin/www_bget?rn:R06969">R06969</a> <a href="/dbget-bin/www_bget?rn:R06970">R06970</a> <a href="/dbget-bin/www_bget?rn:R06971">R06971</a> <a href="/dbget-bin/www_bget?rn:R07164">R07164</a> <a href="/dbget-bin/www_bget?rn:R07165">R07165</a> <br>
+<a href="/dbget-bin/www_bget?rn:R07166">R07166</a> <a href="/dbget-bin/www_bget?rn:R07167">R07167</a> <a href="/dbget-bin/www_bget?rn:R07226">R07226</a> <a href="/dbget-bin/www_bget?rn:R07307">R07307</a> <a href="/dbget-bin/www_bget?rn:R07316">R07316</a> <a href="/dbget-bin/www_bget?rn:R07400">R07400</a> <a href="/dbget-bin/www_bget?rn:R07415">R07415</a> <a href="/dbget-bin/www_bget?rn:R07598">R07598</a> <br>
+<a href="/dbget-bin/www_bget?rn:R07634">R07634</a> <a href="/dbget-bin/www_bget?rn:R07641">R07641</a> <a href="/dbget-bin/www_bget?rn:R07700">R07700</a> <a href="/dbget-bin/www_bget?rn:R07782">R07782</a> <a href="/dbget-bin/www_bget?rn:R07793">R07793</a> <a href="/dbget-bin/www_bget?rn:R07855">R07855</a> <a href="/dbget-bin/www_bget?rn:R07984">R07984</a> <a href="/dbget-bin/www_bget?rn:R08170">R08170</a> <br>
+<a href="/dbget-bin/www_bget?rn:R08221">R08221</a> <a href="/dbget-bin/www_bget?rn:R08228">R08228</a> <a href="/dbget-bin/www_bget?rn:R08305">R08305</a> <a href="/dbget-bin/www_bget?rn:R08308">R08308</a> <a href="/dbget-bin/www_bget?rn:R08348">R08348</a> <a href="/dbget-bin/www_bget?rn:R08365">R08365</a> <a href="/dbget-bin/www_bget?rn:R08514">R08514</a> <a href="/dbget-bin/www_bget?rn:R08569">R08569</a> <br>
+<a href="/dbget-bin/www_bget?rn:R08583">R08583</a> <a href="/dbget-bin/www_bget?rn:R08637">R08637</a> <a href="/dbget-bin/www_bget?rn:R08654">R08654</a> <a href="/dbget-bin/www_bget?rn:R08660">R08660</a> <a href="/dbget-bin/www_bget?rn:R08667">R08667</a> <a href="/dbget-bin/www_bget?rn:R08686">R08686</a> <a href="/dbget-bin/www_bget?rn:R08698">R08698</a> <a href="/dbget-bin/www_bget?rn:R08846">R08846</a> <br>
+<a href="/dbget-bin/www_bget?rn:R08920">R08920</a> <a href="/dbget-bin/www_bget?rn:R09253">R09253</a> <a href="/dbget-bin/www_bget?rn:R09285">R09285</a> <a href="/dbget-bin/www_bget?rn:R09287">R09287</a> <a href="/dbget-bin/www_bget?rn:R09366">R09366</a> <a href="/dbget-bin/www_bget?rn:R09377">R09377</a> <a href="/dbget-bin/www_bget?rn:R09396">R09396</a> <a href="/dbget-bin/www_bget?rn:R09493">R09493</a> <br>
+<a href="/dbget-bin/www_bget?rn:R09519">R09519</a> <a href="/dbget-bin/www_bget?rn:R09537">R09537</a> <a href="/dbget-bin/www_bget?rn:R09566">R09566</a> <a href="/dbget-bin/www_bget?rn:R09647">R09647</a> <a href="/dbget-bin/www_bget?rn:R09648">R09648</a> <a href="/dbget-bin/www_bget?rn:R09649">R09649</a> <a href="/dbget-bin/www_bget?rn:R09650">R09650</a> <a href="/dbget-bin/www_bget?rn:R09660">R09660</a> <br>
+<a href="/dbget-bin/www_bget?rn:R09661">R09661</a> <a href="/dbget-bin/www_bget?rn:R09680">R09680</a> <a href="/dbget-bin/www_bget?rn:R09683">R09683</a> <a href="/dbget-bin/www_bget?rn:R09799">R09799</a> <a href="/dbget-bin/www_bget?rn:R09809">R09809</a> <a href="/dbget-bin/www_bget?rn:R09830">R09830</a> <a href="/dbget-bin/www_bget?rn:R09876">R09876</a> <a href="/dbget-bin/www_bget?rn:R09948">R09948</a> <br>
+<a href="/dbget-bin/www_bget?rn:R09950">R09950</a> <a href="/dbget-bin/www_bget?rn:R09978">R09978</a> <a href="/dbget-bin/www_bget?rn:R09983">R09983</a> <a href="/dbget-bin/www_bget?rn:R09993">R09993</a> <a href="/dbget-bin/www_bget?rn:R09998">R09998</a> <a href="/dbget-bin/www_bget?rn:R10002">R10002</a> <a href="/dbget-bin/www_bget?rn:R10012">R10012</a> <a href="/dbget-bin/www_bget?rn:R10014">R10014</a> <br>
+<a href="/dbget-bin/www_bget?rn:R10054">R10054</a> <a href="/dbget-bin/www_bget?rn:R10079">R10079</a> <a href="/dbget-bin/www_bget?rn:R10086">R10086</a> <a href="/dbget-bin/www_bget?rn:R10088">R10088</a> <a href="/dbget-bin/www_bget?rn:R10223">R10223</a> <a href="/dbget-bin/www_bget?rn:R10231">R10231</a> <a href="/dbget-bin/www_bget?rn:R10232">R10232</a> <a href="/dbget-bin/www_bget?rn:R10245">R10245</a> <br>
+<a href="/dbget-bin/www_bget?rn:R10270">R10270</a> <a href="/dbget-bin/www_bget?rn:R10277">R10277</a> <a href="/dbget-bin/www_bget?rn:R10312">R10312</a> <a href="/dbget-bin/www_bget?rn:R10408">R10408</a> <a href="/dbget-bin/www_bget?rn:R10470">R10470</a> <a href="/dbget-bin/www_bget?rn:R10695">R10695</a> <a href="/dbget-bin/www_bget?rn:R10775">R10775</a> <a href="/dbget-bin/www_bget?rn:R10949">R10949</a> <br>
+<a href="/dbget-bin/www_bget?rn:R11017">R11017</a> <a href="/dbget-bin/www_bget?rn:R11018">R11018</a> <a href="/dbget-bin/www_bget?rn:R11023">R11023</a> <a href="/dbget-bin/www_bget?rn:R11031">R11031</a> <a href="/dbget-bin/www_bget?rn:R11032">R11032</a> <a href="/dbget-bin/www_bget?rn:R11094">R11094</a> <a href="/dbget-bin/www_bget?rn:R11098">R11098</a> <a href="/dbget-bin/www_bget?rn:R11099">R11099</a> <br>
+<a href="/dbget-bin/www_bget?rn:R11209">R11209</a> <a href="/dbget-bin/www_bget?rn:R11328">R11328</a> <a href="/dbget-bin/www_bget?rn:R11409">R11409</a> <a href="/dbget-bin/www_bget?rn:R11532">R11532</a> <a href="/dbget-bin/www_bget?rn:R11559">R11559</a> <a href="/dbget-bin/www_bget?rn:R11560">R11560</a> <a href="/dbget-bin/www_bget?rn:R11604">R11604</a> <a href="/dbget-bin/www_bget?rn:R11617">R11617</a> <br>
+<a href="/dbget-bin/www_bget?rn:R11619">R11619</a> <a href="/dbget-bin/www_bget?rn:R11864">R11864</a> <a href="/dbget-bin/www_bget?rn:R11916">R11916</a> <a href="/dbget-bin/www_bget?rn:R11917">R11917</a> <a href="/dbget-bin/www_bget?rn:R11918">R11918</a> <a href="/dbget-bin/www_bget?rn:R11919">R11919</a><br>
+</div><a href="javascript:void(0)" onclick="javascript:toggleField(this,&quot;r1&quot;,&quot;show all&quot;,&quot;hide&quot;)">&nbsp;&raquo; show all</a><br>
+</div></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Pathway</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><table width=555 border=0 cellspacing=0 cellpadding=0><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map00220+C00014">map00220</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Arginine biosynthesis</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map00230+C00014">map00230</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Purine metabolism</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map00250+C00014">map00250</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Alanine, aspartate and glutamate metabolism</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map00260+C00014">map00260</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Glycine, serine and threonine metabolism</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map00460+C00014">map00460</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Cyanoamino acid metabolism</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map00630+C00014">map00630</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Glyoxylate and dicarboxylate metabolism</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map00910+C00014">map00910</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Nitrogen metabolism</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map01100+C00014">map01100</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Metabolic pathways</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map01110+C00014">map01110</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Biosynthesis of secondary metabolites</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map01120+C00014">map01120</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Microbial metabolism in diverse environments</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map01130+C00014">map01130</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Biosynthesis of antibiotics</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map01200+C00014">map01200</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Carbon metabolism</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map01230+C00014">map01230</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Biosynthesis of amino acids</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04964+C00014">map04964</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Proximal tubule bicarbonate reclamation</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04966+C00014">map04966</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Collecting duct acid secretion</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map04974+C00014">map04974</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Protein digestion and absorption</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map05110+C00014">map05110</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Vibrio cholerae infection</div></td></tr><tr><td align="left" valign="top" style="width:5.5em"><div><nobr><a href="/kegg-bin/show_pathway?map05120+C00014">map05120</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Epithelial cell signaling in Helicobacter pylori infection</div></td></tr></table></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Module</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><table width=555 border=0 cellspacing=0 cellpadding=0><tr><td align="left" valign="top" style="width:4.5em"><div><nobr><a href="/kegg-bin/show_module?M00029+C00014">M00029</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Urea cycle</div></td></tr><tr><td align="left" valign="top" style="width:4.5em"><div><nobr><a href="/kegg-bin/show_module?M00175+C00014">M00175</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Nitrogen fixation, nitrogen =&gt; ammonia</div></td></tr><tr><td align="left" valign="top" style="width:4.5em"><div><nobr><a href="/kegg-bin/show_module?M00528+C00014">M00528</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Nitrification, ammonia =&gt; nitrite</div></td></tr><tr><td align="left" valign="top" style="width:4.5em"><div><nobr><a href="/kegg-bin/show_module?M00530+C00014">M00530</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Dissimilatory nitrate reduction, nitrate =&gt; ammonia</div></td></tr><tr><td align="left" valign="top" style="width:4.5em"><div><nobr><a href="/kegg-bin/show_module?M00531+C00014">M00531</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Assimilatory nitrate reduction, nitrate =&gt; ammonia</div></td></tr><tr><td align="left" valign="top" style="width:4.5em"><div><nobr><a href="/kegg-bin/show_module?M00532+C00014">M00532</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Photorespiration</div></td></tr><tr><td align="left" valign="top" style="width:4.5em"><div><nobr><a href="/kegg-bin/show_module?M00804+C00014">M00804</a>&nbsp;&nbsp;</nobr></div></td><td align="left"><div>Complete nitrification, comammox, ammonia =&gt; nitrite =&gt; nitrate</div></td></tr></table></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Enzyme</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden"><a href="/dbget-bin/www_bget?ec:1.3.7.8">1.3.7.8</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.1.1">1.4.1.1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.1.2">1.4.1.2</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.1.3">1.4.1.3</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:1.4.1.4">1.4.1.4</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.1.5">1.4.1.5</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.1.7">1.4.1.7</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.1.8">1.4.1.8</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:1.4.1.9">1.4.1.9</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.1.10">1.4.1.10</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.1.11">1.4.1.11</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.1.12">1.4.1.12</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:1.4.1.13">1.4.1.13</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.1.15">1.4.1.15</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.1.16">1.4.1.16</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.1.18">1.4.1.18</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:1.4.1.19">1.4.1.19</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.1.20">1.4.1.20</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.1.21">1.4.1.21</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.1.23">1.4.1.23</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:1.4.1.24">1.4.1.24</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.1.25">1.4.1.25</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.1.26">1.4.1.26</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.4.1.-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:1.4.2.1">1.4.2.1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.4.2.-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.3.1">1.4.3.1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.3.2">1.4.3.2</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:1.4.3.3">1.4.3.3</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.3.4">1.4.3.4</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.3.5">1.4.3.5</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.3.7">1.4.3.7</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:1.4.3.8">1.4.3.8</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.3.10">1.4.3.10</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.3.11">1.4.3.11</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.3.12">1.4.3.12</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:1.4.3.13">1.4.3.13</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.3.14">1.4.3.14</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.3.15">1.4.3.15</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.3.16">1.4.3.16</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<style>.e1{display:none;}</style><div class="e1"><a href="/dbget-bin/www_bget?ec:1.4.3.19">1.4.3.19</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.3.20">1.4.3.20</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.3.21">1.4.3.21</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.3.22">1.4.3.22</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:1.4.3.25">1.4.3.25</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.4.3.-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.4.2">1.4.4.2</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.5.1">1.4.5.1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:1.4.7.1">1.4.7.1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.9.1">1.4.9.1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.9.2">1.4.9.2</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.4.99.2">1.4.99.2</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:1.4.99.6">1.4.99.6</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.4.-.-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.5.1.-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.7.1.4">1.7.1.4</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:1.7.1.7">1.7.1.7</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.7.1.10">1.7.1.10</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.7.1.14">1.7.1.14</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.7.1.15">1.7.1.15</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:1.7.2.2">1.7.2.2</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.7.2.7">1.7.2.7</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.7.7.1">1.7.7.1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.7.99.1">1.7.99.1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:1.8.1.4">1.8.1.4</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.13.12.15">1.13.12.15</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.13.99.3">1.13.99.3</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.14.11.37">1.14.11.37</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:1.14.12.1">1.14.12.1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.14.12.14">1.14.12.14</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.14.12.-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.14.13.35">1.14.13.35</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:1.14.99.39">1.14.99.39</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.14.-.-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.18.6.1">1.18.6.1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.19.6.1">1.19.6.1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:1.21.4.2">1.21.4.2</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:1.21.98.2">1.21.98.2</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:2.1.1.21">2.1.1.21</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:2.1.1.247">2.1.1.247</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:2.1.1.248">2.1.1.248</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:2.1.2.10">2.1.2.10</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:2.3.2.1">2.3.2.1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:2.3.2.5">2.3.2.5</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:2.3.2.7">2.3.2.7</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:2.3.2.13">2.3.2.13</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:2.3.2.14">2.3.2.14</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:2.5.1.44">2.5.1.44</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:2.5.1.48">2.5.1.48</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:2.5.1.61">2.5.1.61</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:2.5.1.77">2.5.1.77</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:2.7.1.62">2.7.1.62</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:2.7.2.2">2.7.2.2</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:2.7.3.8">2.7.3.8</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:2.7.7.51">2.7.7.51</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.1.1">3.5.1.1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:3.5.1.2">3.5.1.2</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.1.3">3.5.1.3</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.1.4">3.5.1.4</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.1.5">3.5.1.5</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:3.5.1.6">3.5.1.6</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.1.7">3.5.1.7</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.1.12">3.5.1.12</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.1.19">3.5.1.19</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:3.5.1.20">3.5.1.20</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.1.29">3.5.1.29</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.1.30">3.5.1.30</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.1.35">3.5.1.35</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:3.5.1.38">3.5.1.38</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.1.42">3.5.1.42</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.1.43">3.5.1.43</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.1.44">3.5.1.44</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:3.5.1.49">3.5.1.49</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.1.50">3.5.1.50</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.1.53">3.5.1.53</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.1.54">3.5.1.54</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:3.5.1.57">3.5.1.57</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.1.59">3.5.1.59</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.1.66">3.5.1.66</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.1.67">3.5.1.67</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:3.5.1.73">3.5.1.73</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.1.75">3.5.1.75</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.1.77">3.5.1.77</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.1.84">3.5.1.84</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:3.5.1.86">3.5.1.86</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.1.87">3.5.1.87</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.1.99">3.5.1.99</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.1.100">3.5.1.100</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:3.5.1.101">3.5.1.101</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.1.107">3.5.1.107</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.1.110">3.5.1.110</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.1.111">3.5.1.111</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:3.5.1.116">3.5.1.116</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.1.119">3.5.1.119</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.1.121">3.5.1.121</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.1.122">3.5.1.122</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:3.5.1.126">3.5.1.126</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.5.1.-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.2.18">3.5.2.18</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.3.5">3.5.3.5</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:3.5.3.6">3.5.3.6</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.3.9">3.5.3.9</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.3.12">3.5.3.12</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.3.13">3.5.3.13</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:3.5.3.15">3.5.3.15</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.3.21">3.5.3.21</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.3.23">3.5.3.23</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.3.26">3.5.3.26</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+3.5.3.-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.4.1">3.5.4.1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.4.2">3.5.4.2</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.4.3">3.5.4.3</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:3.5.4.4">3.5.4.4</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.4.5">3.5.4.5</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.4.6">3.5.4.6</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.4.7">3.5.4.7</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:3.5.4.8">3.5.4.8</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.4.11">3.5.4.11</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.4.12">3.5.4.12</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.4.13">3.5.4.13</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:3.5.4.15">3.5.4.15</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.4.17">3.5.4.17</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.4.18">3.5.4.18</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.4.20">3.5.4.20</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:3.5.4.21">3.5.4.21</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.4.22">3.5.4.22</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.4.23">3.5.4.23</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.4.24">3.5.4.24</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:3.5.4.26">3.5.4.26</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.4.28">3.5.4.28</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.4.30">3.5.4.30</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.4.31">3.5.4.31</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:3.5.4.32">3.5.4.32</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.4.33">3.5.4.33</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.4.34">3.5.4.34</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.4.35">3.5.4.35</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:3.5.4.40">3.5.4.40</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.4.41">3.5.4.41</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.4.42">3.5.4.42</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.4.45">3.5.4.45</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:3.5.4.46">3.5.4.46</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.5.4.-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.5.1">3.5.5.1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.5.2">3.5.5.2</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:3.5.5.4">3.5.5.4</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.5.5">3.5.5.5</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.5.6">3.5.5.6</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.5.7">3.5.5.7</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:3.5.5.8">3.5.5.8</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.5.5.-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.99.2">3.5.99.2</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.99.5">3.5.99.5</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:3.5.99.6">3.5.99.6</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.99.7">3.5.99.7</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.99.8">3.5.99.8</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.5.99.10">3.5.99.10</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:3.5.99.11">3.5.99.11</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.5.99.-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:3.8.1.8">3.8.1.8</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.1.1.107">4.1.1.107</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:4.1.1.108">4.1.1.108</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.1.1.109">4.1.1.109</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.1.3.27">4.1.3.27</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.1.99.1">4.1.99.1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:4.1.99.2">4.1.99.2</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.1.99.23">4.1.99.23</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.2.1.87">4.2.1.87</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.2.1.104">4.2.1.104</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:4.2.1.168">4.2.1.168</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.2.3.2">4.2.3.2</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.2.3.134">4.2.3.134</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.3.1.1">4.3.1.1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:4.3.1.2">4.3.1.2</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.3.1.3">4.3.1.3</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.3.1.4">4.3.1.4</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.3.1.6">4.3.1.6</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:4.3.1.7">4.3.1.7</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.3.1.9">4.3.1.9</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.3.1.10">4.3.1.10</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.3.1.12">4.3.1.12</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:4.3.1.13">4.3.1.13</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.3.1.14">4.3.1.14</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.3.1.15">4.3.1.15</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.3.1.16">4.3.1.16</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:4.3.1.17">4.3.1.17</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.3.1.18">4.3.1.18</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.3.1.19">4.3.1.19</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.3.1.20">4.3.1.20</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:4.3.1.22">4.3.1.22</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.3.1.23">4.3.1.23</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.3.1.24">4.3.1.24</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.3.1.25">4.3.1.25</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:4.3.1.27">4.3.1.27</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.3.1.28">4.3.1.28</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.3.1.29">4.3.1.29</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.3.1.30">4.3.1.30</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:4.3.1.31">4.3.1.31</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.3.3.6">4.3.3.6</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.3.99.3">4.3.99.3</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.4.1.1">4.4.1.1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:4.4.1.2">4.4.1.2</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.4.1.6">4.4.1.6</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.4.1.8">4.4.1.8</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.4.1.11">4.4.1.11</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:4.4.1.13">4.4.1.13</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.4.1.15">4.4.1.15</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.4.1.25">4.4.1.25</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.4.1.28">4.4.1.28</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:4.4.1.35">4.4.1.35</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.4.1.36">4.4.1.36</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.4.1.-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:4.5.1.2">4.5.1.2</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:4.5.1.4">4.5.1.4</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.3.1.-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:6.3.1.1">6.3.1.1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:6.3.1.2">6.3.1.2</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:6.3.1.4">6.3.1.4</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:6.3.1.5">6.3.1.5</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:6.3.1.7">6.3.1.7</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:6.3.1.14">6.3.1.14</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:6.3.3.5">6.3.3.5</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:6.3.4.2">6.3.4.2</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:6.3.4.7">6.3.4.7</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:6.3.4.16">6.3.4.16</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:6.3.4.20">6.3.4.20</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:6.3.5.1">6.3.5.1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:6.3.5.2">6.3.5.2</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dbget-bin/www_bget?ec:6.3.5.4">6.3.5.4</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="/dbget-bin/www_bget?ec:6.3.5.5">6.3.5.5</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.3.5.-<br>
+</div><a href="javascript:void(0)" onclick="javascript:toggleField(this,&quot;e1&quot;,&quot;show all&quot;,&quot;hide&quot;)">&nbsp;&raquo; show all</a><br>
+</div></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Brite</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden"><nobr>Risk category of Japanese OTC drugs [BR:<a href="/kegg-bin/get_htext?br08312+C00014+D02916">br08312</a>]<br>
+&nbsp;Third-class OTC drugs<br>
+&nbsp;&nbsp;Inorganic and organic chemicals<br>
+&nbsp;&nbsp;&nbsp;Ammonia solution, strong<br>
+&nbsp;&nbsp;&nbsp;&nbsp;D02916&nbsp;&nbsp;Ammonia solution, strong (NF)<br>
+</nobr></div><a href="/kegg-bin/search_brite?option=-a&amp;search_string=C00014"><img align="middle" alt="BRITE hierarchy" border="0" name="BRH" onmousedown="btn(this,'BHbd')" onmouseout="btn(this,'BHb')" onmouseover="btn(this,'BHbh')" onmouseup="btn(this,'BHb')" ontouchend="btn(this,'BHb')" ontouchstart="btn(this,'BHbd')" src="/Fig/bget/button_BHb.gif"></a></td></tr>
+
+
+<tr><th class="th20" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>Other DBs</nobr></th>
+<td class="td20" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><div style="width:555px;overflow-x:auto;overflow-y:hidden"><div style="float:left">CAS:&nbsp;</div><div style="margin-left:3em">7664-41-7</div><div style="clear:both"></div><div style="float:left">PubChem:&nbsp;</div><div style="margin-left:5em"><a href="https://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=3316">3316</a></div><div style="clear:both"></div><div style="float:left">ChEBI:&nbsp;</div><div style="margin-left:4em"><a href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:16134">16134</a></div><div style="clear:both"></div><div style="float:left">ChEMBL:&nbsp;</div><div style="margin-left:4.5em"><a href="https://www.ebi.ac.uk/chembldb/compound/inspect/CHEMBL1160819">CHEMBL1160819</a></div><div style="clear:both"></div><div style="float:left">KNApSAcK:&nbsp;</div><div style="margin-left:5.5em"><a href="http://kanaya.naist.jp/knapsack_jsp/information.jsp?sname=C_ID&word=C00007267">C00007267</a></div><div style="clear:both"></div><div style="float:left">PDB-CCD:&nbsp;</div><div style="margin-left:5em"><a href="http://www.ebi.ac.uk/pdbe-srv/pdbechem/chemicalCompound/show/NH3">NH3</a>[<a href="http://pdbj.org/chemie/summary/NH3">PDBj</a>] </div><div style="clear:both"></div><div style="float:left">3DMET:&nbsp;</div><div style="margin-left:4em"><a href="http://www.3dmet.dna.affrc.go.jp/cgi/show_data.php?acc=B00004">B00004</a></div><div style="clear:both"></div><div style="float:left">NIKKAJI:&nbsp;</div><div style="margin-left:5em"><a href="http://jglobal.jst.go.jp/en/redirect?Nikkaji_No=J3.748F">J3.748F</a></div><div style="clear:both"></div></div></td></tr>
+
+
+<tr><th class="th21" align="left" valign="top" style="border-color:#000; border-width: 1px 0px 0px 1px; border-style: solid"><nobr>KCF data</nobr></th>
+<td class="td21" style="border-color:#000; border-width: 1px 1px 0px 1px; border-style: solid"><img align="middle" alt="Show" border="0" class="kcfb" id="kcfb1" name="show_kcf" src="/Fig/bget/button_Sb.gif"><div class="kcfd" id="kcfd1"><br>ATOM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;N0&nbsp;&nbsp;N&nbsp;&nbsp;&nbsp;&nbsp;20.7200&nbsp;&nbsp;-15.4700<br>
+BOND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0<br>
+</div></td></tr>
+
+</table></td></tr></table>
+<br><span style="font-size:12px"><a href="/dbget-bin/www_bget?cpd_ja:C00014">&raquo; Japanese version</a></span><br><br></form></td><td valign="top"><div style="margin-top:46px;margin-left:1em;border:#ddd 1px solid"><div class="th20" style="font-weight:bold;line-height:1.5em">&nbsp;&nbsp;All links&nbsp;&nbsp;</div>
+<pre style="margin-left:1em">
+<span style="color:#006"><a href="/dbget-bin/get_linkdb?-t+2+cpd:C00014">Pathway (25)</a></span>   
+   <a href="/dbget-bin/get_linkdb?-t+pathway+cpd:C00014">KEGG PATHWAY (18)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+module+cpd:C00014">KEGG MODULE (7)</a>   
+<span style="color:#006"><a href="/dbget-bin/get_linkdb?-t+5+cpd:C00014">Drug (2)</a></span>   
+   <a href="/dbget-bin/get_linkdb?-t+drug+cpd:C00014">KEGG DRUG (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+chembl+cpd:C00014">CHEMBL (1)</a>   
+<span style="color:#006"><a href="/dbget-bin/get_linkdb?-t+6+cpd:C00014">Chemical substance (8)</a></span>   
+   <a href="/dbget-bin/get_linkdb?-t+pubchem+cpd:C00014">PubChem (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+chebi+cpd:C00014">ChEBI (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+3dmet+cpd:C00014">3DMET (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+hmdb+cpd:C00014">HMDB (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+hsdb+cpd:C00014">HSDB (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+knapsack+cpd:C00014">KNApSAcK (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+nikkaji+cpd:C00014">NIKKAJI (1)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+pdb-ccd+cpd:C00014">PDB-CCD (1)</a>   
+<span style="color:#006"><a href="/dbget-bin/get_linkdb?-t+7+cpd:C00014">Chemical reaction (637)</a></span>   
+   <a href="/dbget-bin/get_linkdb?-t+enzyme+cpd:C00014">KEGG ENZYME (255)</a>   
+   <a href="/dbget-bin/get_linkdb?-t+reaction+cpd:C00014">KEGG REACTION (382)</a>   
+<span style="color:#006"><a href="/dbget-bin/get_linkdb?-t+9+cpd:C00014">Gene (249863)</a></span>   
+   <a href="/dbget-bin/get_linkdb?-t+genes+cpd:C00014">KEGG GENES (249863)</a>   
+<a href="/dbget-bin/get_linkdb?-t+alldb+cpd:C00014">All databases (250535)</a>   
+<br><a href="/dbget-bin/get_linkdb?-N+cpd:C00014">Download RDF</a>   
+</pre>
+</div>
+</td></tr></table>
+
+
+<a href="/dbget/">DBGET</a> integrated database retrieval system</div>
+
+</body>
+</html>
