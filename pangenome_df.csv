@@ -1,0 +1,945 @@
+species,strain,kegg_abbr
+Pseudomonas putida,Pseudomonas putida KT2440,ppu
+Pseudomonas putida,Pseudomonas putida F1,ppf
+Pseudomonas putida,Pseudomonas putida GB-1,ppg
+Pseudomonas putida,Pseudomonas putida W619,ppw
+Pseudomonas putida,Pseudomonas putida S16,ppt
+Pseudomonas putida,Pseudomonas putida BIRD-1,ppb
+Pseudomonas putida,Pseudomonas putida ND6,ppi
+Pseudomonas putida,Pseudomonas putida DOT-T1E,ppx
+Pseudomonas putida,Pseudomonas putida HB3267,ppuh
+Pseudomonas putida,Pseudomonas putida H8234,pput
+Pseudomonas putida,Pseudomonas putida NBRC 14164,ppun
+Pseudomonas putida,Pseudomonas putida DLL-E4,ppud
+Streptococcus pyogenes,Streptococcus pyogenes M1 GAS (serotype M1),spy
+Streptococcus pyogenes,Streptococcus pyogenes MGAS5005 (serotype M1),spz
+Streptococcus pyogenes,Streptococcus pyogenes M1 476 (serotype M1),spym
+Streptococcus pyogenes,Streptococcus pyogenes MGAS8232 (serotype M18),spm
+Streptococcus pyogenes,Streptococcus pyogenes MGAS315 (serotype M3),spg
+Streptococcus pyogenes,Streptococcus pyogenes SSI-1 (serotype M3),sps
+Streptococcus pyogenes,Streptococcus pyogenes MGAS10270 (serotype M2),sph
+Streptococcus pyogenes,Streptococcus pyogenes MGAS10750 (serotype M4),spi
+Streptococcus pyogenes,Streptococcus pyogenes MGAS2096 (serotype M12),spj
+Streptococcus pyogenes,Streptococcus pyogenes MGAS9429 (serotype M12),spk
+Streptococcus pyogenes,Streptococcus pyogenes Manfredo (serotype M5),spf
+Streptococcus pyogenes,Streptococcus pyogenes MGAS10394 (serotype M6),spa
+Streptococcus pyogenes,Streptococcus pyogenes MGAS6180 (serotype M28),spb
+Streptococcus pyogenes,Streptococcus pyogenes MGAS15252 (serotype M59),stg
+Streptococcus pyogenes,Streptococcus pyogenes NZ131 (serotype M49),soz
+Streptococcus pyogenes,Streptococcus pyogenes Alab49 (serotype M53),stz
+Streptococcus pyogenes,Streptococcus pyogenes MGAS1882,stx
+Streptococcus pyogenes,Streptococcus pyogenes A20,spya
+Streptococcus pyogenes,Streptococcus pyogenes HSC5,spyh
+Streptococcus pyogenes,Streptococcus pyogenes STAB901 (serotype M44),spyo
+Enterobacter cloacae,Enterobacter cloacae subsp. cloacae ATCC 13047,enc
+Enterobacter cloacae,Enterobacter cloacae subsp. cloacae ENHKU01,eno
+Enterobacter cloacae,Enterobacter cloacae subsp. cloacae NCTC 9394,eclo
+Enterobacter cloacae,Enterobacter cloacae EcWSU1,eec
+Enterobacter cloacae,Enterobacter cloacae subsp. dissolvens SDM,enl
+Enterobacter cloacae,Enterobacter cloacae GGT036,eclg
+Enterobacter cloacae,Enterobacter cloacae ECNIH2,ecle
+Enterobacter cloacae,Enterobacter cloacae ECNIH4,ecln
+Enterobacter cloacae,Enterobacter cloacae ECNIH5,ecli
+Enterobacter cloacae,Enterobacter cloacae 34399,eclx
+Enterobacter cloacae,Enterobacter cloacae 34977,ecly
+Enterobacter cloacae,Enterobacter cloacae 34983,eclz
+Neisseria meningitidis,Neisseria meningitidis Z2491 (serogroup A),nma
+Neisseria meningitidis,Neisseria meningitidis MC58 (serogroup B),nme
+Neisseria meningitidis,Neisseria meningitidis alpha710 (serogroup B),nmp
+Neisseria meningitidis,Neisseria meningitidis H44/76 (serogroup B),nmh
+Neisseria meningitidis,Neisseria meningitidis FAM18 (serogroup C),nmc
+Neisseria meningitidis,Neisseria meningitidis 053442 (serogroup C),nmn
+Neisseria meningitidis,Neisseria meningitidis 8013 (serogroup C),nmt
+Neisseria meningitidis,Neisseria meningitidis alpha14 (cnl strain),nmi
+Neisseria meningitidis,Neisseria meningitidis G2136 (serogroup B),nmd
+Neisseria meningitidis,Neisseria meningitidis M01-240149 (serogroup B),nmm
+Neisseria meningitidis,Neisseria meningitidis M01-240355 (serogroup B),nms
+Neisseria meningitidis,Neisseria meningitidis M04-240196 (serogroup B),nmq
+Neisseria meningitidis,Neisseria meningitidis WUE 2594 (serogroup A),nmw
+Neisseria meningitidis,Neisseria meningitidis NZ-05/33 (serogroup B),nmz
+Neisseria meningitidis,Neisseria meningitidis 510612  (serogroup A),nmx
+Cutibacteirum acnes,Cutibacterium acnes KPA171202,pac
+Cutibacteirum acnes,Propionibacterium acnes SK137,pak
+Cutibacteirum acnes,Cutibacterium acnes TypeIA2 P.acn17,pav
+Cutibacteirum acnes,Cutibacterium acnes TypeIA2 P.acn31,pax
+Cutibacteirum acnes,Cutibacterium acnes TypeIA2 P.acn33,paz
+Cutibacteirum acnes,Propionibacterium acnes 266,paw
+Cutibacteirum acnes,Cutibacterium acnes subsp. defendens ATCC 11828,pad
+Cutibacteirum acnes,Propionibacterium acnes 6609,pcn
+Cutibacteirum acnes,Propionibacterium acnes C1,pacc
+Cutibacteirum acnes,Propionibacterium acnes HL096PA1,pach
+Cutibacteirum acnes,Propionibacterium acnes hdn-1,pacn
+Escherichia coli,Escherichia coli K-12 MG1655,eco
+Escherichia coli,Escherichia coli K-12 W3110,ecj
+Escherichia coli,Escherichia coli K-12 DH10B,ecd
+Escherichia coli,Escherichia coli BW2952,ebw
+Escherichia coli,Escherichia coli K-12 MDS42,ecok
+Escherichia coli,Escherichia coli O157:H7 EDL933 (EHEC),ece
+Escherichia coli,Escherichia coli O157:H7 Sakai (EHEC),ecs
+Escherichia coli,Escherichia coli O157:H7 EC4115 (EHEC),ecf
+Escherichia coli,Escherichia coli O157:H7 TW14359 (EHEC),etw
+Escherichia coli,Escherichia coli O157:H7 Xuzhou21 (EHEC),elx
+Escherichia coli,Escherichia coli O26:H11 11368 (EHEC),eoj
+Escherichia coli,Escherichia coli O111:H- 11128 (EHEC),eoi
+Escherichia coli,Escherichia coli O103:H2 12009 (EHEC),eoh
+Escherichia coli,Escherichia coli O127:H6 E2348/69 (EPEC),ecg
+Escherichia coli,Escherichia coli O55:H7 CB9615 (EPEC),eok
+Escherichia coli,Escherichia coli O55:H7 RM12579 (EPEC),elr
+Escherichia coli,Escherichia coli O6:K2:H1 CFT073 (UPEC),ecc
+Escherichia coli,Escherichia coli O6:K15:H31 536 (UPEC),ecp
+Escherichia coli,Escherichia coli O18:K1:H7 UTI89 (UPEC),eci
+Escherichia coli,Escherichia coli APEC O1 (APEC),ecv
+Escherichia coli,Escherichia coli O9 HS (commensal),ecx
+Escherichia coli,Escherichia coli O139:H28 E24377A (ETEC),ecw
+Escherichia coli,Escherichia coli SMS-3-5 (environmental),ecm
+Escherichia coli,Escherichia coli O152:H28 SE11 (commensal),ecy
+Escherichia coli,Escherichia coli O8 IAI1 (commensal),ecr
+Escherichia coli,Escherichia coli O81 ED1a (commensal),ecq
+Escherichia coli,Escherichia coli 55989 (EAEC),eck
+Escherichia coli,Escherichia coli O7:K1 IAI39 (ExPEC),ect
+Escherichia coli,Escherichia coli O7:K1 CE10,eoc
+Escherichia coli,Escherichia coli O17:K52:H18 UMN026 (ExPEC),eum
+Escherichia coli,Escherichia coli O45:K1:H7 S88 (ExPEC),ecz
+Escherichia coli,Escherichia coli O44:H18 042 (EAEC),elo
+Escherichia coli,Escherichia coli O83:H1 NRG 857C,eln
+Escherichia coli,Escherichia coli O78:H11:K80 H10407 (ETEC),elh
+Escherichia coli,Escherichia coli O150:H5 SE15 (commensal),ese
+Escherichia coli,Escherichia coli O104:H4 2009EL-2071,eso
+Escherichia coli,Escherichia coli O104:H4 2009EL-2050,esm
+Escherichia coli,Escherichia coli O104:H4 2011C-3493,esl
+Escherichia coli,Escherichia coli ATCC 8739,ecl
+Escherichia coli,Escherichia coli B REL606,ebr
+Escherichia coli,Escherichia coli BL21-Gold(DE3)pLysS AG,ebd
+Escherichia coli,Escherichia coli KO11FL,eko
+Escherichia coli,Escherichia coli KO11FL,ekf
+Escherichia coli,Escherichia coli ABU 83972,eab
+Escherichia coli,Escherichia coli DH1,edh
+Escherichia coli,Escherichia coli DH1,edj
+Escherichia coli,Escherichia coli IHE3034,eih
+Escherichia coli,Escherichia coli NA114 (UPEC),ena
+Escherichia coli,Escherichia coli UM146,elu
+Escherichia coli,Escherichia coli UMNK88,eun
+Escherichia coli,Escherichia coli W,elw
+Escherichia coli,Escherichia coli W,ell
+Escherichia coli,Escherichia coli clone D i14,elc
+Escherichia coli,Escherichia coli clone D i2,eld
+Escherichia coli,Escherichia coli P12b,elp
+Escherichia coli,Escherichia coli BL21(DE3),ebl
+Escherichia coli,Escherichia coli BL21(DE3),ebe
+Escherichia coli,Escherichia coli LF82,elf
+Escherichia coli,Escherichia coli APEC O78,ecoa
+Escherichia coli,Escherichia coli LY180,ecol
+Escherichia coli,Escherichia coli PMV-1,ecoi
+Escherichia coli,Escherichia coli JJ1886,ecoj
+Escherichia coli,Escherichia coli O145:H28 RM13514 (EHEC),ecoo
+Escherichia coli,Escherichia coli O145:H28 RM13516 (EHEC),ecoh
+Escherichia coli,Escherichia coli O25b:K100:H4-ST131 EC958 (UPEC),ecos
+Streptococcus agalactiae,Streptococcus agalactiae 2603 (serotype V),sag
+Streptococcus agalactiae,Streptococcus agalactiae NEM316 (serotype III),san
+Streptococcus agalactiae,Streptococcus agalactiae A909 (serotype Ia),sak
+Streptococcus agalactiae,Streptococcus agalactiae GD201008-001 (serotype Ia),sgc
+Streptococcus agalactiae,Streptococcus agalactiae SA20-06,sags
+Streptococcus agalactiae,Streptococcus agalactiae 2-22 (serotype Ib),sagl
+Streptococcus agalactiae,Streptococcus agalactiae 09mas018883,sagm
+Streptococcus agalactiae,Streptococcus agalactiae ILRI005,sagi
+Streptococcus agalactiae,Streptococcus agalactiae ILRI112,sagr
+Streptococcus agalactiae,Streptococcus agalactiae 138P,sagp
+Streptococcus agalactiae,Streptococcus agalactiae 138spar,sagc
+Streptococcus agalactiae,Streptococcus agalactiae COH1,sagt
+Streptococcus agalactiae,Streptococcus agalactiae NGBS061,sage
+Streptococcus agalactiae,Streptococcus agalactiae NGBS572,sagg
+Streptococcus agalactiae,Streptococcus agalactiae CNCTC 10/84,sagn
+Vibrio cholerae,Vibrio cholerae O1 biovar El Tor N16961,vch
+Vibrio cholerae,Vibrio cholerae O1 biovar El Tor FJ147,vcf
+Vibrio cholerae,Vibrio cholerae O1 2010EL-1786,vce
+Vibrio cholerae,Vibrio cholerae MJ-1236,vcj
+Vibrio cholerae,Vibrio cholerae O395,vco
+Vibrio cholerae,Vibrio cholerae O395,vcr
+Vibrio cholerae,Vibrio cholerae M66-2,vcm
+Vibrio cholerae,Vibrio cholerae IEC224,vci
+Vibrio cholerae,Vibrio cholerae LMA3984-4,vcl
+Vibrio cholerae,Vibrio cholerae 2012EL-2176,vcq
+Vibrio cholerae,Vibrio cholerae MS6,vcs
+Vibrio cholerae,Vibrio cholerae 1154-74,vcx
+Vibrio cholerae,Vibrio cholerae 10432-62,vcz
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus N315 (MRSA/VSSA),sau
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus Mu50 (MRSA/VISA),sav
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus Mu3 (MRSA/hetero-VISA),saw
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus JH1 (MRSA/VSSA),sah
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus JH9 (MRSA/VRSA),saj
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus MW2 (CA-MRSA),sam
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus MSSA476 (MSSA),sas
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus MRSA252 (MRSA),sar
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus COL (MRSA),sac
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus USA300_TCH1516 (CA-MSSA),sax
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus USA300_FPR3757 (CA-MRSA),saa
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus NCTC8325,sao
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus Newman,sae
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus ED98,sad
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus M013 (CA-MRSA),suu
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus VC40,suv
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus ED133,sue
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus JKD6159 (CA-MRSA),suj
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus JKD6008 (MRSA/VISA),suk
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus ECT-R 2,suc
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus T0131 (MRSA),sut
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus TCH60,suq
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus 11819-97 (CA-MRSA),suz
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus 71193,sud
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus HO 5096 0412,sux
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus TW20 (MRSA),suw
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus ST398 (MRSA),sug
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus LGA251,suf
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus 55/2053,saua
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus 6850 (MSSA),saue
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus CN1 (CA-MRSA),saun
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus SA40 (CA-MRSA),saus
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus SA957 (CA-MRSA),sauu
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus SA268 (CA-MRSA),saug
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus Z172 (MRSA/VISA),sauz
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus ST228/10388 (MRSA),saut
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus ST228/10497 (MRSA),sauj
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus ST228/15532 (MRSA),sauk
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus ST228/16035 (MRSA),sauq
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus ST228/18412 (MRSA),sauv
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus ST228/16125 (MRSA),sauw
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus ST228/18341 (MRSA),saux
+Staphylococcus aureus,Staphylococcus aureus subsp. aureus ST228/18583 (MRSA),sauy
+Staphylococcus aureus,Staphylococcus aureus RF122,sab
+Staphylococcus aureus,Staphylococcus aureus 04-02981,suy
+Staphylococcus aureus,Staphylococcus aureus 08BA02176,saub
+Staphylococcus aureus,Staphylococcus aureus M1,saum
+Staphylococcus aureus,Staphylococcus aureus CA-347,sauc
+Staphylococcus aureus,Staphylococcus aureus Bmb9393,saur
+Staphylococcus aureus,Staphylococcus aureus USA300-ISMMS1,saui
+Staphylococcus aureus,Staphylococcus aureus 502A,saud
+Staphylococcus aureus,Staphylococcus aureus NRS 100,sauf
+Staphylococcus aureus,Staphylococcus aureus MS4,sams
+Clostridium botulinum,Clostridium botulinum A ATCC 3502,cbo
+Clostridium botulinum,Clostridium botulinum A ATCC 19397,cba
+Clostridium botulinum,Clostridium botulinum A Hall,cbh
+Clostridium botulinum,Clostridium botulinum A2,cby
+Clostridium botulinum,Clostridium botulinum A3 Loch Maree,cbl
+Clostridium botulinum,Clostridium botulinum B Eklund 17B (NRP),cbk
+Clostridium botulinum,Clostridium botulinum B1 Okra,cbb
+Clostridium botulinum,Clostridium botulinum Ba4,cbi
+Clostridium botulinum,Clostridium botulinum BKT015925,cbn
+Clostridium botulinum,Clostridium botulinum E3,cbt
+Clostridium botulinum,Clostridium botulinum F Langeland,cbf
+Clostridium botulinum,Clostridium botulinum F 230613,cbm
+Clostridium botulinum,Clostridium botulinum H04402 065,cbj
+Klebsiella pneumoniae,Klebsiella pneumoniae subsp. pneumoniae MGH 78578,kpn
+Klebsiella pneumoniae,Klebsiella pneumoniae subsp. pneumoniae NTUH-K2044,kpu
+Klebsiella pneumoniae,Klebsiella pneumoniae subsp. pneumoniae HS11286,kpm
+Klebsiella pneumoniae,Klebsiella pneumoniae subsp. pneumoniae 1084,kpp
+Klebsiella pneumoniae,Klebsiella pneumoniae subsp. pneumoniae KP5-1,kpk
+Klebsiella pneumoniae,Klebsiella pneumoniae subsp. pneumoniae KPNIH24,kph
+Klebsiella pneumoniae,Klebsiella pneumoniae subsp. pneumoniae KPNIH27,kpz
+Klebsiella pneumoniae,Klebsiella pneumoniae subsp. pneumoniae KPNIH29,kpv
+Klebsiella pneumoniae,Klebsiella pneumoniae subsp. pneumoniae KPNIH30,kpw
+Klebsiella pneumoniae,Klebsiella pneumoniae subsp. pneumoniae KPNIH31,kpy
+Klebsiella pneumoniae,Klebsiella pneumoniae subsp. pneumoniae KPNIH32,kpg
+Klebsiella pneumoniae,Klebsiella pneumoniae subsp. pneumoniae KPNIH10,kpc
+Klebsiella pneumoniae,Klebsiella pneumoniae subsp. pneumoniae KPR0928,kpq
+Klebsiella pneumoniae,Klebsiella pneumoniae subsp. pneumoniae ATCC 43816 KPPR1,kpt
+Klebsiella pneumoniae,Klebsiella pneumoniae 342,kpe
+Klebsiella pneumoniae,Klebsiella pneumoniae KCTC 2242,kpo
+Klebsiella pneumoniae,Klebsiella pneumoniae subsp. rhinoscleromatis SB3432,kpr
+Klebsiella pneumoniae,Klebsiella pneumoniae JM45,kpj
+Klebsiella pneumoniae,Klebsiella pneumoniae CG43,kpi
+Klebsiella pneumoniae,Klebsiella pneumoniae 30660/NJST258_1,kpa
+Klebsiella pneumoniae,Klebsiella pneumoniae 30684/NJST258_2,kps
+Klebsiella pneumoniae,Klebsiella pneumoniae PMK1,kpx
+Klebsiella pneumoniae,Klebsiella pneumoniae blaNDM-1,kpb
+Klebsiella pneumoniae,Klebsiella pneumoniae 32192,kpne
+Klebsiella pneumoniae,Klebsiella pneumoniae 34618,kpnu
+Klebsiella pneumoniae,Klebsiella pneumoniae Kp52.145,kpnk
+Corynebacterium diphtheriae,Corynebacterium diphtheriae NCTC 13129,cdi
+Corynebacterium diphtheriae,Corynebacterium diphtheriae 241,cdp
+Corynebacterium diphtheriae,Corynebacterium diphtheriae INCA 402,cdh
+Corynebacterium diphtheriae,Corynebacterium diphtheriae HC01,cdt
+Corynebacterium diphtheriae,Corynebacterium diphtheriae HC02,cde
+Corynebacterium diphtheriae,Corynebacterium diphtheriae HC03,cdr
+Corynebacterium diphtheriae,Corynebacterium diphtheriae HC04,cda
+Corynebacterium diphtheriae,Corynebacterium diphtheriae 31A,cdz
+Corynebacterium diphtheriae,Corynebacterium diphtheriae BH8,cdb
+Corynebacterium diphtheriae,Corynebacterium diphtheriae C7,cds
+Corynebacterium diphtheriae,Corynebacterium diphtheriae CDCE 8392,cdd
+Corynebacterium diphtheriae,Corynebacterium diphtheriae PW8,cdw
+Corynebacterium diphtheriae,Corynebacterium diphtheriae VA01,cdv
+Corynebacterium diphtheriae,Corynebacterium diphtheriae NCTC11397,cdip
+Lactococcus lactis,Lactococcus lactis subsp. lactis Il1403,lla
+Lactococcus lactis,Lactococcus lactis subsp. lactis KF147,llk
+Lactococcus lactis,Lactococcus lactis subsp. lactis CV56,llt
+Lactococcus lactis,Lactococcus lactis subsp. lactis IO-1,lls
+Lactococcus lactis,Lactococcus lactis subsp. lactis KLDS 4.0325,lld
+Lactococcus lactis,Lactococcus lactis subsp. lactis NCDO 2118,llx
+Lactococcus lactis,Lactococcus lactis subsp. cremoris SK11,llc
+Lactococcus lactis,Lactococcus lactis subsp. cremoris MG1363,llm
+Lactococcus lactis,Lactococcus lactis subsp. cremoris A76,llr
+Lactococcus lactis,Lactococcus lactis subsp. cremoris NZ9000,lln
+Lactococcus lactis,Lactococcus lactis subsp. cremoris UC509.9,lli
+Lactococcus lactis,Lactococcus lactis subsp. cremoris KW2,llw
+Lactococcus lactis,Lactococcus lactis AI06,llj
+Bacillus subtilis,Bacillus subtilis subsp. subtilis 168,bsu
+Bacillus subtilis,Bacillus subtilis subsp. subtilis RO-NN-1,bsr
+Bacillus subtilis,Bacillus subtilis subsp. subtilis BSP1,bsl
+Bacillus subtilis,Bacillus subtilis subsp. subtilis 6051-HGW,bsh
+Bacillus subtilis,Bacillus subtilis subsp. subtilis BAB-1,bsy
+Bacillus subtilis,Bacillus subtilis subsp. subtilis AG1839,bsut
+Bacillus subtilis,Bacillus subtilis subsp. subtilis JH642,bsul
+Bacillus subtilis,Bacillus subtilis subsp. subtilis OH 131.1,bsus
+Bacillus subtilis,Bacillus subtilis subsp. spizizenii W23,bss
+Bacillus subtilis,Bacillus subtilis subsp. spizizenii TU-B-10,bst
+Bacillus subtilis,Bacillus subtilis subsp. natto BEST195,bso
+Bacillus subtilis,Bacillus subtilis BSn5,bsn
+Bacillus subtilis,Bacillus subtilis QB928,bsq
+Bacillus subtilis,Bacillus subtilis XF-1,bsx
+Bacillus subtilis,Bacillus subtilis PY79,bsp
+Bacillus thuringiensis,Bacillus thuringiensis serovar konkukian 97-27,btk
+Bacillus thuringiensis,Bacillus thuringiensis Al Hakam,btl
+Bacillus thuringiensis,Bacillus thuringiensis BMB171,btb
+Bacillus thuringiensis,Bacillus thuringiensis serovar kurstaki HD73,btt
+Bacillus thuringiensis,Bacillus thuringiensis serovar kurstaki YBT-1520,bthr
+Bacillus thuringiensis,Bacillus thuringiensis serovar kurstaki HD-1,bthi
+Bacillus thuringiensis,Bacillus thuringiensis serovar chinensis CT-43,btc
+Bacillus thuringiensis,Bacillus thuringiensis serovar finitimus YBT-020,btf
+Bacillus thuringiensis,Bacillus thuringiensis MC28,btm
+Bacillus thuringiensis,Bacillus thuringiensis Bt407,btg
+Bacillus thuringiensis,Bacillus thuringiensis HD-771,bti
+Bacillus thuringiensis,Bacillus thuringiensis HD-789,btn
+Bacillus thuringiensis,Bacillus thuringiensis serovar thuringiensis IS5056,btht
+Bacillus thuringiensis,Bacillus thuringiensis YBT-1518,bthu
+Bacillus thuringiensis,Bacillus thuringiensis HD1011,btw
+Bacillus thuringiensis,Bacillus thuringiensis YWC2-8,bthy
+Brucella suis,Brucella suis 1330,bms
+Brucella suis,Brucella suis 1330,bsi
+Brucella suis,Brucella suis bv. 1,bsf
+Brucella suis,Brucella suis bv. 2 Bs143CITA,bsui
+Brucella suis,Brucella suis bv. 2 PT09143,bsup
+Brucella suis,Brucella suis bv. 2 PT09172,bsuv
+Brucella suis,Brucella suis bv. 2 Bs364CITA,bsuc
+Brucella suis,Brucella suis ATCC 23445,bmt
+Brucella suis,Brucella suis bv. 3,bsz
+Brucella suis,Brucella suis VBI22,bsv
+Brucella suis,Brucella suis ZW043,bsw
+Brucella suis,Brucella suis ZW046,bsg
+Bacillus velezensis,Bacillus velezensis FZB42,bay
+Bacillus velezensis,Bacillus velezensis CAU B946,baq
+Bacillus velezensis,Bacillus velezensis YAU B9601-Y2,bya
+Bacillus velezensis,Bacillus velezensis AS43.3,bamp
+Bacillus velezensis,Bacillus velezensis UCMB5036,baml
+Bacillus velezensis,Bacillus velezensis UCMB5033,bama
+Bacillus velezensis,Bacillus velezensis UCMB5113,bamn
+Bacillus velezensis,Bacillus velezensis NAU-B3,bamb
+Bacillus velezensis,Bacillus velezensis TrigoCor1448,bamt
+Bacillus velezensis,Bacillus velezensis SQR9,bamy
+Bacillus velezensis,Bacillus velezensis,bmp
+Burkholderia mallei,Burkholderia mallei ATCC 23344,bma
+Burkholderia mallei,Burkholderia mallei SAVP1,bmv
+Burkholderia mallei,Burkholderia mallei NCTC 10229,bml
+Burkholderia mallei,Burkholderia mallei NCTC 10247,bmn
+Burkholderia mallei,Burkholderia mallei 23344,bmal
+Burkholderia mallei,Burkholderia mallei 6,bmae
+Burkholderia mallei,Burkholderia mallei BMQ,bmaq
+Burkholderia mallei,Burkholderia mallei 2000031063,bmai
+Burkholderia mallei,Burkholderia mallei FMH 23344,bmaf
+Burkholderia mallei,Burkholderia mallei 092700E,bmaz
+Burkholderia mallei,Burkholderia mallei 2002734299,bmab
+Mycoplasma gallisepticum,Mycoplasma gallisepticum R(low),mga
+Mycoplasma gallisepticum,Mycoplasma gallisepticum R(high),mgh
+Mycoplasma gallisepticum,Mycoplasma gallisepticum F,mgf
+Mycoplasma gallisepticum,Mycoplasma gallisepticum NC06_2006.080-5-2P,mgn
+Mycoplasma gallisepticum,Mycoplasma gallisepticum NC95_13295-2-2P,mgs
+Mycoplasma gallisepticum,Mycoplasma gallisepticum NY01_2001.047-5-1P,mgt
+Mycoplasma gallisepticum,Mycoplasma gallisepticum VA94_7994-1-7P,mgv
+Mycoplasma gallisepticum,Mycoplasma gallisepticum WI01_2001.043-13-2P,mgw
+Mycoplasma gallisepticum,Mycoplasma gallisepticum CA06_2006.052-5-2P,mgac
+Mycoplasma gallisepticum,Mycoplasma gallisepticum NC08_2008.031-4-3P,mgan
+Mycoplasma gallisepticum,Mycoplasma gallisepticum NC96_1596-4-2P,mgnc
+Mycoplasma gallisepticum,Mycoplasma gallisepticum S6,mgz
+Xanthomonas citri,Xanthomonas citri pv. citri 306,xac
+Xanthomonas citri,Xanthomonas citri subsp. citri Aw12879,xci
+Xanthomonas citri,Xanthomonas citri subsp. citri A306,xct
+Xanthomonas citri,Xanthomonas citri subsp. citri UI7,xcu
+Xanthomonas citri,Xanthomonas citri subsp. citri NT17,xcn
+Xanthomonas citri,Xanthomonas citri subsp. citri MN10,xcw
+Xanthomonas citri,Xanthomonas citri subsp. citri MN11,xcr
+Xanthomonas citri,Xanthomonas citri subsp. citri MN12,xcm
+Xanthomonas citri,Xanthomonas citri subsp. citri mf20,xcf
+Xanthomonas citri,Xanthomonas citri subsp. citri UI6,xcj
+Xanthomonas citri,Xanthomonas citri pv. fuscans,xfu
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Typhi CT18,sty
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Typhi Ty2,stt
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Typhi P-stx-12,sex
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Typhi Ty21a,sent
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Typhimurium LT2,stm
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Typhimurium 14028S,seo
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Typhimurium D23580,sev
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Typhimurium SL1344,sey
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Typhimurium T000240,sem
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Typhimurium UK-1,sej
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Typhimurium ST4/74,seb
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Typhimurium 798,sef
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Typhimurium U288,setu
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Typhimurium var. 5- CFSAN001921,setc
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Typhimurium DT2,senr
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Typhimurium DT104,send
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Typhimurium 138736,seni
+Salmonella enterica,"Salmonella enterica subsp. enterica serovar 4,[5],12:i:- str. 08-1736",seen
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Paratyphi A ATCC9150,spt
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Paratyphi A AKU12601,sek
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Paratyphi B,spq
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Paratyphi C,sei
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Choleraesuis,sec
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Heidelberg SL476,seh
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Heidelberg B182,shb
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Heidelberg CFSAN002069,senh
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Heidelberg 41578,seeh
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Newport SL254,see
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Newport USMARC-S3124.1,senn
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Schwarzengrund,sew
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Agona SL483,sea
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Agona 24249,sens
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Dublin,sed
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Gallinarum 287/91,seg
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Gallinarum/pullorum RKS5078,sel
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Gallinarum/pullorum CDC1983-67,sega
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Enteritidis P125109,set
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Enteritidis EC20090135,sena
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Enteritidis EC20090193,seno
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Enteritidis EC20090332,senv
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Enteritidis EC20090531,senq
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Enteritidis OLF-SE1-1019-1,senl
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Javiana,senj
+Salmonella enterica,Salmonella enterica subsp. enterica Serovar Cubana,seec
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Bareilly,seeb
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Pullorum,seep
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Bovismorbificans,senb
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Thompson,sene
+Salmonella enterica,Salmonella enterica subsp. enterica serovar Tennessee,senc
+Salmonella enterica,Salmonella enterica subsp. arizonae,ses
+Bifidobacterium animalis,Bifidobacterium animalis subsp. lactis AD011,bla
+Bifidobacterium animalis,Bifidobacterium animalis subsp. lactis Bl-04,blc
+Bifidobacterium animalis,Bifidobacterium animalis subsp. lactis DSM 10140,blt
+Bifidobacterium animalis,Bifidobacterium animalis subsp. lactis BB-12,bbb
+Bifidobacterium animalis,Bifidobacterium animalis subsp. lactis BLC1,bbc
+Bifidobacterium animalis,Bifidobacterium animalis subsp. lactis CNCM I-2494,bnm
+Bifidobacterium animalis,Bifidobacterium animalis subsp. lactis V9,blv
+Bifidobacterium animalis,Bifidobacterium animalis subsp. lactis B420,blw
+Bifidobacterium animalis,Bifidobacterium animalis subsp. lactis Bi-07,bls
+Bifidobacterium animalis,Bifidobacterium animalis subsp. lactis Bl12,bani
+Bifidobacterium animalis,Bifidobacterium animalis subsp. lactis ATCC 27673,banl
+Bifidobacterium animalis,Bifidobacterium animalis subsp. animalis ATCC 25527,bni
+Bifidobacterium animalis,Bifidobacterium animalis RH,banm
+Treponema pallidum,Treponema pallidum subsp. pallidum Nichols,tpa
+Treponema pallidum,Treponema pallidum subsp. pallidum Nichols,tpw
+Treponema pallidum,Treponema pallidum subsp. pallidum SS14,tpp
+Treponema pallidum,Treponema pallidum subsp. pallidum DAL-1,tpu
+Treponema pallidum,Treponema pallidum subsp. pallidum Chicago,tph
+Treponema pallidum,Treponema pallidum subsp. pallidum Mexico A,tpo
+Treponema pallidum,Treponema pallidum subsp. pallidum Sea 81-4,tpas
+Treponema pallidum,Treponema pallidum subsp. pertenue CDC2,tpc
+Treponema pallidum,Treponema pallidum subsp. pertenue Gauthier,tpg
+Treponema pallidum,Treponema pallidum subsp. pertenue SamoaD,tpm
+Treponema pallidum,Treponema pallidum Fribourg-Blanc,tpb
+Acinetobacter baumannii,Acinetobacter baumannii ATCC 17978,acb
+Acinetobacter baumannii,Acinetobacter baumannii SDF,abm
+Acinetobacter baumannii,Acinetobacter baumannii AYE,aby
+Acinetobacter baumannii,Acinetobacter baumannii ACICU,abc
+Acinetobacter baumannii,Acinetobacter baumannii AB0057,abn
+Acinetobacter baumannii,Acinetobacter baumannii AB307-0294,abb
+Acinetobacter baumannii,Acinetobacter baumannii 1656-2,abx
+Acinetobacter baumannii,Acinetobacter baumannii MDR-ZJ06,abz
+Acinetobacter baumannii,Acinetobacter baumannii MDR-TJ,abr
+Acinetobacter baumannii,Acinetobacter baumannii TCDC-AB0715,abd
+Acinetobacter baumannii,Acinetobacter baumannii TYTH-1,abh
+Acinetobacter baumannii,Acinetobacter baumannii D1279779,abad
+Acinetobacter baumannii,Acinetobacter baumannii BJAB07104,abj
+Acinetobacter baumannii,Acinetobacter baumannii BJAB0715,abab
+Acinetobacter baumannii,Acinetobacter baumannii BJAB0868,abaj
+Acinetobacter baumannii,Acinetobacter baumannii ZW85-1,abaz
+Acinetobacter baumannii,Acinetobacter baumannii AbH12O-A2,abk
+Acinetobacter baumannii,Acinetobacter baumannii AB030,abau
+Acinetobacter baumannii,Acinetobacter baumannii AB031,abaa
+Acinetobacter baumannii,Acinetobacter baumannii AC29,abw
+Acinetobacter baumannii,Acinetobacter baumannii LAC-4,abal
+Burkholderia pseudomallei,Burkholderia pseudomallei K96243,bps
+Burkholderia pseudomallei,Burkholderia pseudomallei 1710b,bpm
+Burkholderia pseudomallei,Burkholderia pseudomallei 1106a,bpl
+Burkholderia pseudomallei,Burkholderia pseudomallei 668,bpd
+Burkholderia pseudomallei,Burkholderia pseudomallei MSHR346,bpr
+Burkholderia pseudomallei,Burkholderia pseudomallei MSHR305,bpse
+Burkholderia pseudomallei,Burkholderia pseudomallei MSHR511,bpsm
+Burkholderia pseudomallei,Burkholderia pseudomallei MSHR146,bpsu
+Burkholderia pseudomallei,Burkholderia pseudomallei MSHR520,bpsd
+Burkholderia pseudomallei,Burkholderia pseudomallei 1026b,bpz
+Burkholderia pseudomallei,Burkholderia pseudomallei BPC006,bpq
+Burkholderia pseudomallei,Burkholderia pseudomallei NCTC 13179,bpk
+Burkholderia pseudomallei,Burkholderia pseudomallei HBPUB10134a,bpsh
+Burkholderia pseudomallei,Burkholderia pseudomallei NAU35A-3,bpsa
+Burkholderia pseudomallei,Burkholderia pseudomallei A79A,bpso
+Burkholderia pseudomallei,Burkholderia pseudomallei TSV202,but
+Streptococcus suis,Streptococcus suis BM407,ssb
+Streptococcus suis,Streptococcus suis 05ZYH33,ssu
+Streptococcus suis,Streptococcus suis 98HAH33,ssv
+Streptococcus suis,Streptococcus suis P1/7,ssi
+Streptococcus suis,Streptococcus suis SC84,sss
+Streptococcus suis,Streptococcus suis ST3,sst
+Streptococcus suis,Streptococcus suis A7,ssf
+Streptococcus suis,Streptococcus suis D12,ssk
+Streptococcus suis,Streptococcus suis D9,ssq
+Streptococcus suis,Streptococcus suis GZ1,ssw
+Streptococcus suis,Streptococcus suis JS14,sui
+Streptococcus suis,Streptococcus suis SS12,suo
+Streptococcus suis,Streptococcus suis ST1,srp
+Streptococcus suis,Streptococcus suis S735,sup
+Streptococcus suis,Streptococcus suis SC070731,ssus
+Streptococcus suis,Streptococcus suis TL13,ssut
+Streptococcus suis,Streptococcus suis T15,ssui
+Streptococcus suis,Streptococcus suis YB51,ssuy
+Campylobacter jejuni,Campylobacter jejuni subsp. jejuni NCTC 11168 = ATCC 700819,cje
+Campylobacter jejuni,Campylobacter jejuni subsp. jejuni NCTC 11168-BN148,cjb
+Campylobacter jejuni,Campylobacter jejuni subsp. jejuni 81-176,cjj
+Campylobacter jejuni,Campylobacter jejuni subsp. jejuni 81116,cju
+Campylobacter jejuni,Campylobacter jejuni subsp. jejuni ICDCCJ07001,cjn
+Campylobacter jejuni,Campylobacter jejuni subsp. jejuni IA3902,cji
+Campylobacter jejuni,Campylobacter jejuni subsp. jejuni M1,cjm
+Campylobacter jejuni,Campylobacter jejuni subsp. jejuni S3,cjs
+Campylobacter jejuni,Campylobacter jejuni subsp. jejuni PT14,cjp
+Campylobacter jejuni,Campylobacter jejuni subsp. jejuni 00-2426,cjej
+Campylobacter jejuni,Campylobacter jejuni subsp. jejuni 00-2538,cjeu
+Campylobacter jejuni,Campylobacter jejuni subsp. jejuni 00-2544,cjen
+Campylobacter jejuni,Campylobacter jejuni subsp. jejuni 00-2425,cjei
+Campylobacter jejuni,Campylobacter jejuni subsp. jejuni R14,cjer
+Campylobacter jejuni,Campylobacter jejuni subsp. jejuni MTVDSCj20,cjv
+Campylobacter jejuni,Campylobacter jejuni subsp. jejuni YH001,cjy
+Campylobacter jejuni,Campylobacter jejuni subsp. jejuni 35925B2,cjq
+Campylobacter jejuni,Campylobacter jejuni subsp. jejuni 00-1597,cjl
+Campylobacter jejuni,Campylobacter jejuni subsp. jejuni 00-6200,cjw
+Campylobacter jejuni,Campylobacter jejuni RM1221,cjr
+Campylobacter jejuni,Campylobacter jejuni subsp. doylei 269.97,cjd
+Campylobacter jejuni,Campylobacter jejuni 32488,cjz
+Campylobacter jejuni,Campylobacter jejuni 4031,cjx
+Chlamydia psittaci,Chlamydia psittaci 6BC,chp
+Chlamydia psittaci,Chlamydia psittaci 6BC,chb
+Chlamydia psittaci,Chlamydia psittaci 01DC11,chs
+Chlamydia psittaci,Chlamydia psittaci 02DC15,chi
+Chlamydia psittaci,Chlamydia psittaci 08DC60,cht
+Chlamydia psittaci,Chlamydia psittaci C19/98,chc
+Chlamydia psittaci,Chlamydia psittaci RD1,chr
+Chlamydia psittaci,Chlamydia psittaci CP3,cpsc
+Chlamydia psittaci,Chlamydia psittaci NJ1,cpsn
+Chlamydia psittaci,Chlamydia psittaci 84/55,cpsb
+Chlamydia psittaci,Chlamydia psittaci GR9,cpsg
+Chlamydia psittaci,Chlamydia psittaci M56,cpsm
+Chlamydia psittaci,Chlamydia psittaci MN,cpsi
+Chlamydia psittaci,Chlamydia psittaci VS225,cpsv
+Chlamydia psittaci,Chlamydia psittaci WC,cpsw
+Chlamydia psittaci,Chlamydia psittaci WS/RT/E30,cpst
+Chlamydia psittaci,Chlamydia psittaci 01DC12,cpsd
+Chlamydia psittaci,Chlamydia psittaci Mat116,cpsa
+Chlamydia trachomatis,Chlamydia trachomatis D/UW-3/CX,ctr
+Chlamydia trachomatis,Chlamydia trachomatis D-EC,ctd
+Chlamydia trachomatis,Chlamydia trachomatis D-LC,ctf
+Chlamydia trachomatis,Chlamydia trachomatis D/SotonD1,ctrd
+Chlamydia trachomatis,Chlamydia trachomatis D/SotonD5,ctro
+Chlamydia trachomatis,Chlamydia trachomatis D/SotonD6,ctrt
+Chlamydia trachomatis,Chlamydia trachomatis A/HAR-13,cta
+Chlamydia trachomatis,Chlamydia trachomatis A2497,cty
+Chlamydia trachomatis,Chlamydia trachomatis A2497,cra
+Chlamydia trachomatis,Chlamydia trachomatis A/363,ctrq
+Chlamydia trachomatis,Chlamydia trachomatis A/5291,ctrx
+Chlamydia trachomatis,Chlamydia trachomatis A/7249,ctrz
+Chlamydia trachomatis,Chlamydia trachomatis L1/1322/p2,ctrp
+Chlamydia trachomatis,Chlamydia trachomatis L1/115,ctlj
+Chlamydia trachomatis,Chlamydia trachomatis L1/224,ctlx
+Chlamydia trachomatis,Chlamydia trachomatis L1/440/LN,ctll
+Chlamydia trachomatis,Chlamydia trachomatis L2/434/Bu,ctb
+Chlamydia trachomatis,Chlamydia trachomatis L2/25667R,ctrr
+Chlamydia trachomatis,Chlamydia trachomatis L2/434/Bu(f),ctlf
+Chlamydia trachomatis,Chlamydia trachomatis L2/434/Bu(i),ctli
+Chlamydia trachomatis,Chlamydia trachomatis L2b/UCH-1/proctitis,ctl
+Chlamydia trachomatis,Chlamydia trachomatis L2b/UCH-2,ctru
+Chlamydia trachomatis,Chlamydia trachomatis L2b/LST,ctrl
+Chlamydia trachomatis,Chlamydia trachomatis L2b/CV204,ctrv
+Chlamydia trachomatis,Chlamydia trachomatis L2b/Ams1,ctrm
+Chlamydia trachomatis,Chlamydia trachomatis L2b/Ams2,ctla
+Chlamydia trachomatis,Chlamydia trachomatis L2b/Ams3,ctlm
+Chlamydia trachomatis,Chlamydia trachomatis L2b/Ams4,ctls
+Chlamydia trachomatis,Chlamydia trachomatis L2b/Ams5,ctlz
+Chlamydia trachomatis,Chlamydia trachomatis L2b/Canada1,ctlc
+Chlamydia trachomatis,Chlamydia trachomatis L2b/Canada2,ctln
+Chlamydia trachomatis,Chlamydia trachomatis L2b/795,ctlb
+Chlamydia trachomatis,Chlamydia trachomatis L2b/8200/07,ctlq
+Chlamydia trachomatis,Chlamydia trachomatis L2c,cto
+Chlamydia trachomatis,Chlamydia trachomatis L3/404/LN,ctrn
+Chlamydia trachomatis,Chlamydia trachomatis B/Jali20/OT,ctj
+Chlamydia trachomatis,Chlamydia trachomatis B/TZ1A828/OT,ctz
+Chlamydia trachomatis,Chlamydia trachomatis E/11023,ctg
+Chlamydia trachomatis,Chlamydia trachomatis E/150,ctk
+Chlamydia trachomatis,Chlamydia trachomatis Sweden2,csw
+Chlamydia trachomatis,Chlamydia trachomatis E/SW3,ces
+Chlamydia trachomatis,Chlamydia trachomatis E/Bour,ctrb
+Chlamydia trachomatis,Chlamydia trachomatis E/SotonE4,ctre
+Chlamydia trachomatis,Chlamydia trachomatis E/SotonE8,ctrs
+Chlamydia trachomatis,Chlamydia trachomatis E/C599,ctec
+Chlamydia trachomatis,Chlamydia trachomatis F/SW4,cfs
+Chlamydia trachomatis,Chlamydia trachomatis F/SW5,cfw
+Chlamydia trachomatis,Chlamydia trachomatis F/SWFPminus,ctfw
+Chlamydia trachomatis,Chlamydia trachomatis F/SotonF3,ctrf
+Chlamydia trachomatis,Chlamydia trachomatis F/11-96,ctch
+Chlamydia trachomatis,Chlamydia trachomatis G/11074,ctn
+Chlamydia trachomatis,Chlamydia trachomatis G/11222,ctq
+Chlamydia trachomatis,Chlamydia trachomatis G/9301,ctv
+Chlamydia trachomatis,Chlamydia trachomatis G/9768,ctw
+Chlamydia trachomatis,Chlamydia trachomatis G/SotonG1,ctrg
+Chlamydia trachomatis,Chlamydia trachomatis IU824,ctri
+Chlamydia trachomatis,Chlamydia trachomatis IU888,ctra
+Chlamydia trachomatis,Chlamydia trachomatis Ia/SotonIa1,ctrh
+Chlamydia trachomatis,Chlamydia trachomatis Ia/SotonIa3,ctrj
+Chlamydia trachomatis,Chlamydia trachomatis K/SotonK1,ctrk
+Chlamydia trachomatis,Chlamydia trachomatis J/6276tet1,ctjt
+Chlamydia trachomatis,Chlamydia trachomatis RC-F/69,ctcf
+Chlamydia trachomatis,Chlamydia trachomatis RC-F(s)/342,ctfs
+Chlamydia trachomatis,Chlamydia trachomatis RC-F(s)/852,cthf
+Chlamydia trachomatis,Chlamydia trachomatis RC-J/943,ctcj
+Chlamydia trachomatis,Chlamydia trachomatis RC-J/953,cthj
+Chlamydia trachomatis,Chlamydia trachomatis RC-J/966,ctmj
+Chlamydia trachomatis,Chlamydia trachomatis RC-J/971,cttj
+Chlamydia trachomatis,Chlamydia trachomatis RC-J(s)/122,ctjs
+Chlamydia trachomatis,Chlamydia trachomatis RC-L2/55,ctrc
+Chlamydia trachomatis,Chlamydia trachomatis RC-L2(s)/3,ctrw
+Chlamydia trachomatis,Chlamydia trachomatis RC-L2(s)/46,ctry
+Chlamydia trachomatis,Chlamydia trachomatis C/TW-3,ctct
+Mycobacterium tuberculosis,Mycobacterium tuberculosis H37Rv,mtu
+Mycobacterium tuberculosis,Mycobacterium tuberculosis H37Rv,mtv
+Mycobacterium tuberculosis,Mycobacterium tuberculosis CDC1551,mtc
+Mycobacterium tuberculosis,Mycobacterium tuberculosis H37Ra,mra
+Mycobacterium tuberculosis,Mycobacterium tuberculosis F11,mtf
+Mycobacterium tuberculosis,Mycobacterium tuberculosis KZN 1435,mtb
+Mycobacterium tuberculosis,Mycobacterium tuberculosis KZN 4207,mtk
+Mycobacterium tuberculosis,Mycobacterium tuberculosis KZN 605,mtz
+Mycobacterium tuberculosis,Mycobacterium tuberculosis RGTB327,mtg
+Mycobacterium tuberculosis,Mycobacterium tuberculosis RGTB423,mti
+Mycobacterium tuberculosis,Mycobacterium tuberculosis CCDC5079,mte
+Mycobacterium tuberculosis,Mycobacterium tuberculosis CCDC5079,mtur
+Mycobacterium tuberculosis,Mycobacterium tuberculosis CCDC5180,mtl
+Mycobacterium tuberculosis,Mycobacterium tuberculosis CTRI-2,mto
+Mycobacterium tuberculosis,Mycobacterium tuberculosis UT205,mtd
+Mycobacterium tuberculosis,Mycobacterium tuberculosis Erdman = ATCC 35801,mtn
+Mycobacterium tuberculosis,Mycobacterium tuberculosis Beijing/NITR203,mtj
+Mycobacterium tuberculosis,Mycobacterium tuberculosis 7199-99,mtub
+Mycobacterium tuberculosis,Mycobacterium tuberculosis CAS/NITR204,mtuc
+Mycobacterium tuberculosis,Mycobacterium tuberculosis EAI5/NITR206,mtue
+Mycobacterium tuberculosis,Mycobacterium tuberculosis EAI5,mtx
+Mycobacterium tuberculosis,Mycobacterium tuberculosis Haarlem/NITR202,mtuh
+Mycobacterium tuberculosis,Mycobacterium tuberculosis Haarlem,mtul
+Mycobacterium tuberculosis,Mycobacterium tuberculosis BT1,mtut
+Mycobacterium tuberculosis,Mycobacterium tuberculosis BT2,mtuu
+Mycobacterium tuberculosis,Mycobacterium tuberculosis HKBS1,mtq
+Bacillus cereus,Bacillus cereus ATCC 14579,bce
+Bacillus cereus,Bacillus cereus ATCC 10987,bca
+Bacillus cereus,Bacillus cereus E33L,bcz
+Bacillus cereus,Bacillus cereus AH187,bcr
+Bacillus cereus,Bacillus cereus B4264,bcb
+Bacillus cereus,Bacillus cereus AH820,bcu
+Bacillus cereus,Bacillus cereus G9842,bcg
+Bacillus cereus,Bacillus cereus Q1,bcq
+Bacillus cereus,Bacillus cereus 03BB102,bcx
+Bacillus cereus,Bacillus cereus biovar anthracis CI,bal
+Bacillus cereus,Bacillus cereus NC7401,bnc
+Bacillus cereus,Bacillus cereus F837/76,bcf
+Bacillus cereus,Bacillus cereus FRI-35,bcer
+Bacillus cereus,Bacillus cereus FT9,bcef
+Haemophilus influenzae,Haemophilus influenzae Rd KW20 (serotype d),hin
+Haemophilus influenzae,Haemophilus influenzae 86-028NP (nontypeable),hit
+Haemophilus influenzae,Haemophilus influenzae PittEE (nontypeable),hip
+Haemophilus influenzae,Haemophilus influenzae PittGG (nontypeable),hiq
+Haemophilus influenzae,Haemophilus influenzae F3031 (nontypeable),hif
+Haemophilus influenzae,Haemophilus influenzae F3047 (nontypeable),hil
+Haemophilus influenzae,Haemophilus influenzae 10810 (serotype b),hiu
+Haemophilus influenzae,Haemophilus influenzae R2846 (nontypeable),hie
+Haemophilus influenzae,Haemophilus influenzae R2866 (nontypeable),hiz
+Haemophilus influenzae,Haemophilus influenzae KR494 (serotype f),hik
+Haemophilus influenzae,Haemophilus influenzae CGSHiCZ412602,hia
+Haemophilus influenzae,Haemophilus influenzae Hi375,hih
+Haemophilus influenzae,Haemophilus influenzae 477,hiw
+Haemophilus influenzae,Haemophilus influenzae C486,hic
+Haemophilus influenzae,Haemophilus influenzae 723,hix
+Pseudomonas aeruginosa,Pseudomonas aeruginosa PAO1,pae
+Pseudomonas aeruginosa,Pseudomonas aeruginosa PAO1-VE13,paev
+Pseudomonas aeruginosa,Pseudomonas aeruginosa PAO1-VE2,paei
+Pseudomonas aeruginosa,Pseudomonas aeruginosa UCBPP-PA14,pau
+Pseudomonas aeruginosa,Pseudomonas aeruginosa PA7,pap
+Pseudomonas aeruginosa,Pseudomonas aeruginosa LESB58,pag
+Pseudomonas aeruginosa,Pseudomonas aeruginosa M18,paf
+Pseudomonas aeruginosa,Pseudomonas aeruginosa NCGM2.S1,pnc
+Pseudomonas aeruginosa,Pseudomonas aeruginosa NCGM 1900,paeb
+Pseudomonas aeruginosa,Pseudomonas aeruginosa DK2,pdk
+Pseudomonas aeruginosa,Pseudomonas aeruginosa B136-33,psg
+Pseudomonas aeruginosa,Pseudomonas aeruginosa RP73,prp
+Pseudomonas aeruginosa,Pseudomonas aeruginosa PA1,paep
+Pseudomonas aeruginosa,Pseudomonas aeruginosa PA1R,paer
+Pseudomonas aeruginosa,Pseudomonas aeruginosa MTB-1,paem
+Pseudomonas aeruginosa,Pseudomonas aeruginosa LES431,pael
+Pseudomonas aeruginosa,Pseudomonas aeruginosa SCV20265,paes
+Pseudomonas aeruginosa,Pseudomonas aeruginosa PA38182,paeu
+Pseudomonas aeruginosa,Pseudomonas aeruginosa YL84,paeg
+Pseudomonas aeruginosa,Pseudomonas aeruginosa c7447m,paec
+Pseudomonas aeruginosa,Pseudomonas aeruginosa PAO581,paeo
+Francisella tularensis,Francisella tularensis subsp. tularensis SCHU S4,ftu
+Francisella tularensis,Francisella tularensis subsp. tularensis SCHU S4 NR-28534,ftq
+Francisella tularensis,Francisella tularensis subsp. tularensis FSC198,ftf
+Francisella tularensis,Francisella tularensis subsp. tularensis WY96-3418,ftw
+Francisella tularensis,Francisella tularensis subsp. tularensis NE061598,ftr
+Francisella tularensis,Francisella tularensis subsp. tularensis TI0902,ftt
+Francisella tularensis,Francisella tularensis subsp. tularensis WY96,fty
+Francisella tularensis,Francisella tularensis subsp. tularensis TIGB03,ftg
+Francisella tularensis,Francisella tularensis subsp. holarctica LVS,ftl
+Francisella tularensis,Francisella tularensis subsp. holarctica OSU18,fth
+Francisella tularensis,Francisella tularensis subsp. holarctica FTNF002-00,fta
+Francisella tularensis,Francisella tularensis subsp. holarctica F92,fts
+Francisella tularensis,Francisella tularensis subsp. holarctica FSC200,fti
+Francisella tularensis,Francisella tularensis subsp. holarctica PHIT-FT049,fto
+Francisella tularensis,Francisella tularensis subsp. holarctica FTT_1,ftc
+Francisella tularensis,Francisella tularensis subsp. holarctica VT68,ftv
+Francisella tularensis,Francisella tularensis subsp. holarctica 425,ftz
+Francisella tularensis,Francisella tularensis subsp. mediasiatica FSC147,ftm
+Francisella tularensis,Francisella tularensis subsp. novicida U112,ftn
+Francisella tularensis,Francisella tularensis subsp. novicida U112,ftx
+Francisella tularensis,Francisella tularensis subsp. novicida F6168,ftd
+Francisella tularensis,Francisella cf. novicida Fx1,fcf
+Francisella tularensis,Francisella cf. tularensis subsp. novicida 3523,fcn
+Brucella abortus,Brucella abortus 2308,bmf
+Brucella abortus,Brucella abortus bv. 1 9-941,bmb
+Brucella abortus,Brucella abortus S19,bmc
+Brucella abortus,Brucella abortus A13334,baa
+Brucella abortus,Brucella abortus bv. 2 86/8/59,babo
+Brucella abortus,Brucella abortus bv. 6 870,babr
+Brucella abortus,Brucella abortus 63 75,babt
+Brucella abortus,Brucella abortus BDW,babb
+Brucella abortus,Brucella abortus bv. 9 C68,babu
+Brucella abortus,Brucella abortus BER,babs
+Brucella abortus,Brucella abortus NCTC 10505,babc
+Listeria monocytogenes,Listeria monocytogenes EGD-e,lmo
+Listeria monocytogenes,Listeria monocytogenes F2365,lmf
+Listeria monocytogenes,Listeria monocytogenes HCC23,lmh
+Listeria monocytogenes,Listeria monocytogenes CLIP 80459,lmc
+Listeria monocytogenes,Listeria monocytogenes 08-5578,lmn
+Listeria monocytogenes,Listeria monocytogenes 08-5923,lmy
+Listeria monocytogenes,Listeria monocytogenes 10403S,lmt
+Listeria monocytogenes,Listeria monocytogenes FSL R2-561,lmg
+Listeria monocytogenes,Listeria monocytogenes Finland 1998,lms
+Listeria monocytogenes,Listeria monocytogenes J0161,lmj
+Listeria monocytogenes,Listeria monocytogenes M7,lmq
+Listeria monocytogenes,Listeria monocytogenes L99,lml
+Listeria monocytogenes,Listeria monocytogenes 07PF0776,lmp
+Listeria monocytogenes,Listeria monocytogenes SLCC2755,lmw
+Listeria monocytogenes,Listeria monocytogenes SLCC2372,lmx
+Listeria monocytogenes,Listeria monocytogenes serotype 7 SLCC2482,lmz
+Listeria monocytogenes,Listeria monocytogenes SLCC2376,lmon
+Listeria monocytogenes,Listeria monocytogenes SLCC5850,lmoc
+Listeria monocytogenes,Listeria monocytogenes SLCC7179,lmos
+Listeria monocytogenes,Listeria monocytogenes SLCC2378,lmoo
+Listeria monocytogenes,Listeria monocytogenes SLCC2479,lmoy
+Listeria monocytogenes,Listeria monocytogenes SLCC2540,lmot
+Listeria monocytogenes,Listeria monocytogenes ATCC 19117,lmoa
+Listeria monocytogenes,Listeria monocytogenes L312,lmol
+Listeria monocytogenes,Listeria monocytogenes serotype 4b LL195,lmog
+Listeria monocytogenes,Listeria monocytogenes La111,lmoe
+Listeria monocytogenes,Listeria monocytogenes N53-1,lmob
+Listeria monocytogenes,Listeria monocytogenes J1-220,lmoj
+Listeria monocytogenes,Listeria monocytogenes J1816,lmoz
+Listeria monocytogenes,Listeria monocytogenes EGD,lmod
+Listeria monocytogenes,Listeria monocytogenes WSLC1001,lmow
+Listeria monocytogenes,Listeria monocytogenes WSLC1042,lmox
+Listeria monocytogenes,Listeria monocytogenes 6179,lmoq
+Listeria monocytogenes,Listeria monocytogenes R479a,lmr
+Listeria monocytogenes,Listeria monocytogenes NE dc2014,lmok
+Listeria monocytogenes,Listeria monocytogenes CFSAN006122,lmv
+Listeria monocytogenes,Listeria monocytogenes Lm60,lmom
+Yersinia pestis,Yersinia pestis CO92 (biovar Orientalis),ype
+Yersinia pestis,Yersinia pestis KIM10+ (biovar Mediaevalis),ypk
+Yersinia pestis,Yersinia pestis Antiqua (biovar Antiqua),ypa
+Yersinia pestis,Yersinia pestis Nepal516 (biovar Antiqua),ypn
+Yersinia pestis,Yersinia pestis 91001 (biovar Microtus),ypm
+Yersinia pestis,Yersinia pestis Pestoides F,ypp
+Yersinia pestis,Yersinia pestis Angola,ypg
+Yersinia pestis,Yersinia pestis Z176003,ypz
+Yersinia pestis,Yersinia pestis A1122,ypt
+Yersinia pestis,Yersinia pestis D106004,ypd
+Yersinia pestis,Yersinia pestis D182038,ypx
+Yersinia pestis,Yersinia pestis biovar Medievalis Harbin 35,yph
+Yersinia pestis,Yersinia pestis PBM19,ypw
+Yersinia pestis,Yersinia pestis Harbin35,ypj
+Yersinia pestis,Yersinia pestis Shasta,ypv
+Yersinia pestis,Yersinia pestis El Dorado,ypl
+Corynebacterium pseudotuberculosis,Corynebacterium pseudotuberculosis FRC41,cpu
+Corynebacterium pseudotuberculosis,Corynebacterium pseudotuberculosis 3/99-5,cpl
+Corynebacterium pseudotuberculosis,Corynebacterium pseudotuberculosis 316,cpg
+Corynebacterium pseudotuberculosis,Corynebacterium pseudotuberculosis P54B96,cpp
+Corynebacterium pseudotuberculosis,Corynebacterium pseudotuberculosis 1002,cpk
+Corynebacterium pseudotuberculosis,Corynebacterium pseudotuberculosis C231,cpq
+Corynebacterium pseudotuberculosis,Corynebacterium pseudotuberculosis I19,cpx
+Corynebacterium pseudotuberculosis,Corynebacterium pseudotuberculosis PAT10,cpz
+Corynebacterium pseudotuberculosis,Corynebacterium pseudotuberculosis 267,cor
+Corynebacterium pseudotuberculosis,Corynebacterium pseudotuberculosis 31,cop
+Corynebacterium pseudotuberculosis,Corynebacterium pseudotuberculosis 1/06-A,cod
+Corynebacterium pseudotuberculosis,Corynebacterium pseudotuberculosis 42/02-A,cos
+Corynebacterium pseudotuberculosis,Corynebacterium pseudotuberculosis CIP 52.97,coi
+Corynebacterium pseudotuberculosis,Corynebacterium pseudotuberculosis 258,coe
+Corynebacterium pseudotuberculosis,Corynebacterium pseudotuberculosis Cp162,cou
+Corynebacterium pseudotuberculosis,Corynebacterium pseudotuberculosis 48252,cpse
+Corynebacterium pseudotuberculosis,Corynebacterium pseudotuberculosis CS_10,cpsu
+Corynebacterium pseudotuberculosis,Corynebacterium pseudotuberculosis Ft_2193/67,cpsf
+Bacillus anthracis,Bacillus anthracis Ames,ban
+Bacillus anthracis,Bacillus anthracis Ames Ancestor,bar
+Bacillus anthracis,Bacillus anthracis Sterne,bat
+Bacillus anthracis,Bacillus anthracis CDC 684,bah
+Bacillus anthracis,Bacillus anthracis A0248,bai
+Bacillus anthracis,Bacillus anthracis H9401,bax
+Bacillus anthracis,Bacillus anthracis A16,bant
+Bacillus anthracis,Bacillus anthracis A16R,banr
+Bacillus anthracis,Bacillus anthracis SVA11,bans
+Bacillus anthracis,Bacillus anthracis HYU01,banh
+Bacillus anthracis,Bacillus anthracis Vollum,banv
+Dehalococcoides mccartyi,Dehalococcoides mccartyi 195,det
+Dehalococcoides mccartyi,Dehalococcoides mccartyi CBDB1,deh
+Dehalococcoides mccartyi,Dehalococcoides mccartyi BAV1,deb
+Dehalococcoides mccartyi,Dehalococcoides mccartyi VS,dev
+Dehalococcoides mccartyi,Dehalococcoides mccartyi GT,deg
+Dehalococcoides mccartyi,Dehalococcoides mccartyi BTF08,dmc
+Dehalococcoides mccartyi,Dehalococcoides mccartyi DCMB5,dmd
+Dehalococcoides mccartyi,Dehalococcoides mccartyi GY50,dmg
+Dehalococcoides mccartyi,Dehalococcoides mccartyi CG1,dmx
+Dehalococcoides mccartyi,Dehalococcoides mccartyi CG4,dmy
+Dehalococcoides mccartyi,Dehalococcoides mccartyi CG5,dmz
+Streptococcus pneumoniae,Streptococcus pneumoniae TIGR4 (virulent serotype 4),spn
+Streptococcus pneumoniae,Streptococcus pneumoniae D39 (virulent serotype 2),spd
+Streptococcus pneumoniae,Streptococcus pneumoniae R6 (avirulent),spr
+Streptococcus pneumoniae,Streptococcus pneumoniae CGSP14 (serotype 14),spw
+Streptococcus pneumoniae,Streptococcus pneumoniae G54 (serotype 19F),spx
+Streptococcus pneumoniae,Streptococcus pneumoniae ATCC 700669 (serotype 23F ST81 lineage),sne
+Streptococcus pneumoniae,Streptococcus pneumoniae Hungary19A 6,spv
+Streptococcus pneumoniae,Streptococcus pneumoniae 70585,snm
+Streptococcus pneumoniae,Streptococcus pneumoniae JJA,sjj
+Streptococcus pneumoniae,Streptococcus pneumoniae P1031,spp
+Streptococcus pneumoniae,Streptococcus pneumoniae Taiwan19F-14,snt
+Streptococcus pneumoniae,Streptococcus pneumoniae TCH8431/19A,snc
+Streptococcus pneumoniae,Streptococcus pneumoniae 670-6B,snb
+Streptococcus pneumoniae,Streptococcus pneumoniae AP200,snp
+Streptococcus pneumoniae,Streptococcus pneumoniae INV104,sni
+Streptococcus pneumoniae,Streptococcus pneumoniae INV200,snv
+Streptococcus pneumoniae,Streptococcus pneumoniae OXC141,snx
+Streptococcus pneumoniae,Streptococcus pneumoniae ST556,snd
+Streptococcus pneumoniae,Streptococcus pneumoniae SPNA45,snu
+Streptococcus pneumoniae,Streptococcus pneumoniae gamPNI0373,spng
+Streptococcus pneumoniae,Streptococcus pneumoniae SPN034156,spne
+Streptococcus pneumoniae,Streptococcus pneumoniae SPN034183,spnu
+Streptococcus pneumoniae,Streptococcus pneumoniae SPN994038,spnm
+Streptococcus pneumoniae,Streptococcus pneumoniae SPN994039,spno
+Streptococcus pneumoniae,Streptococcus pneumoniae A026,spnn
+Buchnera aphidicola,Buchnera aphidicola APS (Acyrthosiphon pisum),buc
+Buchnera aphidicola,Buchnera aphidicola 5A (Acyrthosiphon pisum),bap
+Buchnera aphidicola,Buchnera aphidicola Tuc7 (Acyrthosiphon pisum),bau
+Buchnera aphidicola,Buchnera aphidicola JF98 (Acyrthosiphon pisum),baw
+Buchnera aphidicola,Buchnera aphidicola JF99 (Acyrthosiphon pisum),bajc
+Buchnera aphidicola,Buchnera aphidicola LL01 (Acyrthosiphon pisum),bua
+Buchnera aphidicola,Buchnera aphidicola TLW03 (Acyrthosiphon pisum),bup
+Buchnera aphidicola,Buchnera aphidicola Ak (Acyrthosiphon kondoi),bak
+Buchnera aphidicola,Buchnera aphidicola Ua (Uroleucon ambrosiae),buh
+Buchnera aphidicola,Buchnera aphidicola F009 (Myzus persicae),bapf
+Buchnera aphidicola,Buchnera aphidicola G002 (Myzus persicae),bapg
+Buchnera aphidicola,Buchnera aphidicola USDA (Myzus persicae),bapu
+Buchnera aphidicola,Buchnera aphidicola W106 (Myzus persicae),bapw
+Buchnera aphidicola,Buchnera aphidicola Sg (Schizaphis graminum),bas
+Buchnera aphidicola,Buchnera aphidicola Bp (Baizongia pistaciae),bab
+Buchnera aphidicola,Buchnera aphidicola BCc,bcc
+Buchnera aphidicola,Buchnera aphidicola (Cinara tujafilina),baj
+Buchnera aphidicola,Buchnera aphidicola (Aphis glycines),baph
+Helicobacter pylori,Helicobacter pylori 26695,hpy
+Helicobacter pylori,Helicobacter pylori 26695,heo
+Helicobacter pylori,Helicobacter pylori J99,hpj
+Helicobacter pylori,Helicobacter pylori HPAG1,hpa
+Helicobacter pylori,Helicobacter pylori Shi470,hps
+Helicobacter pylori,Helicobacter pylori Shi112,hhp
+Helicobacter pylori,Helicobacter pylori Shi169,hhq
+Helicobacter pylori,Helicobacter pylori Shi417,hhr
+Helicobacter pylori,Helicobacter pylori G27,hpg
+Helicobacter pylori,Helicobacter pylori P12,hpp
+Helicobacter pylori,Helicobacter pylori B38,hpb
+Helicobacter pylori,Helicobacter pylori B8,hpl
+Helicobacter pylori,Helicobacter pylori PeCan4,hpc
+Helicobacter pylori,Helicobacter pylori PeCan18,hca
+Helicobacter pylori,Helicobacter pylori SJM180,hpm
+Helicobacter pylori,Helicobacter pylori ELS37,hpe
+Helicobacter pylori,Helicobacter pylori 35A,hpo
+Helicobacter pylori,Helicobacter pylori 908,hpi
+Helicobacter pylori,Helicobacter pylori 2017,hpq
+Helicobacter pylori,Helicobacter pylori 2018,hpw
+Helicobacter pylori,Helicobacter pylori Cuz20,hpu
+Helicobacter pylori,Helicobacter pylori F16,hef
+Helicobacter pylori,Helicobacter pylori F30,hpf
+Helicobacter pylori,Helicobacter pylori F32,heq
+Helicobacter pylori,Helicobacter pylori F57,hex
+Helicobacter pylori,Helicobacter pylori Sat464,hpt
+Helicobacter pylori,Helicobacter pylori 52,hpz
+Helicobacter pylori,Helicobacter pylori v225d,hpv
+Helicobacter pylori,Helicobacter pylori 83,hpx
+Helicobacter pylori,Helicobacter pylori SNT49,hen
+Helicobacter pylori,Helicobacter pylori Lithuania75,hph
+Helicobacter pylori,Helicobacter pylori Gambia94/24,heg
+Helicobacter pylori,Helicobacter pylori India7,hpn
+Helicobacter pylori,Helicobacter pylori Puno120,hep
+Helicobacter pylori,Helicobacter pylori Puno135,heu
+Helicobacter pylori,Helicobacter pylori SouthAfrica7,hes
+Helicobacter pylori,Helicobacter pylori SouthAfrica20,hpys
+Helicobacter pylori,Helicobacter pylori HUP-B14,hcn
+Helicobacter pylori,Helicobacter pylori 51,hpd
+Helicobacter pylori,Helicobacter pylori XZ274,hey
+Helicobacter pylori,Helicobacter pylori Rif1,her
+Helicobacter pylori,Helicobacter pylori Rif2,hei
+Helicobacter pylori,Helicobacter pylori Aklavik117,hpya
+Helicobacter pylori,Helicobacter pylori Aklavik86,hpyk
+Helicobacter pylori,Helicobacter pylori OK113,hpyo
+Helicobacter pylori,Helicobacter pylori OK310,hpyl
+Helicobacter pylori,Helicobacter pylori oki102,hpyb
+Helicobacter pylori,Helicobacter pylori oki112,hpyc
+Helicobacter pylori,Helicobacter pylori oki128,hpyd
+Helicobacter pylori,Helicobacter pylori oki154,hpye
+Helicobacter pylori,Helicobacter pylori oki422,hpyf
+Helicobacter pylori,Helicobacter pylori oki673,hpyg
+Helicobacter pylori,Helicobacter pylori oki828,hpyh
+Helicobacter pylori,Helicobacter pylori oki898,hpyj
+Helicobacter pylori,Helicobacter pylori UM032,hpyr
+Helicobacter pylori,Helicobacter pylori UM037,hpyi
+Helicobacter pylori,Helicobacter pylori UM066,hpyu
+Helicobacter pylori,Helicobacter pylori UM299,hpym
+Helicobacter pylori,Helicobacter pylori UM298,hem
+Helicobacter pylori,Helicobacter pylori BM012A,heb
+Helicobacter pylori,Helicobacter pylori BM012S,hez
+Bifidobacterium longum,Bifidobacterium longum NCC2705,blo
+Bifidobacterium longum,Bifidobacterium longum DJO10A,blj
+Bifidobacterium longum,Bifidobacterium longum subsp. infantis ATCC 15697 (JGI),bln
+Bifidobacterium longum,Bifidobacterium longum subsp. infantis ATCC 15697 (Tokyo),blon
+Bifidobacterium longum,Bifidobacterium longum subsp. infantis 157F,blf
+Bifidobacterium longum,Bifidobacterium longum subsp. longum JDM301,bll
+Bifidobacterium longum,Bifidobacterium longum subsp. longum BBMN68,blb
+Bifidobacterium longum,Bifidobacterium longum subsp. longum JCM 1217,blm
+Bifidobacterium longum,Bifidobacterium longum subsp. longum KACC 91563,blk
+Bifidobacterium longum,Bifidobacterium longum subsp. longum F8,blg
+Bifidobacterium longum,Bifidobacterium longum subsp. longum GT15,blz
+Bifidobacterium longum,Bifidobacterium longum BXY01,blx
+Prochlorococcus marinus,Prochlorococcus marinus SS120,pma
+Prochlorococcus marinus,Prochlorococcus marinus MED4,pmm
+Prochlorococcus marinus,Prochlorococcus marinus MIT 9313,pmt
+Prochlorococcus marinus,Prochlorococcus marinus NATL2A,pmn
+Prochlorococcus marinus,Prochlorococcus marinus MIT 9312,pmi
+Prochlorococcus marinus,Prochlorococcus marinus AS9601,pmb
+Prochlorococcus marinus,Prochlorococcus marinus MIT 9515,pmc
+Prochlorococcus marinus,Prochlorococcus marinus MIT 9303,pmf
+Prochlorococcus marinus,Prochlorococcus marinus MIT 9301,pmg
+Prochlorococcus marinus,Prochlorococcus marinus MIT 9215,pmh
+Prochlorococcus marinus,Prochlorococcus marinus MIT 9211,pmj
+Prochlorococcus marinus,Prochlorococcus marinus NATL1A,pme
