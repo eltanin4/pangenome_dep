@@ -175,7 +175,6 @@ plt.ylim(-0.015, 0.25)
 plt.savefig('plots/mono_met_overlap_corr_phi_eta_core.svg')
 plt.show()
 
-# write down why the fuck you want to calculate this in this fashion.
 # Tentative: # of potentially advantageous strain-specific (not in to all strains)
 # biosynthetic (core) molecules producible per strain (note: only by the accessory content).
 # To test if "ostensibly dispensible genes can be commonly advantageous" and if that advantage 
